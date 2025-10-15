@@ -1,13 +1,13 @@
 Paralen 500
-Paralen 125 (sirup)
+Paralen 125 sirup
 Ibalgin 400
-Ibalgin 200 (sirup)
+Ibalgin 200 sirup
 Brufen 400
 Nurofen 200
 Nurofen Forte 400
 Panadol 500
 Acylpyrin 500mg
-Aspirin 100mg (kardio)
+Aspirin 100mg kardio
 Voltaren Emulgel 1%
 Olfen gel
 Movicol
@@ -27,7 +27,7 @@ Lorista 25mg
 Losartan Zentiva 50mg
 Concor 5mg
 Bisoprolol Zentiva 5mg
-Zentiva Enalapril 5mg
+Enalapril Zentiva 5mg
 Amlodipin Zentiva 5mg
 Valsacor 160mg
 Furosemid 40mg
@@ -35,16 +35,16 @@ Verospiron 100mg
 Letrox 50
 Euthyrox 100
 Glucophage 850
-Galvus Met 50/850
+Galvus Met 50_850
 Januvia 100mg
 Daonil 5mg
-Zentiva Metformin 500mg
+Metformin Zentiva 500mg
 Ventolin Inhaler
 Seretide Diskus 250
-Symbicort Turbuhaler 160/4,5
+Symbicort Turbuhaler 160_4,5
 Zyrtec 10mg
 Analergin 10mg
 Claritine 10mg
 Zodac 10mg
-Nosivin 0,1% (kapky)
+Nosivin 0,1percent kapky
 Otrivin
