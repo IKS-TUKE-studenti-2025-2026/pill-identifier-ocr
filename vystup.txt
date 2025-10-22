@@ -40,9 +40,6 @@ Metoprolol
 Otrivin Menthol 0,1% aer nao 1x10 ml (fľ.HDPE s dávkovačom)
 Xylometazolín
 
-Ultra-TechneKow FM (99mTC-generátor) inj 8,50 GBq  exp:d
-Technécium (99mTc) pertechnetát
-
 Tebokan 120 mg tbl flm 30x120 mg (blis.PVC/PVDC/Al)
 Ginkgo biloba
 
@@ -81,6 +78,9 @@ Perindopril
 
 CALCIUM CHLORATUM - IVAX sol por 100 ml
 Chlorid vápenatý
+
+INDIVIDUÁLNY PRÍPRAVOK DO 0,33 €
+neznámy
 
 PAMYCON na pripravu kvapiek plv gtt 1x1 flaš.
 Iné antibiotiká na lokálne použitie
@@ -159,3 +159,4 @@ Prednizón
 
 PROTHAZIN tbl flm 20x25 mg
 Prometazín
+
