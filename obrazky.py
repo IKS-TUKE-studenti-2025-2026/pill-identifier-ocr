@@ -2,26 +2,21 @@
 # -*- coding: utf-8 -*-
 
 """
-Robust image fetcher for OCR dataset prep.
+Robust image fetcher for OCR dataset prep (NO PROCESSING).
+- Sťahuje originálne obrázky (farby a rozlíšenie zachované).
+- Náhodné malé pauzy, caching vyhľadávania, retries pri sťahovaní.
+- Backend: Bing (ak je BING_IMAGE_SEARCH_KEY) alebo DuckDuckGo (ddgs).
 
-Features:
-- Small randomized delays instead of large fixed sleeps
-- Graceful handling of DuckDuckGo 403 rate limits (cooldown or skip)
-- Search result caching so repeated runs don't keep hitting the search endpoint
-- Single persistent requests.Session with retry/backoff for downloads
-- Optional Bing Image Search backend (set env BING_IMAGE_SEARCH_KEY to use)
-- Basic image preprocessing (grayscale, pad to square, contrast boost)
-
-Folder structure expected:
+Struktúra:
 dataset/
   DrugA/
-    dataset.txt   # first line: search query (e.g., drug name)
+    dataset.txt   # 1. riadok: vyhľadávacia fráza (názov lieku)
   DrugB/
     dataset.txt
-  ...
+...
 
-Outputs:
-dataset/<drug>/image_1.png ... image_N.png
+Výstup:
+dataset/<drug>/image_1.jpg|png|webp ... image_N.ext
 """
 
 import os
@@ -32,72 +27,59 @@ import random
 import traceback
 import requests
 from typing import List, Dict, Optional
-
-# ---- Optional backend: Bing Image Search (set your key in the environment) ----
-BING_API_KEY = os.getenv("BING_IMAGE_SEARCH_KEY", "").strip()
-
-# ---- Third-party libs (install: pip install duckduckgo_search pillow requests) ----
-try:
-    from duckduckgo_search import DDGS
-except Exception:
-    DDGS = None  # If not installed and you only want Bing, that's OK.
-
-from PIL import Image, ImageOps, ImageEnhance
+from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter, Retry
 
+# ---------------- Optional Bing backend ----------------
+BING_API_KEY = os.getenv("BING_IMAGE_SEARCH_KEY", "").strip()
 
-# ============================ CONFIG ===========================================
-# Root folder with per-drug folders
+# ---------------- DDG backend ----------------
+try:
+    from ddgs import DDGS    # pip install -U ddgs
+except Exception:
+    DDGS = None  # ok, ak chceš iba Bing
+
+# Voliteľne: validácia, že bajty sú obrázok (neprepisujeme obsah)
+try:
+    from PIL import Image, ImageFile
+    ImageFile.LOAD_TRUNCATED_IMAGES = True
+    HAVE_PIL = True
+except Exception:
+    HAVE_PIL = False
+
+# ============================ CONFIG ============================
 DATASET_DIR = "dataset"
-
-# Number of processed images to save per drug
 NUM_IMAGES = 3
 
-# Target image size (for OCR)
-TARGET_SIZE = (512, 512)
+SEARCH_BACKEND = "auto"  # 'auto'|'bing'|'ddg'
 
-# Backend preference: 'auto' | 'bing' | 'ddg'
-# - 'auto': use Bing if BING_IMAGE_SEARCH_KEY is set, else DDG
-# - 'bing': require Bing key
-# - 'ddg': force DuckDuckGo (unofficial, risk of 403)
-SEARCH_BACKEND = "auto"
+SEARCH_JITTER_SEC = (1.0, 3.0)   # wait medzi vyhľadávaniami
+DOWNLOAD_JITTER_SEC = (0.8, 2.0) # wait medzi downloadmi
 
-# Jitter windows (seconds)
-SEARCH_JITTER_SEC = (1.0, 3.0)       # delay between searches
-DOWNLOAD_JITTER_SEC = (0.8, 2.0)     # delay between downloads
+DDG_403_BEHAVIOR = "cooldown"    # 'cooldown' alebo 'skip'
+COOLDOWN_WINDOW_SEC = (180, 420)
 
-# If DDG returns 403, what to do:
-# 'cooldown' -> sleep for COOLDOWN_WINDOW then continue
-# 'skip'     -> skip this folder (faster runs; safer on shared IPs)
-DDG_403_BEHAVIOR = "cooldown"  # 'cooldown' or 'skip'
-COOLDOWN_WINDOW_SEC = (180, 420)  # 3–7 minutes randomized
-
-# Max total attempts per image download (Session has its own inner retries too)
 MAX_DOWNLOAD_ATTEMPTS = 3
 
-# Cache
 CACHE_PATH = os.path.join(DATASET_DIR, "_search_cache.json")
 
-# User-Agent pool to randomize a bit
 UA_POOL = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0 Safari/537.36",
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Safari/605.1.15",
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
 ]
-# ==============================================================================
 
+MIN_BYTES, MAX_BYTES = 8 * 1024, 12 * 1024 * 1024  # 8KB – 12MB
+# ================================================================
 
 def polite_sleep(a: float, b: float) -> None:
     time.sleep(random.uniform(a, b))
 
-
 def make_session() -> requests.Session:
     s = requests.Session()
     retries = Retry(
-        total=5,
-        connect=5,
-        read=5,
-        backoff_factor=1.2,  # 0, 1.2, 2.4, 3.6, ...
+        total=5, connect=5, read=5,
+        backoff_factor=1.2,
         status_forcelist=(429, 500, 502, 503, 504),
         allowed_methods=frozenset(["GET", "HEAD"]),
         raise_on_status=False,
@@ -106,15 +88,12 @@ def make_session() -> requests.Session:
     s.mount("https://", HTTPAdapter(max_retries=retries))
     s.headers.update({
         "User-Agent": random.choice(UA_POOL),
-        "Accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+        "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
         "Accept-Language": "sk-SK,sk;q=0.9,en;q=0.8",
-        # No Referer set to avoid hotlink/fingerprint issues
     })
     return s
 
-
 SESSION = make_session()
-
 
 def load_cache() -> Dict[str, List[str]]:
     if not os.path.isfile(CACHE_PATH):
@@ -125,7 +104,6 @@ def load_cache() -> Dict[str, List[str]]:
     except Exception:
         return {}
 
-
 def save_cache(cache: Dict[str, List[str]]) -> None:
     try:
         with open(CACHE_PATH, "w", encoding="utf-8") as fh:
@@ -133,28 +111,20 @@ def save_cache(cache: Dict[str, List[str]]) -> None:
     except Exception:
         pass
 
-
 SEARCH_CACHE: Dict[str, List[str]] = load_cache()
-
 
 def resolve_backend() -> str:
     if SEARCH_BACKEND == "auto":
         return "bing" if BING_API_KEY else "ddg"
     return SEARCH_BACKEND
 
-
-# ----------------------- Backends: Bing & DDG ----------------------------------
+# --------------------- Search backends -------------------------
 
 def search_bing_images(query: str, want: int) -> List[str]:
-    """Bing Image Search (official API). Requires BING_IMAGE_SEARCH_KEY env var."""
     if not BING_API_KEY:
-        raise RuntimeError("Bing API key missing; set BING_IMAGE_SEARCH_KEY or change SEARCH_BACKEND.")
+        raise RuntimeError("Bing API key missing. Set BING_IMAGE_SEARCH_KEY or use DDG.")
     url = "https://api.bing.microsoft.com/v7.0/images/search"
-    params = {
-        "q": query,
-        "count": max(want + 4, want),  # request a bit more to have fallbacks
-        "safeSearch": "Strict",
-    }
+    params = {"q": query, "count": max(want + 6, want), "safeSearch": "Strict"}
     headers = {"Ocp-Apim-Subscription-Key": BING_API_KEY}
     r = requests.get(url, params=params, headers=headers, timeout=20)
     r.raise_for_status()
@@ -162,133 +132,132 @@ def search_bing_images(query: str, want: int) -> List[str]:
     vals = data.get("value", [])
     urls = []
     for item in vals:
-        # Try contentUrl primarily; as a fallback, hostPageUrl is the web page
-        u = item.get("contentUrl")
+        u = item.get("contentUrl") or item.get("thumbnailUrl")
         if u:
             urls.append(u)
-    return urls
-
+    # dedupe
+    seen, uniq = set(), []
+    for u in urls:
+        if u not in seen:
+            seen.add(u); uniq.append(u)
+    return uniq
 
 _DDG_CLIENT: Optional[DDGS] = None
-
 
 def ddg_client() -> DDGS:
     global _DDG_CLIENT
     if _DDG_CLIENT is None:
         if DDGS is None:
-            raise RuntimeError("duckduckgo_search is not installed. Install it or use Bing.")
+            raise RuntimeError("ddgs nie je nainštalované. pip install -U ddgs")
         _DDG_CLIENT = DDGS()
     return _DDG_CLIENT
 
-
 def search_ddg_images(query: str, want: int) -> List[str]:
-    """DuckDuckGo via duckduckgo_search (unofficial; prone to 403 rate limiting)."""
     client = ddg_client()
-    # duckduckgo_search internally calls /i.js. We’ll catch 403 in the exception string.
     try:
-        results = list(client.images(keywords=query, max_results=want + 6))
+        results = list(client.images(query, region="sk-sk", safesearch="moderate", max_results=want + 10))
     except Exception as e:
         msg = str(e).lower()
-        if "403" in msg or "ratelimit" in msg or "i.js" in msg:
-            # Handle rate limiting according to config
+        if "403" in msg or "i.js" in msg or "rate" in msg:
             if DDG_403_BEHAVIOR == "cooldown":
                 cool = random.randint(*map(int, COOLDOWN_WINDOW_SEC))
-                print(f"  🧊 DDG rate-limit detected (403). Cooling down for {cool}s…")
+                print(f"  🧊 DDG 403 – čakám {cool}s…")
                 time.sleep(cool)
-                # Try exactly once more after cooldown
                 try:
-                    results = list(client.images(keywords=query, max_results=want + 6))
+                    results = list(client.images(query, region="sk-sk", safesearch="moderate", max_results=want + 10))
                 except Exception:
-                    print("  ❌ Still blocked after cooldown. Skipping this query.")
+                    print("  ❌ Stále blokované – preskakujem.")
                     return []
             else:
-                print("  🧊 DDG rate-limit detected (403). Skipping this query.")
+                print("  🧊 DDG 403 – preskakujem.")
                 return []
         else:
-            # Some other network/parser error
-            print(f"  ❌ DuckDuckGo search error: {e}")
+            print(f"  ❌ Chyba DDG: {e}")
             return []
-
     urls = []
     for r in results:
-        # Prefer 'image' URL; keep 'thumbnail' as fallback
         img = r.get("image")
-        if img:
-            urls.append(img)
+        if img: urls.append(img)
         thumb = r.get("thumbnail")
-        if thumb:
-            urls.append(thumb)
-    # Deduplicate while keeping order
-    seen = set()
-    uniq = []
+        if thumb: urls.append(thumb)
+    seen, uniq = set(), []
     for u in urls:
         if u not in seen:
-            seen.add(u)
-            uniq.append(u)
+            seen.add(u); uniq.append(u)
     return uniq
 
-
 def search_images_cached(query: str, want: int) -> List[str]:
-    """Unified cached search across backends."""
     backend = resolve_backend()
-    cache_key = f"{backend}::{query}::{want}"
-    if cache_key in SEARCH_CACHE and SEARCH_CACHE[cache_key]:
-        return SEARCH_CACHE[cache_key][:]
-
+    key = f"{backend}::{query}::{want}"
+    if key in SEARCH_CACHE and SEARCH_CACHE[key]:
+        return SEARCH_CACHE[key][:]
     if backend == "bing":
         urls = search_bing_images(query, want)
     elif backend == "ddg":
         urls = search_ddg_images(query, want)
     else:
         raise RuntimeError(f"Unknown backend: {backend}")
-
-    # store some extras for retries/fallbacks
-    SEARCH_CACHE[cache_key] = urls
+    SEARCH_CACHE[key] = urls
     save_cache(SEARCH_CACHE)
     return urls[:]
 
+# ---------------------- Download & Save ------------------------
 
-# ----------------------- Download & Process ------------------------------------
+def guess_ext_from_headers_or_url(content_type: str, url: str) -> str:
+    ct = (content_type or "").lower()
+    path = urlparse(url).path.lower()
+    # map podľa Content-Type
+    if "image/jpeg" in ct or path.endswith((".jpg", ".jpeg", ".jfif")):
+        return ".jpg"
+    if "image/png" in ct or path.endswith(".png"):
+        return ".png"
+    if "image/webp" in ct or path.endswith(".webp"):
+        return ".webp"
+    if "image/gif" in ct or path.endswith(".gif"):
+        return ".gif"
+    if "image/bmp" in ct or path.endswith(".bmp"):
+        return ".bmp"
+    if "image/tiff" in ct or path.endswith((".tif", ".tiff")):
+        return ".tif"
+    # default
+    return ".jpg"
 
-def download_image(url: str, timeout: int = 25) -> bytes:
-    """Download image bytes with session-level retries and basic checks."""
+def download_image(url: str, timeout: int = 25) -> tuple[bytes, str]:
     last_exc = None
     for attempt in range(1, MAX_DOWNLOAD_ATTEMPTS + 1):
         try:
             r = SESSION.get(url, timeout=timeout, stream=True)
             if r.status_code == 429:
-                # Short pause, then retry
                 pause = 10 * attempt
-                print(f"    ⏳ 429 Too Many Requests. Waiting {pause}s before retry…")
+                print(f"    ⏳ 429 Too Many Requests — čakám {pause}s…")
                 time.sleep(pause)
                 continue
             if r.status_code >= 400:
-                raise requests.HTTPError(f"HTTP {r.status_code} for {url}")
+                raise requests.HTTPError(f"HTTP {r.status_code} pre {url}")
 
-            ct = r.headers.get("content-type", "")
-            if not ct.startswith("image/"):
-                # Some hosts mislabel; allow octet-stream if bytes sniff succeed
-                if ct and "octet-stream" not in ct:
-                    raise ValueError(f"Not an image: {ct}")
-            return r.content
+            content_type = r.headers.get("content-type", "")
+            data = r.content
+            if len(data) < MIN_BYTES or len(data) > MAX_BYTES:
+                raise ValueError("Veľkosť mimo limitu")
+
+            # voliteľná validácia, že je to obrazok (bez zmeny dát)
+            if HAVE_PIL:
+                try:
+                    im = Image.open(io.BytesIO(data))
+                    im.verify()  # skontroluje integritu
+                except Exception as e:
+                    raise ValueError(f"Nie je validný obrázok: {e}")
+
+            ext = guess_ext_from_headers_or_url(content_type, url)
+            return data, ext
         except Exception as e:
             last_exc = e
-            print(f"    ⚠️ Download attempt {attempt}/{MAX_DOWNLOAD_ATTEMPTS} failed: {e}")
+            print(f"    ⚠️ Pokus {attempt}/{MAX_DOWNLOAD_ATTEMPTS} zlyhal: {e}")
             if attempt < MAX_DOWNLOAD_ATTEMPTS:
                 time.sleep(1.5 * attempt)
-    # All attempts failed
-    raise last_exc if last_exc else RuntimeError("Unknown download error")
+    raise last_exc if last_exc else RuntimeError("Neznáma chyba sťahovania")
 
-
-def process_image(image_data: bytes) -> Image.Image:
-    """Convert to grayscale, pad to square TARGET_SIZE, boost contrast."""
-    image = Image.open(io.BytesIO(image_data)).convert("L")
-    image = ImageOps.pad(image, TARGET_SIZE, color=255)
-    image = ImageEnhance.Contrast(image).enhance(1.5)
-    return image
-
-
-# ----------------------------- Main -------------------------------------------
+# ----------------------------- Main ---------------------------
 
 def main() -> None:
     if not os.path.isdir(DATASET_DIR):
@@ -297,7 +266,7 @@ def main() -> None:
     folders = [f for f in os.listdir(DATASET_DIR)
                if os.path.isdir(os.path.join(DATASET_DIR, f))]
     total = len(folders)
-    print(f"🎬 Spúšťam sťahovanie obrázkov pre {total} priečinkov…")
+    print(f"🎬 Sťahujem obrázky pre {total} priečinkov…")
     print(f"🔌 Backend: {resolve_backend().upper()}")
 
     for idx, folder in enumerate(sorted(folders), 1):
@@ -308,61 +277,56 @@ def main() -> None:
             print(f"❌ [{idx}/{total}] Chýba dataset.txt v “{folder}”, preskakujem…")
             continue
 
-        # Skip if we already have enough images
-        existing = [f for f in os.listdir(folder_path)
-                    if f.lower().endswith((".jpg", ".jpeg", ".png"))]
-        if len(existing) >= NUM_IMAGES:
-            print(f"⏩ [{idx}/{total}] Preskakujem “{folder}” (už mám {len(existing)} obrázkov)")
+        # koľko už máme (image_*.ext)
+        have = len([f for f in os.listdir(folder_path)
+                    if f.lower().startswith("image_") and os.path.isfile(os.path.join(folder_path, f))])
+        need = max(0, NUM_IMAGES - have)
+        if need == 0:
+            print(f"⏩ [{idx}/{total}] “{folder}”: už mám {have} obrázkov")
             continue
 
         with open(dataset_file, "r", encoding="utf-8") as fh:
             query = fh.readline().strip()
 
-        print(f"🔍 [{idx}/{total}] Hľadám obrázky pre: “{query}”")
+        print(f"🔍 [{idx}/{total}] Hľadám pre: “{query}” (chýba {need})")
 
-        # Small polite delay between searches
         if idx > 1:
             polite_sleep(*SEARCH_JITTER_SEC)
 
         try:
-            urls = search_images_cached(query, want=NUM_IMAGES)
+            urls = search_images_cached(query, want=max(need, NUM_IMAGES) + 6)
         except Exception as e:
             print(f"  ❌ Chyba vyhľadávania: {e}")
             continue
 
         if not urls:
-            print(f"  ❌ Nenašli sa žiadne URL pre “{query}”")
+            print(f"  ❌ Nenašli sa URL pre “{query}”")
             continue
 
-        success = 0
+        saved = 0
         tried = 0
-
         for url in urls:
-            if success >= NUM_IMAGES:
+            if saved >= need:
                 break
             tried += 1
-
-            # Small delay to avoid hammering hosts
             polite_sleep(*DOWNLOAD_JITTER_SEC)
-
             try:
-                data = download_image(url)
-                img = process_image(data)
-                out_path = os.path.join(folder_path, f"image_{success + 1}.png")
-                img.save(out_path, format="PNG", optimize=True)
-                success += 1
-                print(f"  ✅ Uložené: {success}/{NUM_IMAGES} (z {tried} pokusov)")
+                data, ext = download_image(url)
+                out_path = os.path.join(folder_path, f"image_{have + saved + 1}{ext}")
+                # ulož originálne bajty, žiadne spracovanie
+                with open(out_path, "wb") as f:
+                    f.write(data)
+                saved += 1
+                print(f"  ✅ {os.path.basename(out_path)} (z {tried} pokusov)")
             except Exception as e:
-                # Try to fall back to the next URL (thumbnails are included in cache list)
                 print(f"  ⚠️ Zlyhané sťahovanie: {e}")
 
-        if success == 0:
-            print(f"  ❌ Pre “{query}” sa nepodarilo stiahnuť žiadne obrázky")
+        if saved == 0:
+            print(f"  ❌ Pre “{query}” sa nepodarilo uložiť žiadny obrázok")
         else:
-            print(f"  📊 “{query}”: úspešne {success}/{NUM_IMAGES}")
+            print(f"  📊 “{query}”: pridané {saved}/{need}")
 
-    print("\n🎉 Hotovo! Obrázky sú uložené a pripravené na OCR tréning.")
-
+    print("\n🎉 Hotovo. Obrázky uložené bez úprav (farba aj rozlíšenie zachované).")
 
 if __name__ == "__main__":
     try:
