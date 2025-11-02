@@ -1,0 +1,22 @@
+{
+  "drug_name": "Lexaurin 3 mg tbl 28x3 mg (blis.Al/PVC)",
+  "ingredient_sk": "Bromazepam",
+  "ingredient_en": "Bromazepam",
+  "source": "openfda",
+  "openfda_meta": {
+    "hits": 0,
+    "set_ids": [],
+    "sources": []
+  },
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [],
+    "warnings": [],
+    "warnings_and_cautions": [],
+    "precautions": [],
+    "drug_interactions": [],
+    "adverse_reactions": [],
+    "clinical_pharmacology": []
+  },
+  "disease_flags": []
+}

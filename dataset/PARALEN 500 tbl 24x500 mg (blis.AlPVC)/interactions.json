@@ -1,0 +1,44 @@
+{
+  "drug_name": "PARALEN 500 tbl 24x500 mg (blis.Al/PVC)",
+  "ingredient_sk": "Paracetamol",
+  "ingredient_en": "Paracetamol",
+  "source": "openfda",
+  "openfda_meta": {
+    "hits": 2,
+    "set_ids": [
+      "7fd78fc6-1f80-4866-bb8b-6dbf8af80482",
+      "e49a93a8-158a-4184-b4bc-cac3031ad8b6"
+    ],
+    "sources": []
+  },
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [
+      "Contraindications: Hypersensitivity to individual product ingredients, co-administration of tricyclic antidepressants, beta-adrenergic blockers or other sympathomimetic products, hyperthyroidism, pheochromocytoma, angle-closure glaucoma, alcoholism, pregnancy, breastfeeding, pediatric use under 12 years of age. For a complete list of contraindications, see patient information leaflet.",
+      "Contraindications: Increased sensitivity to individual ingredients of the preparation, simultaneous use of tricyclic antidepressants, monoamine oxidase (MAO) inhibitors, beta-adrenergic blockers; portal hypertension; alcoholism; diabetes mellitus, pregnancy, breast-feeding, children under 12 years of age. With caution: in marked coronary artery atherosclerosis, in arterial hypertension, narrow-angle glaucoma, severe liver or kidney diseases, prostatic hyperplasia, blood diseases, glucose-6-phosphate dehydrogenase deficiency, congenital hyperbilirubinemia (Gilbert, Dubin-Johnson, and Rotor syndromes), hyperthyroidism, pheochromocytoma, bronchial asthma."
+    ],
+    "warnings": [
+      "Interaction with other drugs: Intensifies the effect of MAO inhibitors, sedative preparations, ethanol. The risk of the hepatotoxic action of paracetamol increases during concurrent use of barbiturates, diphenine, carbamazepine, rifampicin, zidovudine, and other hepatic microsomal enzyme inducers. Antidepressants, antiparkinsonian agents, antipsychotic agents, and phenothiazine derivatives - increase the risk of developing urinary retention, dry mouth, and constipation. Glucocorticosteroids increase the risk of developing elevated intraocular pressure."
+    ],
+    "warnings_and_cautions": [
+      "Special warnings: To avoid toxic liver damage, the preparation should not be combined with the use of alcoholic beverages. Care should be taken when the preparation is used by individuals over 70 years of age with cardiovascular disease because of the possible vasoconstricting action of phenylephrine. If regardless of the use of the preparation, the illness is accompanied by continuing fever or repeated temperature elevations, a physician must be consulted. Do not exceed the recommended dose. Do not use the preparation from damaged packets. Effect on the ability to drive an automobile and to operate machinery. During treatment, care must be taken when operating an automobile or other machinery, requiring mental alertness and quick psychomotor reactions.",
+      "Effect on the ability to drive an automobile and to operate machinery. During treatment, care must be taken when operating an automobile or other machinery, requiring mental alertness and quick psychomotor reactions."
+    ],
+    "precautions": [],
+    "drug_interactions": [],
+    "adverse_reactions": [
+      "Side effects: possible allergic reactions (skin rash, pruritus, hives, angioedema), hyperexcitability, sleep disorder, reduction in the speed of psychomotor reactions, drowsiness, dizziness, nausea, vomiting, stomach pain, palpitations, blood pressure increase, dry mouth, accommodative palsy, increase in intraocular pressure, urinary retention. During prolonged use in high doses - hepatotoxic action, changes in blood count; nephrotoxicity."
+    ],
+    "clinical_pharmacology": []
+  },
+  "disease_flags": [
+    "asthma",
+    "children / pediatrics",
+    "diabetes",
+    "glaucoma",
+    "hypertension",
+    "lactation",
+    "pheochromocytoma",
+    "pregnancy"
+  ]
+}

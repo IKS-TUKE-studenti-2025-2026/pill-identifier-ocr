@@ -1,0 +1,30 @@
+{
+  "drug_name": "LAGOSA tbl obd 100",
+  "ingredient_sk": "Silymarín",
+  "ingredient_en": "Silymarin",
+  "source": "openfda",
+  "openfda_meta": {
+    "hits": 2,
+    "set_ids": [
+      "59178bc0-0e0c-4b7e-999f-94510cdca918",
+      "653c5a11-2f92-262b-e053-2991aa0a637f"
+    ],
+    "sources": []
+  },
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [],
+    "warnings": [
+      "Warnings Silymarin may inhibit cytochrome P450 2C9 and CYPP4503A4; but no effect on pharmacokinetics of indinavir in human studies. Silymarin may decrease blood glucose in patients with cirrhosis and diabetes.",
+      "never drink the liquid if the liquid gets into the eyes, do not rub eyes but immediately wash with flowing tab water if skin is contacted with the undiluted liquid, immediately wash with flowing water"
+    ],
+    "warnings_and_cautions": [],
+    "precautions": [],
+    "drug_interactions": [],
+    "adverse_reactions": [],
+    "clinical_pharmacology": []
+  },
+  "disease_flags": [
+    "diabetes"
+  ]
+}
