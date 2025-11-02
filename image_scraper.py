@@ -1,57 +1,98 @@
-import pandas as pd
+# -*- coding: utf-8 -*-
+"""
+reconcile_vystup_with_folders.py
 
-def process_excel_to_txt(input_file, output_file):
-    try:
-        # Načítanie druhého sheetu "Data"
-        print("Načítavam dáta z XLSX súboru...")
-        df = pd.read_excel(input_file, sheet_name='Data')
-        
-        # Zobrazenie presných názvov stĺpcov pre kontrolu
-        print("Presné názvy stĺpcov:")
-        for i, col in enumerate(df.columns):
-            print(f"  {i}: '{col}'")
-        
-        # Použime presné názvy stĺpcov s medzerami
-        required_columns = ['LIEK_popis ', 'ATC7_popis']
-        missing_columns = [col for col in required_columns if col not in df.columns]
-        
-        if missing_columns:
-            print(f"Chyba: Chýbajúce stĺpce: {missing_columns}")
-            return
-        
-        # Výber prvých 60 záznamov
-        df_first_60 = df.head(60)
-        
-        print(f"Načítaných {len(df_first_60)} záznamov z celkových {len(df)}")
-        
-        # Vytvorenie TXT súboru s formátom pod seba
-        with open(output_file, 'w', encoding='utf-8') as f:
-            for index, row in df_first_60.iterrows():
-                f.write(f"{row['LIEK_popis ']}\n")  # Pozor: medzera na konci!
-                f.write(f"{row['ATC7_popis']}\n")
-                f.write("\n")  # Prázdny riadok pre oddelenie záznamov
-        
-        print(f"✅ TXT súbor {output_file} bol úspešne vytvorený!")
-        print(f"📊 Počet spracovaných záznamov: {len(df_first_60)}")
-        
-        # Zobrazenie prvých pár záznamov pre kontrolu
-        print("\n📋 Ukážka prvých 3 záznamov:")
-        for i in range(min(3, len(df_first_60))):
-            print(f"Záznam {i+1}:")
-            print(f"  LIEK_popis: '{df_first_60.iloc[i]['LIEK_popis ']}'")
-            print(f"  ATC7_popis: '{df_first_60.iloc[i]['ATC7_popis']}'")
-            print()
-            
-    except FileNotFoundError:
-        print(f"❌ Chyba: Súbor {input_file} nebol nájdený.")
-    except Exception as e:
-        print(f"❌ Chyba: {e}")
+- Číta vstupný TXT (vystup.txt) po dvojiciach riadkov:
+    1) názov lieku
+    2) účinná látka
+- Overí, že v dataset/<safe_name> existuje priečinok (safe_name = názov bez zakázaných znakov Windows).
+- Ak priečinok NEexistuje, dvojicu z TXT odstráni.
+- Zapíše späť do toho istého súboru, ale najprv vytvorí zálohu.
 
-# Hlavný program
+Záloha: vystup.backup-YYYYmmdd-HHMMSS.txt
+Formát výstupu: každý liek + jeho látka na dvoch riadkoch, medzi pármi prázdny riadok.
+"""
+
+import os
+import shutil
+from datetime import datetime
+from pathlib import Path
+
+DATASET_DIR = Path("dataset")
+INPUT_TXT   = Path("vystup.txt")
+
+# nastav, ak chceš len ukázať, čo by sa zmenilo (bez zápisu)
+DRY_RUN = False
+
+def safe_name(name: str) -> str:
+    # rovnaká sanitácia ako si mal pri vytváraní priečinkov
+    forbidden = '<>:"/\\|?*'
+    return "".join(c for c in name if c not in forbidden)
+
+def read_pairs(path: Path):
+    if not path.exists():
+        raise FileNotFoundError(f"Neexistuje: {path}")
+    with path.open("r", encoding="utf-8") as f:
+        lines = [ln.strip() for ln in f.readlines() if ln.strip()]
+    pairs = []
+    for i in range(0, len(lines), 2):
+        if i + 1 < len(lines):
+            pairs.append( (lines[i], lines[i+1]) )
+    return pairs
+
+def write_pairs(path: Path, pairs):
+    with path.open("w", encoding="utf-8") as out:
+        for i, (name, ing) in enumerate(pairs):
+            out.write(name.rstrip() + "\n")
+            out.write(ing.rstrip() + "\n")
+            if i != len(pairs) - 1:
+                out.write("\n")
+
+def main():
+    if not DATASET_DIR.exists():
+        print(f"❌ Neexistuje priečinok: {DATASET_DIR.resolve()}")
+        return
+    pairs = read_pairs(INPUT_TXT)
+    if not pairs:
+        print("⚠️  vstup je prázdny alebo nemá platné dvojice.")
+        return
+
+    # pre rýchle case-insensitive porovnanie priprav zoznam existujúcich priečinkov
+    existing_dirs = {p.name.lower(): p for p in DATASET_DIR.iterdir() if p.is_dir()}
+
+    kept, removed = [], []
+    for (name, ing) in pairs:
+        s = safe_name(name).strip()
+        # porovnávaj case-insensitive
+        exists = (s.lower() in existing_dirs)
+        if exists:
+            kept.append((name, ing))
+        else:
+            removed.append((name, ing))
+
+    print(f"🔎 Našiel som {len(pairs)} položiek v TXT.")
+    print(f"   ✔️  ponechané: {len(kept)}")
+    print(f"   🗑️  vyhodené:  {len(removed)}")
+
+    if removed:
+        print("\n🗒️  Zoznam chýbajúcich (nemajú priečinok v dataset/):")
+        for name, ing in removed[:20]:
+            print(f"  - {name}")
+        if len(removed) > 20:
+            print(f"  … a ďalších {len(removed) - 20} položiek")
+
+    if DRY_RUN:
+        print("\n(DRY_RUN=True) – súbor som NEupravil. Nastav DRY_RUN=False pre zápis.")
+        return
+
+    # záloha
+    backup = INPUT_TXT.with_name(f"vystup.backup-{datetime.now():%Y%m%d-%H%M%S}.txt")
+    shutil.copy2(INPUT_TXT, backup)
+    print(f"\n🛟 Záloha uložená do: {backup.name}")
+
+    # zápis filtrovaného zoznamu
+    write_pairs(INPUT_TXT, kept)
+    print(f"✅ Hotovo. Prepísaný súbor: {INPUT_TXT.name}")
+
 if __name__ == "__main__":
-    # Nastavenie názvov súborov
-    input_filename = 'data.xlsx'  # Nahraď názvom svojho XLSX súboru
-    output_filename = 'vystup.txt'
-    
-    # Spustenie spracovania
-    process_excel_to_txt(input_filename, output_filename)
+    main()
