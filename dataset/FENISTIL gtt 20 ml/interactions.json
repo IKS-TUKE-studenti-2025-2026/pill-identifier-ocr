@@ -1,22 +1,75 @@
 {
   "drug_name": "FENISTIL gtt 20 ml",
-  "ingredient_sk": "Dimetindén",
-  "ingredient_en": "Dimetindene",
-  "source": "openfda",
-  "openfda_meta": {
-    "hits": 0,
-    "set_ids": [],
-    "sources": []
-  },
+  "ingredient_sk": "Dimetindénium-maleát",
+  "ingredient_en_candidates": [
+    "Dimetindene maleate",
+    "Dimetindene"
+  ],
+  "matched_name": "Dimetindene maleate",
+  "source": "ŠÚKL – SmPC (Príloha č. 1 k notifikácii o zmene, ev. č.: 2024/03072-Z1B), Držiteľ: Haleon Czech Republic s.r.o., Reg. č.: 24/0129/92-S, Dátum revízie textu: 07/2024",
+  "openfda_meta": {},
   "sections": {
     "boxed_warning": [],
-    "contraindications": [],
-    "warnings": [],
+    "contraindications": [
+      "Precitlivenosť na dimetindénium-maleát alebo na ktorúkoľvek pomocnú látku.",
+      "Dojčatá mladšie ako 1 mesiac, zvlášť nedonosené dojčatá."
+    ],
+    "warnings": [
+      "Ostrátnosť u pacientov s glaukómom s úzkym uhlom alebo s obštrukciou výtoku z močového mechúra (napr. hypertrofia prostaty).",
+      "Zvýšená pozornosť u pacientov s epilepsiou (ako pri iných H1-antihistaminikách).",
+      "Starší pacienti sú náchylnejší na agitáciu a únavu; nepoužívať u starších so zmätenosťou.",
+      "U malých detí môže antihistaminikum navodiť excitáciu.",
+      "Dojčatá 1 mesiac – 1 rok: podávať len na odporúčanie lekára a pri jasnej indikácii; sedácia môže súvisieť s epizódami spánkového apnoe.",
+      "Pomocné látky: obsahuje kyselinu benzoovú (riziko zhoršenia neonatálnej hyperbilirubinémie až jadrového ikteru) a propylénglykol (riziko závažných NÚ u novorodencov, najmä so súbežnými substrátmi alkoholdehydrogenázy, napr. etanol).",
+      "Môže znížiť mentálnu pozornosť – opatrnosť pri vedení vozidiel a obsluhe strojov."
+    ],
     "warnings_and_cautions": [],
-    "precautions": [],
-    "drug_interactions": [],
-    "adverse_reactions": [],
-    "clinical_pharmacology": []
+    "precautions": [
+      "Dávkovanie dospelí a ≥12 r.: 20–40 kvapiek 3× denne (celkovo 3–6 mg/deň). Pri sklone k spavosti: 40 kvapiek na noc a 20 ráno.",
+      "Dávkovanie deti 1–12 r.: 0,1 mg/kg/deň (2 kvapky/kg/deň) v 3 dielčich dávkach; orientačná tabuľka dávok podľa hmotnosti je uvedená v SPC.",
+      "Dojčatá 1 mesiac – 1 rok: len na odporúčanie lekára; 0,1 mg/kg/deň (2 kvapky/kg/deň) v 3 dávkach.",
+      "20 kvapiek = 1 ml = 1 mg dimetindénium-maleátu.",
+      "Kvapky nepridávať do horúcich tekutín; pri podávaní do fľaše pridať tesne pred kŕmením, keď je obsah vlažný; možno podať aj nezriedené na lyžičke."
+    ],
+    "drug_interactions": [
+      "Kombinácia s inými tlmičmi CNS (opioidné analgetiká, antikonvulzíva, tricyklické antidepresíva, IMAO, antihistaminiká, antiemetiká, antipsychotiká, anxiolytiká, hypnotiká, skopolamín) a s alkoholom: riziko aditívneho útlmu CNS až život-ohrozujúcich následkov.",
+      "Tricyklické antidepresíva a anticholinergiká (napr. bronchodilatanciá, spasmolytiká GIT, mydriatiká, urologické parasympatolytiká): aditívny antimuskarinový účinok → riziko zhoršenia glaukómu alebo retencie moču.",
+      "Prokarbazín: podávať s opatrnosťou (minimalizovať útlm CNS)."
+    ],
+    "adverse_reactions": [
+      "Poruchy imunitného systému: veľmi zriedkavé – anafylaktické reakcie (opuch tváre/hltana, vyrážka), svalové kŕče, dyspnoe.",
+      "Psychické poruchy: zriedkavé – nepokoj.",
+      "Poruchy nervového systému: veľmi časté – únava; časté – somnolencia, nervozita; zriedkavé – bolesť hlavy, závraty.",
+      "Gastrointestinálne poruchy: zriedkavé – dyspepsia, nauzea, sucho v ústach a hrdle."
+    ],
+    "clinical_pharmacology": [
+      "Farmakoterapeutická skupina: antihistaminiká na systémové použitie, substituované alkylamíny (ATC R06AB03).",
+      "Mechanizmus účinku: kompetitívny antagonista H1-receptorov; stabilizuje mastocyty, má lokálny anestetický účinok; bez účinku na H2-receptory; racemát, R-(−)-dimetindén má vyšší H1-antihistaminický účinok; znižuje kapilárnu hyperpermeabilitu.",
+      "Farmakodynamika: po jednorazovej dávke 4 mg pretrval antihistamínový účinok ≥24 h (štúdie opuchu/zápalu kože).",
+      "Farmakokinetika – absorpcia: perorálna biologická dostupnosť ~70 %; nástup ~30 min, vrchol účinku ~5 h; t_max plazmy ~2 h (pri 1 mg roztok/obalená tableta).",
+      "Farmakokinetika – distribúcia: ~90 % viazaný na plazmatické proteíny.",
+      "Farmakokinetika – metabolizmus: prevažne hydroxylácia a metoxylácia.",
+      "Farmakokinetika – eliminácia: t_1/2 ~6 h; vylučovanie žlčou aj močom.",
+      "Predklinické údaje: opakované dávky a genotoxicita bez osobitných rizík; bez teratogénnych účinkov u potkanov/králikov; vysoké dávky u potkanov neovplyvnili fertilitu ani peri-/postnatálny vývoj."
+    ]
   },
-  "disease_flags": []
+  "disease_flags": [
+    "glaukóm s úzkym uhlom – opatrnosť",
+    "obštrukcia výtoku z močového mechúra / hypertrofia prostaty – opatrnosť",
+    "epilepsia – opatrnosť",
+    "starší pacienti – vyššie riziko agitácie/únavy, neindikované pri zmätenosti",
+    "dojčatá <1 mesiac (najmä nedonosené) – kontraindikované",
+    "dojčatá 1–12 mesiacov – len na odporúčanie lekára; riziko apnoe pri sedácii",
+    "gravidita – používať len ak prínos prevýši riziko a pod lekárskym dohľadom",
+    "dojčenie – použitie sa neodporúča (pravdepodobné vylučovanie do mlieka)",
+    "súbežné CNS depresíva/alkohol – riziko aditívneho útlmu CNS",
+    "anticholinergická záťaž – riziko retencie moču/zhoršenia glaukómu",
+    "kyselina benzoová – riziko zhoršenia neonatálnej hyperbilirubinémie",
+    "propylénglykol – riziko toxicity u novorodencov a pri súbežnom etanole"
+  ],
+  "queries_tried": [
+    "Dimetindene",
+    "Dimetindene maleate"
+  ],
+  "status": "ok"
 }

@@ -1,15 +1,17 @@
 {
   "drug_name": "IBALGIN RAPIDCAPS 400 mg cps mol 30x400 mg (blis.PVC/PVDC/Al)",
   "ingredient_sk": "Ibuprofén",
-  "ingredient_en": "Ibuprofen",
+  "ingredient_en_candidates": [
+    "Ibuprofen"
+  ],
+  "matched_name": "Ibuprofen",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "4227d0b7-846a-dcb0-e063-6294a90af7d7",
       "4b75bd6f-5455-4237-991c-eacc0fdcf709"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [
@@ -46,5 +48,8 @@
     "peptic ulcer / gi bleeding",
     "pregnancy",
     "renal impairment"
+  ],
+  "queries_tried": [
+    "Ibuprofen"
   ]
 }

@@ -1,15 +1,17 @@
 {
   "drug_name": "NEUROL 0,25 tbl 30x0,25 mg (bli.)",
   "ingredient_sk": "Alprazolam",
-  "ingredient_en": "Alprazolam",
+  "ingredient_en_candidates": [
+    "Alprazolam"
+  ],
+  "matched_name": "Alprazolam",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "2f16ff78-1262-4bb8-9a25-822c13c4746f",
       "5040e1ed-32d6-4757-a0ee-b8240f3e7cf5"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [
@@ -39,5 +41,8 @@
     "elderly",
     "pregnancy",
     "seizure disorders"
+  ],
+  "queries_tried": [
+    "Alprazolam"
   ]
 }

@@ -1,15 +1,17 @@
 {
   "drug_name": "TRITACE 5 tbl 30x5 mg",
   "ingredient_sk": "Ramipril",
-  "ingredient_en": "Ramipril",
+  "ingredient_en_candidates": [
+    "Ramipril"
+  ],
+  "matched_name": "Ramipril",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "6187971a-2756-4791-8801-211bec0a6718",
       "9463f004-79d6-443a-88ea-007ef515d821"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [
@@ -49,5 +51,8 @@
     "hypotension",
     "pregnancy",
     "renal impairment"
+  ],
+  "queries_tried": [
+    "Ramipril"
   ]
 }

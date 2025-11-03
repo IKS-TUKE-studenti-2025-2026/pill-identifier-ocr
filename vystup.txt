@@ -62,10 +62,6 @@ LAGOSA tbl obd 100
 Silymarín
 Silymarin
 
-NOVALGIN 500 mg tbl flm 50x500 mg
-metamizol, sodná soľ
-Metamizole, Dipyrone
-
 FURON tbl 50x40 mg
 Furosemid
 Furosemide
@@ -182,7 +178,7 @@ PRESTANCE 5 mg/5 mg tbl 30x5 mg/5 mg
 Perindopril a amlodipín
 Perindopril, amlodipine
 
-MAGNESII LACTICI 500 MG TBL. GALVEX, Magnéziové tablety 500 mg Galvex tbl 100x0,5 g (obal PE)
+Magnesii lactas Galvex 500 mg
 Mliečnan horečnatý
 Magnesium lactate
 

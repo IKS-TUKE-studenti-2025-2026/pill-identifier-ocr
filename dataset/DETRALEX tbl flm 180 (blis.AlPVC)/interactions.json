@@ -1,14 +1,16 @@
 {
   "drug_name": "DETRALEX tbl flm 180 (blis.Al/PVC)",
   "ingredient_sk": "Diozmín, kombinácie",
-  "ingredient_en": "Diosmin",
+  "ingredient_en_candidates": [
+    "Diosmin"
+  ],
+  "matched_name": "Diosmin",
   "source": "openfda",
   "openfda_meta": {
     "hits": 1,
     "set_ids": [
       "24245e80-529f-0542-e063-6394a90a1fb4"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -28,5 +30,8 @@
     ],
     "clinical_pharmacology": []
   },
-  "disease_flags": []
+  "disease_flags": [],
+  "queries_tried": [
+    "Diosmin"
+  ]
 }

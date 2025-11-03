@@ -1,15 +1,17 @@
 {
   "drug_name": "AGEN 5 tbl 30x5 mg",
   "ingredient_sk": "Amlodipín",
-  "ingredient_en": "Amlodipine",
+  "ingredient_en_candidates": [
+    "Amlodipine"
+  ],
+  "matched_name": "Amlodipine",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "5a0b3dd4-91f5-4173-a992-e91b1cac6a18",
       "1080fcea-a5da-499d-a855-690c13559071"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -49,5 +51,8 @@
   "disease_flags": [
     "hepatic impairment",
     "hypotension"
+  ],
+  "queries_tried": [
+    "Amlodipine"
   ]
 }

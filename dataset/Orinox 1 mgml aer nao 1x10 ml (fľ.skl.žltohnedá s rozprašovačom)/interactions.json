@@ -1,14 +1,16 @@
 {
   "drug_name": "Orinox 1 mg/ml aer nao 1x10 ml (fľ.skl.žltohnedá s rozprašovačom)",
   "ingredient_sk": "Xylometazolín",
-  "ingredient_en": "Xylometazoline",
+  "ingredient_en_candidates": [
+    "Xylometazoline"
+  ],
+  "matched_name": "Xylometazoline",
   "source": "openfda",
   "openfda_meta": {
     "hits": 1,
     "set_ids": [
       "e9da6f39-8620-faca-e053-2995a90a8a57"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -25,5 +27,8 @@
   "disease_flags": [
     "children / pediatrics",
     "pregnancy"
+  ],
+  "queries_tried": [
+    "Xylometazoline"
   ]
 }

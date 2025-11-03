@@ -1,15 +1,17 @@
 {
   "drug_name": "SUMAMED 500 mg tbl flm 3x500 mg",
   "ingredient_sk": "Azitromycín",
-  "ingredient_en": "Azithromycin",
+  "ingredient_en_candidates": [
+    "Azithromycin"
+  ],
+  "matched_name": "Azithromycin",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "01649d79-4677-4577-a3e4-e054f3f9fc3b",
       "c9990a1d-5238-403e-9221-72a9314d7b5e"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -43,5 +45,8 @@
     "heart failure",
     "hepatic impairment",
     "myasthenia gravis"
+  ],
+  "queries_tried": [
+    "Azithromycin"
   ]
 }

@@ -1,15 +1,17 @@
 {
   "drug_name": "MAGNOSOLV gra 30x6,1 g (sáčky)",
   "ingredient_sk": "Horčík (rôzne soli v kombinácii)",
-  "ingredient_en": "Magnesium",
+  "ingredient_en_candidates": [
+    "Magnesium"
+  ],
+  "matched_name": "Magnesium",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "2faff171-575b-3fd8-e063-6294a90a2bce",
       "31f417f0-1637-eefa-e063-6294a90a121b"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -27,5 +29,8 @@
   "disease_flags": [
     "children / pediatrics",
     "pregnancy"
+  ],
+  "queries_tried": [
+    "Magnesium"
   ]
 }

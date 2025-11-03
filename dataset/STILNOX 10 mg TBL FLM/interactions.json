@@ -1,15 +1,17 @@
 {
   "drug_name": "STILNOX 10 mg TBL FLM",
   "ingredient_sk": "Zolpidem",
-  "ingredient_en": "Zolpidem",
+  "ingredient_en_candidates": [
+    "Zolpidem"
+  ],
+  "matched_name": "Zolpidem",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "24722308-dbb8-3a2d-e054-00144ff8d46c",
       "29f3d258-c152-6880-e054-00144ff88e88"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [
@@ -40,5 +42,8 @@
     "elderly",
     "hepatic impairment",
     "myasthenia gravis"
+  ],
+  "queries_tried": [
+    "Zolpidem"
   ]
 }

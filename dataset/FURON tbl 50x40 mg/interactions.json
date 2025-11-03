@@ -1,15 +1,17 @@
 {
   "drug_name": "FURON tbl 50x40 mg",
   "ingredient_sk": "Furosemid",
-  "ingredient_en": "Furosemide",
+  "ingredient_en_candidates": [
+    "Furosemide"
+  ],
+  "matched_name": "Furosemide",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "4227fab8-a64a-1c9e-e063-6294a90a0682",
       "cb27654f-c7a1-4796-ab08-60a5fa16f5c0"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -48,5 +50,8 @@
     "elderly",
     "hypotension",
     "renal impairment"
+  ],
+  "queries_tried": [
+    "Furosemide"
   ]
 }

@@ -1,22 +1,78 @@
 {
   "drug_name": "ENELBIN 100 RETARD (FLAS.PE) tbl flm 100x100 mg",
-  "ingredient_sk": "Naftidrofuryl",
-  "ingredient_en": "Naftidrofuryl",
-  "source": "openfda",
-  "openfda_meta": {
-    "hits": 0,
-    "set_ids": [],
-    "sources": []
-  },
+  "ingredient_sk": "Naftidrofuryloxalát (naftidrofuryl oxalát)",
+  "ingredient_en_candidates": [
+    "Naftidrofuryl",
+    "Naftidrofuryl oxalate"
+  ],
+  "matched_name": "Naftidrofuryl oxalate",
+  "source": "ŠÚKL – SmPC (Schválený text k rozhodnutiu o zmene, ev. č.: 2019/07194-ZME), Držiteľ: STADA Arzneimittel AG, Reg. č.: 83/0329/91-CS, Dátum revízie textu: 05/2021",
+  "openfda_meta": {},
   "sections": {
     "boxed_warning": [],
-    "contraindications": [],
-    "warnings": [],
+    "contraindications": [
+      "Precitlivenosť na naftidrofuryl alebo na ktorúkoľvek pomocnú látku.",
+      "Čerstvý infarkt myokardu.",
+      "Manifestná srdcová insuficiencia NYHA III–IV.",
+      "Závažné prevodové poruchy.",
+      "Závažná koronárna insuficiencia.",
+      "Tranzitórne ischemické príhody (TIA).",
+      "Krvácavé stavy.",
+      "Obehové kolapsy v anamnéze.",
+      "Výrazná hypotenzia.",
+      "Ortostatická dysregulácia."
+    ],
+    "warnings": [
+      "Počas terapie nie je vhodné fajčenie a pitie alkoholu.",
+      "Liek obsahuje laktózu – pacienti so zriedkavými dedičnými problémami galaktózovej intolerancie, celkovým deficitom laktázy alebo glukózo-galaktózovou malabsorpciou nesmú liek užívať.",
+      "Obsahuje farbivo Ponceau 4R (E124) – môže vyvolať alergické reakcie."
+    ],
     "warnings_and_cautions": [],
-    "precautions": [],
-    "drug_interactions": [],
-    "adverse_reactions": [],
-    "clinical_pharmacology": []
+    "precautions": [
+      "Dávkovanie pri periférnych vaskulárnych poruchách: 100–200 mg 2–3× denne; optimálne 400–600 mg/deň; terapia má trvať najmenej 3 mesiace.",
+      "Dávkovanie pri demencii a iných cerebrovaskulárnych poruchách: 100 mg 3× denne.",
+      "Dávkovanie pri ikte: 200 mg 3× denne alebo 300–400 mg 2× denne.",
+      "Tablety s predĺženým uvoľňovaním prehĺtať celé, nerozhryzené, zapiť vodou alebo nealkoholickým nápojom."
+    ],
+    "drug_interactions": [
+      "Antiarytmiká a betablokátory: kardiodepresívne, negatívne dromotropné účinky – riziko AV blokády pri súbežnom podaní."
+    ],
+    "adverse_reactions": [
+      "Psychické poruchy: časté – nespavosť; menej časté – nepokoj.",
+      "Poruchy nervového systému: časté – závrat, bolesť hlavy.",
+      "Poruchy srdca a srdcovej činnosti: menej časté – poruchy srdcového rytmu.",
+      "Poruchy ciev: menej časté – ortostatická hypotenzia.",
+      "Gastrointestinálne poruchy: časté – nauzea; menej časté – žalúdočné ťažkosti, bolesť v epigastriu.",
+      "Poruchy pečene a žlčových ciest: neznáme – cholestatická žltačka, hepatitída, poškodenie pečene.",
+      "Poruchy kože a podkožného tkaniva: neznáme – vyrážka.",
+      "Celkové poruchy a reakcie v mieste podania: neznáme – únava.",
+      "Laboratórne a funkčné vyšetrenia: neznáme – pokles krvného tlaku."
+    ],
+    "clinical_pharmacology": [
+      "Farmakoterapeutická skupina: periférne vazodilatanciá, iné periférne vazodilatanciá (ATC C04AX21).",
+      "Mechanizmus účinku: muskulotropné spazmolytikum na hladkú svalovinu artérií; znižuje periférny cievny odpor; zlepšuje prekrvenie periférnych tkanív a CNS; blokuje S2 (serotonínové) receptory v trombocytoch a hladkej svalovine ciev (antiserotonínové, vazodilatačné, antiagregačné účinky); antagonista nikotínu a bradykinínu; stimuluje energetický metabolizmus neurónov, znižuje tvorbu algogénnych látok (kyseliny mliečnej); aktivuje tkanivovú sukcinyldehydrogenázu; zvyšuje ponuku kyslíka tkanivám, utilizáciu glukózy a tvorbu ATP.",
+      "Farmakokinetika – absorpcia: dobre sa vstrebáva; pri predĺženom uvoľňovaní sú účinné plazmatické koncentrácie ≥3–5 h po dávke.",
+      "Farmakokinetika – distribúcia: väzba na plazmatické bielkoviny ~80 %; dobre preniká cez hematoencefalickú bariéru; vylučuje sa do materského mlieka.",
+      "Farmakokinetika – eliminácia: vylučovanie predovšetkým žlčou prevažne ako metabolity, malá časť močom; plazmatický polčas ~40–60 min.",
+      "Predklinické údaje: perorálna LD50 u myší približne 550–600 mg/kg; teratogenita nepreukázaná v štúdiách na myšiach, potkanoch a králikoch."
+    ]
   },
-  "disease_flags": []
+  "disease_flags": [
+    "čerstvý infarkt myokardu (kontraindikované)",
+    "srdcové zlyhávanie NYHA III–IV (kontraindikované)",
+    "závažné prevodové poruchy (kontraindikované)",
+    "závažná koronárna insuficiencia (kontraindikované)",
+    "tranzitórne ischemické príhody TIA (kontraindikované)",
+    "krvácavé stavy (kontraindikované)",
+    "obehové kolapsy v anamnéze (kontraindikované)",
+    "výrazná hypotenzia / ortostatická dysregulácia (kontraindikované)",
+    "laktózová intolerancia / poruchy metabolizmu laktózy (kontraindikované)",
+    "gravidita – použiť len ak prínos prevýši riziko; laktácia – dojčenie sa neodporúča",
+    "súbežné antiarytmiká / betablokátory – riziko AV blokády"
+  ],
+  "queries_tried": [
+    "Naftidrofuryl",
+    "Naftidrofuryl oxalate"
+  ],
+  "status": "ok"
 }

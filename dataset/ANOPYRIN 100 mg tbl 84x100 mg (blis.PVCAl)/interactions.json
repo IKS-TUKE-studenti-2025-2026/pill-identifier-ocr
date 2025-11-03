@@ -1,15 +1,17 @@
 {
   "drug_name": "ANOPYRIN 100 mg tbl 84x100 mg (blis.PVC/Al)",
   "ingredient_sk": "Kyselina acetylsalicylová",
-  "ingredient_en": "Acetylsalicylic acid",
+  "ingredient_en_candidates": [
+    "Acetylsalicylic acid"
+  ],
+  "matched_name": "Acetylsalicylic acid",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "17770f22-fb95-2123-e054-00144ff88e88",
       "80ce8064-0e27-4587-b70b-2ea3c9aa2786"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -29,5 +31,8 @@
     "diabetes",
     "hypertension",
     "pregnancy"
+  ],
+  "queries_tried": [
+    "Acetylsalicylic acid"
   ]
 }

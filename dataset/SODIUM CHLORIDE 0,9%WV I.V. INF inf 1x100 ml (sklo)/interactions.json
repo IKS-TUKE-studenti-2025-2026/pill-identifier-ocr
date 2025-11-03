@@ -1,15 +1,17 @@
 {
   "drug_name": "SODIUM CHLORIDE 0,9%W/V I.V. INF inf 1x100 ml (sklo)",
   "ingredient_sk": "Elektrolyty",
-  "ingredient_en": "Electrolytes",
+  "ingredient_en_candidates": [
+    "Electrolytes"
+  ],
+  "matched_name": "Electrolytes",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "c2eb5522-8572-45f4-869d-42f9fd251bb6",
       "afeb4837-a759-4484-a76e-e04611c459e7"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -42,5 +44,8 @@
     "heart failure",
     "hepatic impairment",
     "renal impairment"
+  ],
+  "queries_tried": [
+    "Electrolytes"
   ]
 }

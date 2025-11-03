@@ -1,15 +1,17 @@
 {
   "drug_name": "PARALEN 500 tbl 24x500 mg (blis.Al/PVC)",
   "ingredient_sk": "Paracetamol",
-  "ingredient_en": "Paracetamol",
+  "ingredient_en_candidates": [
+    "Paracetamol"
+  ],
+  "matched_name": "Paracetamol",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "7fd78fc6-1f80-4866-bb8b-6dbf8af80482",
       "e49a93a8-158a-4184-b4bc-cac3031ad8b6"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -40,5 +42,8 @@
     "lactation",
     "pheochromocytoma",
     "pregnancy"
+  ],
+  "queries_tried": [
+    "Paracetamol"
   ]
 }

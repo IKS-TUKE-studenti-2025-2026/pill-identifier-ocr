@@ -1,15 +1,17 @@
 {
   "drug_name": "UNIFLOX 0,3 % int opo/ots",
   "ingredient_sk": "Ofloxacín",
-  "ingredient_en": "Ofloxacin",
+  "ingredient_en_candidates": [
+    "Ofloxacin"
+  ],
+  "matched_name": "Ofloxacin",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "42366170-e536-46a1-9735-d76e5820a9de",
       "fe619d50-49bf-4fcc-9428-6108c45580eb"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -41,5 +43,8 @@
     "children / pediatrics",
     "lactation",
     "pregnancy"
+  ],
+  "queries_tried": [
+    "Ofloxacin"
   ]
 }

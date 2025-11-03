@@ -1,15 +1,17 @@
 {
   "drug_name": "IMODIUM cps 20x2 mg",
   "ingredient_sk": "Loperamid",
-  "ingredient_en": "Loperamide",
+  "ingredient_en_candidates": [
+    "Loperamide"
+  ],
+  "matched_name": "Loperamide",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "41d6dba5-e411-c8d2-e063-6294a90ae8fa",
       "3310a3c2-389a-4b27-a478-67c905789854"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [
@@ -45,5 +47,8 @@
     "hepatic impairment",
     "pregnancy",
     "renal impairment"
+  ],
+  "queries_tried": [
+    "Loperamide"
   ]
 }

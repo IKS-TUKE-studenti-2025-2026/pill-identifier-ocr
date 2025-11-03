@@ -1,15 +1,17 @@
 {
   "drug_name": "MILURIT tbl 30x300 mg",
   "ingredient_sk": "Alopurinol",
-  "ingredient_en": "Allopurinol",
+  "ingredient_en_candidates": [
+    "Allopurinol"
+  ],
+  "matched_name": "Allopurinol",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "211e47c6-85b9-43e8-9e07-6cc4b8f708a0",
       "b2ab2389-ccaf-487b-9985-50e3539e7617"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -34,5 +36,8 @@
   "disease_flags": [
     "children / pediatrics",
     "renal impairment"
+  ],
+  "queries_tried": [
+    "Allopurinol"
   ]
 }

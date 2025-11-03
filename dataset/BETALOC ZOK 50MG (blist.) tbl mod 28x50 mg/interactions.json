@@ -1,15 +1,17 @@
 {
   "drug_name": "BETALOC ZOK 50MG (blist.) tbl mod 28x50 mg",
   "ingredient_sk": "Metoprolol",
-  "ingredient_en": "Metoprolol",
+  "ingredient_en_candidates": [
+    "Metoprolol"
+  ],
+  "matched_name": "Metoprolol",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "ab44f4c5-9497-4c92-8545-e4718ddb8f08",
       "ff3eaf6a-5697-4ad9-98c4-86925e6da257"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -45,7 +47,9 @@
     "heart failure",
     "hypertension",
     "hypotension",
-    "ischemic heart disease",
     "pheochromocytoma"
+  ],
+  "queries_tried": [
+    "Metoprolol"
   ]
 }

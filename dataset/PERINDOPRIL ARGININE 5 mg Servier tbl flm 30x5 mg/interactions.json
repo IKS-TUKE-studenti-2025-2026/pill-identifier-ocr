@@ -1,14 +1,16 @@
 {
   "drug_name": "PERINDOPRIL ARGININE 5 mg Servier tbl flm 30x5 mg",
   "ingredient_sk": "Perindopril",
-  "ingredient_en": "Perindopril",
+  "ingredient_en_candidates": [
+    "Perindopril"
+  ],
+  "matched_name": "Perindopril",
   "source": "openfda",
   "openfda_meta": {
     "hits": 1,
     "set_ids": [
       "87768fbf-7c63-47da-8925-0316f343d6ef"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [
@@ -39,8 +41,10 @@
     "heart failure",
     "hepatic impairment",
     "hypotension",
-    "ischemic heart disease",
     "pregnancy",
     "renal impairment"
+  ],
+  "queries_tried": [
+    "Perindopril"
   ]
 }

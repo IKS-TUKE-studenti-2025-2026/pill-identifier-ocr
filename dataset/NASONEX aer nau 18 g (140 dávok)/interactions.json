@@ -1,15 +1,17 @@
 {
   "drug_name": "NASONEX aer nau 18 g (140 dávok)",
   "ingredient_sk": "Mometazón",
-  "ingredient_en": "Mometasone",
+  "ingredient_en_candidates": [
+    "Mometasone"
+  ],
+  "matched_name": "Mometasone",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "1ebaac16-432e-4e92-9d58-718bd76ae368",
       "79e13e15-5bd3-48b1-877a-1cd92abbc7c5"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -40,5 +42,8 @@
     "children / pediatrics",
     "glaucoma",
     "hepatic impairment"
+  ],
+  "queries_tried": [
+    "Mometasone"
   ]
 }

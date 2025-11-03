@@ -1,15 +1,17 @@
 {
   "drug_name": "PROTHAZIN tbl flm 20x25 mg",
   "ingredient_sk": "Prometazín",
-  "ingredient_en": "Promethazine",
+  "ingredient_en_candidates": [
+    "Promethazine"
+  ],
+  "matched_name": "Promethazine",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "4d30e587-6d59-4cf5-ab45-c7639f759df9",
       "6b72dcf9-a4a1-4cc1-b7c2-a0bc2740fe97"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [
@@ -53,5 +55,8 @@
     "peptic ulcer / gi bleeding",
     "pregnancy",
     "seizure disorders"
+  ],
+  "queries_tried": [
+    "Promethazine"
   ]
 }

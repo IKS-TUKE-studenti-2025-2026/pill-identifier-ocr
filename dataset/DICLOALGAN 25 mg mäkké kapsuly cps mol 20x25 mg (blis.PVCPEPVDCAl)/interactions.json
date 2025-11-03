@@ -1,15 +1,17 @@
 {
   "drug_name": "DICLOALGAN 25 mg mäkké kapsuly cps mol 20x25 mg (blis.PVC/PE/PVDC/Al)",
   "ingredient_sk": "Diklofenak",
-  "ingredient_en": "Diclofenac",
+  "ingredient_en_candidates": [
+    "Diclofenac"
+  ],
+  "matched_name": "Diclofenac",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "dab3ae60-0135-43b3-a1d0-8752720af82a",
       "41da2e11-58c7-9622-e063-6394a90a9fdb"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [
@@ -49,5 +51,8 @@
     "pregnancy",
     "renal impairment",
     "seizure disorders"
+  ],
+  "queries_tried": [
+    "Diclofenac"
   ]
 }

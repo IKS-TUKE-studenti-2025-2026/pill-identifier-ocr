@@ -1,15 +1,17 @@
 {
   "drug_name": "LAGOSA tbl obd 100",
   "ingredient_sk": "Silymarín",
-  "ingredient_en": "Silymarin",
+  "ingredient_en_candidates": [
+    "Silymarin"
+  ],
+  "matched_name": "Silymarin",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "59178bc0-0e0c-4b7e-999f-94510cdca918",
       "653c5a11-2f92-262b-e053-2991aa0a637f"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -26,5 +28,8 @@
   },
   "disease_flags": [
     "diabetes"
+  ],
+  "queries_tried": [
+    "Silymarin"
   ]
 }

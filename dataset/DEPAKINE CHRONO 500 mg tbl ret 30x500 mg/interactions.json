@@ -1,15 +1,17 @@
 {
   "drug_name": "DEPAKINE CHRONO 500 mg tbl ret 30x500 mg",
   "ingredient_sk": "Kyselina valproová",
-  "ingredient_en": "Valproic acid",
+  "ingredient_en_candidates": [
+    "Valproic acid"
+  ],
+  "matched_name": "Valproic acid",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "1edd220d-d151-4177-9a29-9fee36489fb7",
       "2314af65-b928-42a9-91eb-6372909ab4f5"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [
@@ -45,5 +47,8 @@
     "hepatic impairment",
     "pregnancy",
     "seizure disorders"
+  ],
+  "queries_tried": [
+    "Valproic acid"
   ]
 }

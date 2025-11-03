@@ -1,15 +1,17 @@
 {
   "drug_name": "PREDNISON 5 LÉČIVA tbl 20x5 mg",
   "ingredient_sk": "Prednizón",
-  "ingredient_en": "Prednisone",
+  "ingredient_en_candidates": [
+    "Prednisone"
+  ],
+  "matched_name": "Prednisone",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "41e6f1c3-d225-0ff0-e063-6394a90ace88",
       "41ade439-59f2-dfd1-e063-6294a90aca0f"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -52,5 +54,8 @@
     "renal impairment",
     "seizure disorders",
     "thyroid disorders"
+  ],
+  "queries_tried": [
+    "Prednisone"
   ]
 }

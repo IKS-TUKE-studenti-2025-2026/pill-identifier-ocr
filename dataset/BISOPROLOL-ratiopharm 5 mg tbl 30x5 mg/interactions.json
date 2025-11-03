@@ -1,15 +1,17 @@
 {
   "drug_name": "BISOPROLOL-ratiopharm 5 mg tbl 30x5 mg",
   "ingredient_sk": "Bisoprolol",
-  "ingredient_en": "Bisoprolol",
+  "ingredient_en_candidates": [
+    "Bisoprolol"
+  ],
+  "matched_name": "Bisoprolol",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "df881501-42ae-624a-e053-2995a90ab2a0",
       "6b7f96c3-daf4-4029-a96b-baa37add0edb"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -50,5 +52,8 @@
     "hypotension",
     "pregnancy",
     "renal impairment"
+  ],
+  "queries_tried": [
+    "Bisoprolol"
   ]
 }

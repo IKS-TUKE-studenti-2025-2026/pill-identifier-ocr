@@ -1,15 +1,17 @@
 {
   "drug_name": "CALCIUM CHLORATUM - IVAX sol por 100 ml",
   "ingredient_sk": "Chlorid vápenatý",
-  "ingredient_en": "Calcium chloride",
+  "ingredient_en_candidates": [
+    "Calcium chloride"
+  ],
+  "matched_name": "Calcium chloride",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "0a3b8e0e-efb0-465b-84cb-d120b3096ebd",
       "b96eb740-749a-4d3a-ae63-b8e3947cad30"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -46,5 +48,8 @@
     "hypotension",
     "peptic ulcer / gi bleeding",
     "pregnancy"
+  ],
+  "queries_tried": [
+    "Calcium chloride"
   ]
 }

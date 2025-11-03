@@ -1,15 +1,17 @@
 {
   "drug_name": "NEBILET 5 mg tbl 28x5 mg",
   "ingredient_sk": "Nebivolol",
-  "ingredient_en": "Nebivolol",
+  "ingredient_en_candidates": [
+    "Nebivolol"
+  ],
+  "matched_name": "Nebivolol",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "a9bad35e-cd48-48f1-93ca-46490dbf70a8",
       "fecef8fc-b66b-4133-b66f-8d6b72750622"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -47,5 +49,8 @@
     "hypotension",
     "pheochromocytoma",
     "renal impairment"
+  ],
+  "queries_tried": [
+    "Nebivolol"
   ]
 }

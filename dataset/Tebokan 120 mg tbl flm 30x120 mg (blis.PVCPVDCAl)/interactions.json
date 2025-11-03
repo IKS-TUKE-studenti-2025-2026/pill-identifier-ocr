@@ -1,15 +1,17 @@
 {
   "drug_name": "Tebokan 120 mg tbl flm 30x120 mg (blis.PVC/PVDC/Al)",
   "ingredient_sk": "Ginkgo biloba",
-  "ingredient_en": "Ginkgo biloba",
+  "ingredient_en_candidates": [
+    "Ginkgo biloba"
+  ],
+  "matched_name": "Ginkgo biloba",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "df2d7683-3b45-4ddb-9b67-7bb74dad2854",
       "1d08ce52-0604-04d0-e063-6294a90a7412"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -28,5 +30,8 @@
     "children / pediatrics",
     "hypertension",
     "pregnancy"
+  ],
+  "queries_tried": [
+    "Ginkgo biloba"
   ]
 }

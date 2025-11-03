@@ -1,15 +1,17 @@
 {
   "drug_name": "Dorithricin pas ord 20",
   "ingredient_sk": "Rôzne",
-  "ingredient_en": "Various",
+  "ingredient_en_candidates": [
+    "Various"
+  ],
+  "matched_name": "Various",
   "source": "openfda",
   "openfda_meta": {
     "hits": 2,
     "set_ids": [
       "53bdd864-40e7-4d22-e054-00144ff88e88",
       "81c2c9f2-1a2e-474e-b150-4e336f213699"
-    ],
-    "sources": []
+    ]
   },
   "sections": {
     "boxed_warning": [],
@@ -26,5 +28,8 @@
   },
   "disease_flags": [
     "children / pediatrics"
+  ],
+  "queries_tried": [
+    "Various"
   ]
 }
