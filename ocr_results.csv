@@ -1,0 +1,151 @@
+folder,image,expected_brand,ocr_excerpt,score_brand,status,variant
+ACYLPYRIN (blister) tbl 10x500 mg,image_1.jpg,ACYLPYRIN,S-7 GE N S ACYLPYRIIN 500 X XU V -A SS,94.74,OK,center|psm=6
+ACYLPYRIN (blister) tbl 10x500 mg,image_2.jpg,ACYLPYRIN,ACVLPYRI N,87.5,OK,center|psm=6
+ACYLPYRIN (blister) tbl 10x500 mg,image_3.jpg,ACYLPYRIN,"NY peroralal podani, fNa yniitorné pouzitie",44.44,MISMATCH,center|psm=fallback6
+AGEN 5 tbl 30x5 mg,image_1.jpg,AGEN,Agen & a ed,100.0,OK,center|psm=fallback6
+AGEN 5 tbl 30x5 mg,image_2.jpg,AGEN,-  EE  5  A  V  S 8  STS  TONTIVA  F  A  OE,40.0,MISMATCH,center|psm=11
+AGEN 5 tbl 30x5 mg,image_3.jpg,AGEN,"Le merino TU T ee a Agen: ="" Gee ST  ee cad",100.0,OK,center_narrow|psm=fallback6
+Amlodipin Stichting 5 mg tablety tbl 30x5 mg (bli.PVCAl),image_1.jpg,AMLODIPIN STICHTING,<OPEN_ERROR>,0,ERROR,
+Amlodipin Stichting 5 mg tablety tbl 30x5 mg (bli.PVCAl),image_2.jpg,AMLODIPIN STICHTING,"| Amlodipin-Mepha* 3 Lors @hypertension artérielle,: :| Dmg | scewleeea ay ""| 1 cr COC mepha // t 30 comprimés",64.29,MISMATCH,center|psm=fallback6
+Amlodipin Stichting 5 mg tablety tbl 30x5 mg (bli.PVCAl),image_3.jpg,AMLODIPIN STICHTING,SN,50.0,MISMATCH,center|psm=7
+ANOPYRIN 100 mg tbl 84x100 mg (blis.PVCAl),image_1.jpg,ANOPYRIN,S 8 TI D -ANOPYRIN700 T P 721R-+ L +AN64-  - ZONTIVA,100.0,OK,center|psm=6
+ANOPYRIN 100 mg tbl 84x100 mg (blis.PVCAl),image_2.jpg,ANOPYRIN,PEETEILIDSANOPYRING100- S OS PEELSTLT1271  RAU64DS,100.0,OK,center|psm=6
+ANOPYRIN 100 mg tbl 84x100 mg (blis.PVCAl),image_3.jpg,ANOPYRIN,Y06  MM  BN,23.53,MISMATCH,center|psm=11
+ASPIRIN PROTECT 100 tbl ent 50x100 mg,image_1.jpg,ASPIRIN PROTECT,<OPEN_ERROR>,0,ERROR,
+ASPIRIN PROTECT 100 tbl ent 50x100 mg,image_2.jpg,ASPIRIN PROTECT,ASPIR IN PROTECT10,92.86,OK,center|psm=6
+ASPIRIN PROTECT 100 tbl ent 50x100 mg,image_3.jpg,ASPIRIN PROTECT,<OPEN_ERROR>,0,ERROR,
+BETALOC ZOK 25 mg (blist.) tbl mod 28x25 mg,image_2.jpg,BETALOC ZOK,E,100.0,OK,center|psm=7
+BETALOC ZOK 25 mg (blist.) tbl mod 28x25 mg,image_3.jpg,BETALOC ZOK,28 BZOK OF NT,85.71,OK,center|psm=6
+BETALOC ZOK 25 mg (blist.) tbl mod 28x25 mg,image_1.png,BETALOC ZOK,"~ Betaloc z0K’ 9  B Moroprotod scores  i Za7h wg, ase 0 przera AY Pee News",85.71,OK,center|psm=fallback6
+BETALOC ZOK 50MG (blist.) tbl mod 28x50 mg,image_1.jpg,BETALOC ZOK,E,100.0,OK,center|psm=7
+BETALOC ZOK 50MG (blist.) tbl mod 28x50 mg,image_2.jpg,BETALOC ZOK,Y 2B  F  BZOK 508  O  4  4,85.71,OK,center|psm=11
+BETALOC ZOK 50MG (blist.) tbl mod 28x50 mg,image_3.jpg,BETALOC ZOK,L 30I BZOK S MI 2 M,85.71,OK,center|psm=6
+BISOPROLOL-ratiopharm 5 mg tbl 30x5 mg,image_1.jpg,BISOPROLOL-RATIOPHARM,"Bisoprolol-ratiopharm' 5 ms | tablety, separa veerves Nene  — :",100.0,OK,center|psm=fallback6
+BISOPROLOL-ratiopharm 5 mg tbl 30x5 mg,image_2.jpg,BISOPROLOL-RATIOPHARM,86 OP6- KOOS YA S48 -  N SH 7 N R PR,50.0,MISMATCH,full|psm=6
+BISOPROLOL-ratiopharm 5 mg tbl 30x5 mg,image_3.jpg,BISOPROLOL-RATIOPHARM,"we ina = "" Sa a : ns | iss wi ‘iL an “ “ ro an inst"" sof!” 4 ( |",57.14,MISMATCH,full|psm=fallback6
+CALCIUM CHLORATUM - IVAX sol por 100 ml,image_1.jpg,CALCIUM CHLORATUM,"7 a oN ae 19 9 Streukiigelchen 7 Home TE”  \ ,  Calcium chloral!”  | Steukigetchen Zusstetf",82.35,OK,center|psm=fallback6
+CALCIUM CHLORATUM - IVAX sol por 100 ml,image_2.jpg,CALCIUM CHLORATUM,A,100.0,OK,center_narrow|psm=7
+CALCIUM CHLORATUM - IVAX sol por 100 ml,image_3.jpg,CALCIUM CHLORATUM,"f rae 0 WQ ol fioel ‘ , | Calcium chloratumc3) | | py | Streukigelchen ¢ —_—__ Zusammensetzun : ‘3 9: 10 g Str fehen é J enthalten: Calcium chloratum gig. c 08 ; : ears 10 9 Streukiigetchen zum Ew at Calcium chloratum4 BE",100.0,OK,center|psm=fallback6
+CONCOR 5 tbl flm 30x5 mg,image_1.jpg,CONCOR,ene _. O  va Coneor 5 mg  “ 3 30 tabletas recubiertas. S| Via oral on | ko RARREK |,83.33,OK,full|psm=fallback6
+CONCOR 5 tbl flm 30x5 mg,image_2.jpg,CONCOR,N,100.0,OK,center|psm=7
+CONCOR 5 tbl flm 30x5 mg,image_3.png,CONCOR,| Concor® 5 mg  Ee Active substance:  ‘1 bisoprolol fumarate (2:1)  | 30 film-coated tablets O AGRE,100.0,OK,center|psm=fallback6
+CORONAL 5 tbl flm 30x5 mg (PVCPEPVDCAlu blis.),image_1.jpg,CORONAL,") ) ) ) ) )  |Ambrisentan Dr: Reddys ;') (+ « |S mg comprimidos recublertos |, , Yanriia (|e ) } ) ») Bi Via oral yo 7 ON emprimidos Sup ; . \ ) y) )~»)",57.14,MISMATCH,center|psm=fallback6
+CORONAL 5 tbl flm 30x5 mg (PVCPEPVDCAlu blis.),image_2.jpg,CORONAL,CRANSTON  L  PR  S  72761101  AI D R  59 -  4  VO  CO P EFG  OS  DR QS  X  ZN,60.0,MISMATCH,full|psm=11
+CORONAL 5 tbl flm 30x5 mg (PVCPEPVDCAlu blis.),image_3.jpg,CORONAL,") ) ) ) ) )  |Ambrisentan Dr: Reddys ;') (+ « |S mg comprimidos recublertos |, , Yanriia (|e ) } ) ») Bi Via oral yo 7 ON emprimidos Sup ; . \ ) y) )~»)",57.14,MISMATCH,center|psm=fallback6
+DEPAKINE CHRONO 500 mg tbl ret 30x500 mg,image_1.jpg,DEPAKINE CHRONO,DEPAKINE  CHRONO  500  V  V  CG  O  30 C  S4  30-  -C  SANOFI,100.0,OK,full|psm=11
+DEPAKINE CHRONO 500 mg tbl ret 30x500 mg,image_2.jpg,DEPAKINE CHRONO,DEPAKINE CHRONO 500 G 30C S P 30- -S- SANOFI,100.0,OK,full|psm=6
+DEPAKINE CHRONO 500 mg tbl ret 30x500 mg,image_3.png,DEPAKINE CHRONO,2 LL CADLBR B OO - M S DEPAKINE SB CHRONO 500M V 5 K S M N AC MS 5 -7 -- - -- R - OY SS 30II8 N 30 G HR SANOFIS,100.0,OK,full|psm=6
+DETRALEX tbl flm 180 (blis.AlPVC),image_1.jpg,DETRALEX TBL,CX  A,50.0,MISMATCH,center_narrow|psm=11
+DETRALEX tbl flm 180 (blis.AlPVC),image_2.jpg,DETRALEX TBL,| detralexa SS a  Se if RAS eres 2 pL |,81.82,OK,center|psm=fallback6
+DETRALEX tbl flm 180 (blis.AlPVC),image_3.jpg,DETRALEX TBL,AQSE Sa NYS NE ad cata,47.06,MISMATCH,full|psm=fallback6
+DETRALEX tbl flm 60,image_1.jpg,DETRALEX TBL,eal,66.67,MISMATCH,center_narrow|psm=fallback6
+DETRALEX tbl flm 60,image_2.jpg,DETRALEX TBL,~ ca,50.0,MISMATCH,center|psm=fallback6
+DETRALEX tbl flm 60,image_3.jpg,DETRALEX TBL,<OPEN_ERROR>,0,ERROR,
+DICLOALGAN 25 mg mäkké kapsuly cps mol 20x25 mg (blis.PVCPEPVDCAl),image_1.jpg,DICLOALGAN,DP,66.67,MISMATCH,center|psm=7
+DICLOALGAN 25 mg mäkké kapsuly cps mol 20x25 mg (blis.PVCPEPVDCAl),image_2.jpg,DICLOALGAN,makké kapsuly _ in epolaminova sof diklofenaku . |,50.0,MISMATCH,center|psm=fallback6
+DICLOALGAN 25 mg mäkké kapsuly cps mol 20x25 mg (blis.PVCPEPVDCAl),image_3.jpg,DICLOALGAN,23 makké kapsuly ; i epolaminova sof diklofenaku & 8 : waa lekarenplus.ck = —— ie | t aan kgpstll,50.0,MISMATCH,center|psm=fallback6
+Dorithricin pas ord 20,image_1.jpg,DORITHRICIN PAS,eee eee S””*~<C~S  MUY Q . H H Pa | SeGHt §Dorithricin sx. Halstabletten oe a OQ} eri Schtuckbeschwerden RY §] omeniegeioms—f ep) eet oz feet 44 Lo rw,86.67,OK,center|psm=fallback6
+Dorithricin pas ord 20,image_2.jpg,DORITHRICIN PAS,"0! . s , sf Oo i OAL § Dorithricin sx. 'y Halstabletten aro ta x oni esasnenund San act %",89.66,OK,full|psm=fallback6
+Dorithricin pas ord 20,image_3.jpg,DORITHRICIN PAS,"eo en a i PE ip 7M  —-- ie oe faa ae el | iJ s eR - (q ‘wr t Dorithricin SORE Wrdé pastilky TOR ip : ""rettcn OS mp. bencancniumenlard 101mg a baraokai 18 . AY yas . . 6 ew: 4 20 tvidich pastiliek AN Actavis iis py  _ DNedych past .",92.86,OK,full|psm=fallback6
+ENELBIN 100 RETARD (FLAS.PE) tbl flm 100x100 mg,image_1.jpg,ENELBIN,1  in  J avo 0088 IEE oy  y | vena tween 2 25 °CF ; Pena a |,42.86,MISMATCH,center_narrow|psm=fallback6
+ENELBIN 100 RETARD (FLAS.PE) tbl flm 100x100 mg,image_2.jpg,ENELBIN,2  RY  1  ENELBINIGOO  R  6025CPOOOR  OO  0  A  V  UA  STADA  OSS  W,100.0,OK,full|psm=11
+ENELBIN 100 RETARD (FLAS.PE) tbl flm 100x100 mg,image_3.jpg,ENELBIN,7 - NELBINH00H RETARD - Z S Z CS,92.31,OK,full|psm=6
+FENISTIL gtt 20 ml,image_1.jpg,FENISTIL GTT,". ee : Pei | mi (een eon | met Conicti | Fenistil Sore Lelie ines’ | Gocce orali, eeerets | soluzione me, (cenatindene snaterto} serps scale erence hon Sal pat dvr one se | EE",80.0,OK,full|psm=fallback6
+FENISTIL gtt 20 ml,image_2.jpg,FENISTIL GTT,"pws | Fenistil Roan 41 mg/ml Sere Gocce orali, Ror soluzione Soe | (eee Sra eS seated tema Nant Jet pro vere ore — eon cenmet 0 SMMOMETICD",85.71,OK,center_narrow|psm=fallback6
+FENISTIL gtt 20 ml,image_3.jpg,FENISTIL GTT,"oO ‘ ; - |Fenistil}- Ameg/ml | : . [Gocce orali, 3. soluzione | .",85.71,OK,center_narrow|psm=fallback6
+Flector Rapid 50 mg gra 21x50 mg (vre.papierAlPE),image_1.jpg,FLECTOR RAPID,"> Sites |Flector® Rapid <> HI i neo Setar wef Btoleraky i 4! hemmed : k Wetemm, 47 | : CISECNIK",100.0,OK,full|psm=fallback6
+Flector Rapid 50 mg gra 21x50 mg (vre.papierAlPE),image_2.jpg,FLECTOR RAPID,E,100.0,OK,full|psm=7
+Flector Rapid 50 mg gra 21x50 mg (vre.papierAlPE),image_3.jpg,FLECTOR RAPID,E,100.0,OK,full|psm=7
+FURON tbl 50x40 mg,image_2.jpg,FURON TBL,AD =o ; : Furor” | 40 mg - Tabletten . £0 ee | Wirkstoff: Furosemid Yj Zur Entwasserung und Hochdruckbehandlung SA . 4 ANeersesem . ratiopharm |,77.78,OK,full|psm=fallback6
+FURON tbl 50x40 mg,image_1.png,FURON TBL,Furon an eee) e . e . Y . Wirkstoff: Furosemid | A ae . + . \Q Zur Entwasserung und Hochdruckbehandlung ~,80.0,OK,full|psm=fallback6
+FURON tbl 50x40 mg,image_3.webp,FURON TBL,FR __—_~—S— eset Furon 40 mg tabletta : Notoenyag: tosernre !  |,88.89,OK,center|psm=fallback6
+Ibalgin 400 tbl flm 48x400 mg (blis. PVCAl),image_1.jpg,IBALGIN,A  SS  T  SE  OO  OG  - ETNU  J  2  O  LM  P  PSU  B  CA  B  ZUB  G,40.0,MISMATCH,full|psm=11
+Ibalgin 400 tbl flm 48x400 mg (blis. PVCAl),image_2.jpg,IBALGIN,A,100.0,OK,center|psm=6
+Ibalgin 400 tbl flm 48x400 mg (blis. PVCAl),image_3.jpg,IBALGIN,CIM,50.0,MISMATCH,full|psm=6
+IBALGIN RAPIDCAPS 400 mg cps mol 30x400 mg (blis.PVCPVDCAl),image_1.jpg,IBALGIN RAPIDCAPS,"Choir \) prox ekansu — Sy; 5 i — of, CPidcapsa es ! Z | 2X) axa (2",64.52,MISMATCH,center|psm=fallback6
+IBALGIN RAPIDCAPS 400 mg cps mol 30x400 mg (blis.PVCPVDCAl),image_2.jpg,IBALGIN RAPIDCAPS,Oe a ee l9Gietnr 3 == Rapidcape,82.76,OK,center|psm=fallback6
+IBALGIN RAPIDCAPS 400 mg cps mol 30x400 mg (blis.PVCPVDCAl),image_3.jpg,IBALGIN RAPIDCAPS,JLOXO  WAY  SD  200  HUG  AS  G  OSS  K6-K  WL  UBYOER  S  -  IBGI  N  CEN  M  CH  WETS O  NG  LZ2  S  7  SS  T  0I  H  Z  A  WY  S SS  O04  Z,46.15,MISMATCH,center|psm=11
+IMODIUM cps 20x2 mg,image_1.jpg,IMODIUM CPS,S,100.0,OK,center|psm=7
+IMODIUM cps 20x2 mg,image_2.jpg,IMODIUM CPS,‘Imociun  vl OU  mitvcdectopolky eas  | | Goppenel Tendon Ondus tae EN cee nena eC era pres ORNS Cae,63.16,MISMATCH,center|psm=fallback6
+IMODIUM cps 20x2 mg,image_3.jpg,IMODIUM CPS,ime dium Mee [SS,100.0,OK,full|psm=fallback6
+LAGOSA tbl obd 100,image_1.jpg,LAGOSA TBL,": . 7 _ 400 Hartkapseln (N3) CID zum Einnehmen _ |) Lagos@ Kapsein —  | . Wirkstoff: sariendistetfrachte-Trockenexttals ;  \ a, | - entsprechend 86,5 mg Silymarin (HPLC).  \ 4 Hartkapseln ; - oo",60.0,MISMATCH,center|psm=fallback6
+LAGOSA tbl obd 100,image_2.jpg,LAGOSA TBL,"/ | Lagosa Kapselin \ wast Maren Haass  \ | entsprechend 86,5.m9g Silymarin (HPLC) -  Y { Hartkapseln",82.35,OK,center_narrow|psm=fallback6
+LAGOSA tbl obd 100,image_3.jpg,LAGOSA TBL,fj Lagosa Gi eoerr ———,82.35,OK,full|psm=fallback6
+Lexaurin 3 mg tbl 28x3 mg (blis.AlPVC),image_1.jpg,LEXAURIN,Wh aw rn a set ; i eleeele 4 Lexaurin f,100.0,OK,center|psm=fallback6
+Lexaurin 3 mg tbl 28x3 mg (blis.AlPVC),image_2.jpg,LEXAURIN,2 hi | Lexaurin Sep _| ¢,100.0,OK,center_narrow|psm=fallback6
+Lexaurin 3 mg tbl 28x3 mg (blis.AlPVC),image_3.jpg,LEXAURIN,L8.| exXaurin 3 img qi | Sota,87.5,OK,center_narrow|psm=fallback6
+Magnesii lactas Galvex 500 mg,image_1.jpg,MAGNESII LACTAS,- E SNS ACBRN SRCECARURRISETSLE S- SSEPSAEWEUEDSSS PRERUROUCUCSNEERNSURMWWTDBS MS E BUA IORESRNSUNESD TT MESRUREUWTOPSRTESONS F 4 E ESEASTEMEAAESEW - 45 MY DBR 1 NN T SO FMTESS24GS PANOTWDS,48.28,MISMATCH,full|psm=6
+Magnesii lactas Galvex 500 mg,image_2.jpg,MAGNESII LACTAS,Nau ee eee [2 NAGNESI LACT a0 mg th GAVE siatesatay . 50 tabiet  f Noy? fat | na vnitomé uE<2,81.48,OK,center_narrow|psm=fallback6
+Magnesii lactas Galvex 500 mg,image_3.jpg,MAGNESII LACTAS,S,100.0,OK,full|psm=7
+"MAGNOSOLV gra 30x6,1 g (sáčky)",image_1.jpg,MAGNOSOLV GRA,MAGNOSOLV O- O B,100.0,OK,center_narrow|psm=6
+"MAGNOSOLV gra 30x6,1 g (sáčky)",image_2.jpg,MAGNOSOLV GRA,>) ° ry fe) (@) se i wacndeorv 9.2 | ‘ Q Sarats ' MAGNOSOLV’- : =o 8 © Granulatum. i Pee a) | e ° . www.magnosolv.hu,100.0,OK,full|psm=fallback6
+"MAGNOSOLV gra 30x6,1 g (sáčky)",image_3.jpg,MAGNOSOLV GRA,H  TAMAGN  IS,80.0,OK,center|psm=11
+MILURIT tbl 30x300 mg,image_1.jpg,MILURIT TBL,"a 7, 1 2 Milurit? 300 eres a Lees COPYRIGHT PEARS HEALTH CYBER",84.21,OK,full|psm=fallback6
+MILURIT tbl 30x300 mg,image_2.jpg,MILURIT TBL,"| ne 27, _ oe on 3 Milurit’ ‘300mg. | | 3 O-viennen. 7 , |",84.21,OK,center|psm=fallback6
+MILURIT tbl 30x300 mg,image_3.jpg,MILURIT TBL,; THUOCKEDON - wf Milurit® + -Allopurinol  Hp 1 gx  ‘BO venga 4,81.82,OK,center|psm=fallback6
+MUCONASAL PLUS sol neb 1x10 ml,image_1.jpg,MUCONASAL PLUS,PLUS WEE,100.0,OK,center|psm=6
+MUCONASAL PLUS sol neb 1x10 ml,image_2.jpg,MUCONASAL PLUS,PLUS A,100.0,OK,center|psm=6
+MUCONASAL PLUS sol neb 1x10 ml,image_3.png,MUCONASAL PLUS,"ge NO Muconasal | 1,18 mg/ml nosni sprej, roztok { wy : tramazolini hydrochloridum tt iy & | a eK CY Z XL |B",83.33,OK,center|psm=fallback6
+NASONEX aer nau 18 g (140 dávok),image_1.jpg,NASONEX AER,";~ een P Schering Plough waentaye wre "" ae Nasonex, 22 Mometasony ms Manszare pou, , Zs MOSH spews suspen ‘oe gf +, id CISELWAR",77.78,OK,full|psm=fallback6
+NASONEX aer nau 18 g (140 dávok),image_2.jpg,NASONEX AER,PS-P F ASONEX2 V - Q TH Y CISELWHAN,72.73,OK,full|psm=6
+NASONEX aer nau 18 g (140 dávok),image_3.jpg,NASONEX AER,N,100.0,OK,center|psm=6
+NEBILET 5 mg tbl 28x5 mg,image_2.jpg,NEBILET,NEBILET NS R S,100.0,OK,full|psm=6
+NEBILET 5 mg tbl 28x5 mg,image_3.jpg,NEBILET,NEBILET H NEL0LSM 2 10 AS L 3 NM -LB0W,100.0,OK,center|psm=6
+NEBILET 5 mg tbl 28x5 mg,image_1.png,NEBILET,OES 3 NEBILET 3 B AS N5 GETS K CEINY22 -RS INVIMA2012M-000112482 CT,100.0,OK,full|psm=6
+"NEUROL 0,25 tbl 30x0,25 mg (bli.)",image_1.jpg,NEUROL,‘NEUROL. a ° COPYRIGHT PEARS HEALTH CYBER,100.0,OK,full|psm=fallback6
+"NEUROL 0,25 tbl 30x0,25 mg (bli.)",image_2.jpg,NEUROL,OT NEUROL A S NCONTIUMTOCRES M 8 ZONTIVA AON 30 LENE,100.0,OK,center|psm=6
+"NEUROL 0,25 tbl 30x0,25 mg (bli.)",image_3.jpg,NEUROL,+ 1 INEUROLSBE T S CI  1MEOUTHTDCPRE  ZENTIVAM 4  MONA 301 P2DC,100.0,OK,center|psm=6
+"NEUROL 0,5 mg tbl 30x0,5 mg (bli.)",image_1.jpg,NEUROL,NEUR  O  C  NS  YZ,100.0,OK,center_narrow|psm=11
+"NEUROL 0,5 mg tbl 30x0,5 mg (bli.)",image_2.jpg,NEUROL,NEURT  E  KS  V  NS  P  VEZ,88.89,OK,center_narrow|psm=11
+"NEUROL 0,5 mg tbl 30x0,5 mg (bli.)",image_3.jpg,NEUROL,— t  ST oy  : tenner Teta yt8 +,50.0,MISMATCH,center_narrow|psm=fallback6
+NOVALGIN 500 mg tbl flm 20x500 mg,image_1.jpg,NOVALGIN,": a. @ if Novalgin \ Filmtabletten 500. mg, j | Melina Norn sno f ’ rj",100.0,OK,center|psm=fallback6
+NOVALGIN 500 mg tbl flm 20x500 mg,image_2.jpg,NOVALGIN,: ‘ Novalgin Filmtabletten 500 mg’ | | Melina vain sno ( 2a Engh . ST | 7  oh et 3 = ve oe 8,100.0,OK,center|psm=fallback6
+NOVALGIN 500 mg tbl flm 20x500 mg,image_3.jpg,NOVALGIN,"ees TA anal oe me KMovalgin | | Filmtablette® 500 mg | \' vdetainizol-NotriuaeMonohyares — a I vii Einnglimen: : , =I 4 / ee ee aa . ; r me 4 o‘Filmtabletten ee J",87.5,OK,full|psm=fallback6
+"OLYNTH 0,1 % aer nao 10 ml 0,1%",image_1.jpg,OLYNTH,2 Bey — > nesovd ortho oo | Jf. a,54.55,MISMATCH,center|psm=fallback6
+"OLYNTH 0,1 % aer nao 10 ml 0,1%",image_2.jpg,OLYNTH,"OltAth Wy, | - 5. nosed rth Bi",66.67,MISMATCH,full|psm=fallback6
+"OLYNTH 0,1 % aer nao 10 ml 0,1%",image_3.jpg,OLYNTH,"f a / oo * | CC} seen”  i ‘ es , NM. XA _ Pott, SeOlynthee Rs AN ASA oe SS 9 7 - Y at NEA Feyschulkindens a Na WslErwachsene ra ROS se ia Da BB Bg PSG yee BREE ee Ty by ' oS | GaSe, | By""  Rb NascerNepenhanletegs",100.0,OK,full|psm=fallback6
+"OLYNTH HA 0,1 % aer nao 1x10 ml",image_1.jpg,OLYNTH HA,SS  A  O  N  +  HA  LOR  NOS0  S44  88  ON  T  8  0  Y  44  Y  019  P,55.56,MISMATCH,full|psm=11
+"OLYNTH HA 0,1 % aer nao 1x10 ml",image_2.jpg,OLYNTH HA,O Y,66.67,MISMATCH,center|psm=6
+"OLYNTH HA 0,1 % aer nao 1x10 ml",image_3.png,OLYNTH HA,ALY,66.67,MISMATCH,full|psm=6
+Orinox 1 mgml aer nao 1x10 ml (fľ.skl.žltohnedá s rozprašovačom),image_1.jpg,ORINOX,; % 24 Orinox re 1mg/ml en Nosovd roztokovs oe aerodisperzia wee  eee ' Xfometazotinium. ver chlovid . ay we © Nédcha os ie oe SS ad,100.0,OK,full|psm=fallback6
+Orinox 1 mgml aer nao 1x10 ml (fľ.skl.žltohnedá s rozprašovačom),image_2.jpg,ORINOX,"eteanel “24 Orinox tigi Ea Nosovd toztokov§ aa -Berodisperzia ASA  Xyometazolinium. om ichtona ty ¥ 1 # Nera oe, ws yx? (Wiese 7",100.0,OK,full|psm=fallback6
+Orinox 1 mgml aer nao 1x10 ml (fľ.skl.žltohnedá s rozprašovačom),image_3.jpg,ORINOX,F  Y + 7 ON,50.0,MISMATCH,full|psm=6
+"Otrivin Menthol 0,1% aer nao 1x10 ml (fľ.HDPE s dávkovačom)",image_1.jpg,OTRIVIN MENTHOL,E,100.0,OK,full|psm=7
+"Otrivin Menthol 0,1% aer nao 1x10 ml (fľ.HDPE s dávkovačom)",image_2.jpg,OTRIVIN MENTHOL,"7 Og  to s f or ~ i} Menthol mat) (2 { aetna V Z, area or G pec oder a al pri a",63.64,MISMATCH,full|psm=fallback6
+"Otrivin Menthol 0,1% aer nao 1x10 ml (fľ.HDPE s dávkovačom)",image_3.jpg,OTRIVIN MENTHOL,B E,66.67,MISMATCH,center|psm=6
+PARALEN 500 tbl 24x500 mg (blis.AlPVC),image_1.jpg,PARALEN,PA PARALEN 500 R - TI ZZHK 2 5PI KA0 J Z QI-0 I A Q-N S0K 24 Y,100.0,OK,full|psm=6
+PARALEN 500 tbl 24x500 mg (blis.AlPVC),image_2.jpg,PARALEN,PARALEN EN 500  ES  T  ZJ  P  K  K0  Z  M  0J  V  NZ F  P  K ZA  RANOELNS  4G,100.0,OK,full|psm=11
+PARALEN 500 tbl 24x500 mg (blis.AlPVC),image_3.jpg,PARALEN,PARALENSO0 TI 5Z P K62 T TVI NZ 604SUZ  4 SANOEING,100.0,OK,full|psm=6
+PERINDOPRIL ARGININE 5 mg Servier tbl flm 30x5 mg,image_1.jpg,PERINDOPRIL ARGININE,Perindopril arginina 5 comprimidos recubiertos =? ING con pelicula  Via Oraleeeeu mrcrams a,97.44,OK,center|psm=fallback6
+PERINDOPRIL ARGININE 5 mg Servier tbl flm 30x5 mg,image_2.jpg,PERINDOPRIL ARGININE,Perindopril arginina . 5 comprimidos recubiertos «J MG con pelicula’ ”,97.44,OK,center|psm=fallback6
+PERINDOPRIL ARGININE 5 mg Servier tbl flm 30x5 mg,image_3.jpg,PERINDOPRIL ARGININE,"aS SSS : . reg een es : perindopril Arginine 9 Som , Perindopril Arginine Tablets 5 m9 gs",100.0,OK,center|psm=fallback6
+PREDNISON 5 LÉČIVA tbl 20x5 mg,image_1.jpg,PREDNISON,YPREONISO  02,82.35,OK,center|psm=11
+PREDNISON 5 LÉČIVA tbl 20x5 mg,image_2.jpg,PREDNISON,EE SSPISOF PE - C,54.55,MISMATCH,full|psm=6
+PREDNISON 5 LÉČIVA tbl 20x5 mg,image_3.jpg,PREDNISON,SED,66.67,MISMATCH,center_narrow|psm=6
+PRESTANCE 5 mg5 mg tbl 30x5 mg5 mg,image_1.jpg,PRESTANCE,E,100.0,OK,center|psm=7
+PRESTANCE 5 mg5 mg tbl 30x5 mg5 mg,image_2.jpg,PRESTANCE,BRESTANCEY HMAGL,88.89,OK,full|psm=6
+PRESTANCE 5 mg5 mg tbl 30x5 mg5 mg,image_3.jpg,PRESTANCE,LL  A  PRESTANCE  SSMA-  SN  7  C  F  U  O4  PS  S  4  30  5  7  GISEL  NIK,100.0,OK,full|psm=11
+PROTHAZIN tbl flm 20x25 mg,image_1.jpg,PROTHAZIN TBL,Co s ‘6 (e Prothazin i a Prometazin hydrochlorig : ¢) A O20 wren obalenych ODlie CISELNIK,86.96,OK,full|psm=fallback6
+PROTHAZIN tbl flm 20x25 mg,image_2.jpg,PROTHAZIN TBL,"Prothazire 7 < ~~ Prométaztn hydrochlorig “ INGE, O® mre obslenich ; Dipl Ly— it  CIiSELN",76.19,OK,full|psm=fallback6
+PROTHAZIN tbl flm 20x25 mg,image_3.jpg,PROTHAZIN TBL,Prothazin® 25 mg Filmtabletien Promethazinhydrechlorid | CY on ari ee ee eee . AX,86.96,OK,center|psm=fallback6
+"SODIUM CHLORIDE 0,9%WV I.V. INF inf 1x100 ml (sklo)",image_1.jpg,SODIUM CHLORIDE,"} 2. , Bech 100 mL contains ee |. -28..)_ Sodium Chloride 900 mg: “sso | ""Fim Water for Ingsctiona OS™ so i aie es trmmotss por 100 t { SS, f a NT) m _ ca | dum 15 Chords 15. tS 7s }geco ' =e © | - [QU FRR Intravenous Infusion =. O° = im Sodiuim=ciloride0025 am SS OXZ0S6 Oe IULZ3  Pres a) Ye... elev",100.0,OK,full|psm=fallback6
+"SODIUM CHLORIDE 0,9%WV I.V. INF inf 1x100 ml (sklo)",image_2.jpg,SODIUM CHLORIDE,"| pes Bats reves re here abs | | YARLEX Sterte: NonPyrogenia 08-2501 | geore below 90°C “Do Not Freezes ® Mathers ut ""Bde ro oe | 3) See iycimwog “E87 4 ily { pasar os = yd Sn a een — }. te s + EES } 100 mL Intravenous Infusion =. %- ="" § Sodium=cnioride:0:9¢2 aa San ~ ae . + zu |",86.67,OK,full|psm=fallback6
+"SODIUM CHLORIDE 0,9%WV I.V. INF inf 1x100 ml (sklo)",image_3.jpg,SODIUM CHLORIDE,"en . \ \> Oy | SODIUN CHLORIDE 0.9% om a POSS | |[NTRAVENOUS INFUSION < a id \ Se oe || NORMAL SALINE | Coe ae 500mL ae : Each 100m! contains: T° oy coe ""Sodium Chlorides; f° 4,509 we Waterforiniecion © § \ OS gk PH 4.5-7, Sodium 154mmol/.Chloride 154 mm oVLThe solution is sterile and Iso-osmotic (a",100.0,OK,center|psm=fallback6
+STILNOX 10 mg TBL FLM,image_1.jpg,STILNOX,| Sainoxyy A | een | oN bonned - ;,76.92,OK,center_narrow|psm=fallback6
+STILNOX 10 mg TBL FLM,image_2.jpg,STILNOX,"| Stilhoy: 2S = } fe isc = , | AIRS",76.92,OK,center|psm=fallback6
+STILNOX 10 mg TBL FLM,image_3.jpg,STILNOX,"-~ Stinov <= [ Zolpidem 7 S  . W ancacr "" ; ne a » Sanofi aventis |",83.33,OK,full|psm=fallback6
+SUMAMED 500 mg tbl flm 3x500 mg,image_1.jpg,SUMAMED,TIT IBESTSUMAMED 7 CESEINIK,100.0,OK,full|psm=6
+SUMAMED 500 mg tbl flm 3x500 mg,image_2.jpg,SUMAMED,SUULM  EE  B  V,75.0,OK,center|psm=11
+SUMAMED 500 mg tbl flm 3x500 mg,image_3.jpg,SUMAMED,"pS Ee NE SS] | Raga Suimamedatablels. 00,110 iam ' n pzithromycin -- VANTd | : a9 38 | aD | r=)  7 { : MSDN .  OTS EEO oe no ET SANTEE SS.",85.71,OK,full|psm=fallback6
+Tebokan 120 mg tbl flm 30x120 mg (blis.PVCPVDCAl),image_1.jpg,TEBOKAN,"eae oer EER pate : ow pnts Oe : Tebokan® 429 mg 9 cu Petsborangch tablet eit “Akgonis extract a wt Foe . EN SiCCom pad lant @8 quantifi nN Areffingsy ae a ‘atum(EGb 61) vt tt, ff y oe , y . wae NN - j hae ‘ 1 F . 4 ’ } t ' Fel ergs . SOR AN Abe Rial ve we ty oy coe Sw) eee bd 2s me ~— ae ye al se 1 ",100.0,OK,full|psm=fallback6
+Tebokan 120 mg tbl flm 30x120 mg (blis.PVCPVDCAl),image_2.jpg,TEBOKAN,"Tebokan® 129 mg | 2  Pdi  a  |  | '  | | |  Zs $3, wor""",100.0,OK,full|psm=fallback6
+Tebokan 120 mg tbl flm 30x120 mg (blis.PVCPVDCAl),image_3.jpg,TEBOKAN,BSS WS NN SS SGN SNK NS 7 PANN P,66.67,MISMATCH,center|psm=6
+TRITACE 5 tbl 30x5 mg,image_2.jpg,TRITACE,E,100.0,OK,center|psm=7
+TRITACE 5 tbl 30x5 mg,image_3.jpg,TRITACE,TRITACEXG  EYTE AI - 3 CT LN,100.0,OK,full|psm=6
+TRITACE 5 tbl 30x5 mg,image_1.png,TRITACE,SS XR ITRITACETB -- R C30 SANOFIAD,100.0,OK,center|psm=6
+"UNIFLOX 0,3 % int opoots",image_1.jpg,UNIFLOX,+  TT 1  A  B  BY  UNIFLOX  O  P  S03  A  S  N  SV  SS  SS  I S  RT  W-  IMED  27PHARNA  -,100.0,OK,full|psm=11
+"UNIFLOX 0,3 % int opoots",image_2.jpg,UNIFLOX,UNIFLOX -  1 H P S038  10 POT- PUNARMA,100.0,OK,full|psm=6
+"UNIFLOX 0,3 % int opoots",image_3.jpg,UNIFLOX,W 2 UNIFLOX03 7U OS O2OKOAA S S - R- OS 4 A - 5O9 SCHNEIDER,100.0,OK,full|psm=6
+VESSEL DUE F kapsuly cps 60x250 LSU (blis.PVCPVDCAl),image_1.jpg,VESSEL DUE,VESSELDUEF PN GE,94.74,OK,full|psm=6
+VESSEL DUE F kapsuly cps 60x250 LSU (blis.PVCPVDCAl),image_2.jpg,VESSEL DUE,VESSELDUEF WAE CARE,94.74,OK,full|psm=6
+VESSEL DUE F kapsuly cps 60x250 LSU (blis.PVCPVDCAl),image_3.jpg,VESSEL DUE,Q  SIPE  - A  I  5009  1AP  8250UES  50  DUES  O  GLODEXIOE  SS  L  YY  ABE,66.67,MISMATCH,full|psm=11
