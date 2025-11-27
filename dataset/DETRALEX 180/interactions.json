@@ -1,37 +1,37 @@
 {
-  "drug_name": "DETRALEX tbl flm 180 (blis.Al/PVC)",
-  "ingredient_sk": "Diozmín, kombinácie",
-  "ingredient_en_candidates": [
-    "Diosmin"
-  ],
-  "matched_name": "Diosmin",
-  "source": "openfda",
-  "openfda_meta": {
-    "hits": 1,
-    "set_ids": [
-      "24245e80-529f-0542-e063-6394a90a1fb4"
+    "drug_name": "DETRALEX 180",
+    "ingredient_sk": "Diozmín, kombinácie",
+    "ingredient_en_candidates": [
+        "Diosmin"
+    ],
+    "matched_name": "Diosmin",
+    "source": "openfda",
+    "openfda_meta": {
+        "hits": 1,
+        "set_ids": [
+            "24245e80-529f-0542-e063-6394a90a1fb4"
+        ]
+    },
+    "sections": {
+        "boxed_warning": [],
+        "contraindications": [
+            "CONTRAINDICATIONS: Do not use if you have a known allergy to any of the ingredients in Bruselix™ Bruising Tablets , including Arnica Montana or pineapple (Bromelain). Avoid use if you have an allergy to citrus or bioflavonoid components."
+        ],
+        "warnings": [],
+        "warnings_and_cautions": [
+            "WARNINGS AND PRECAUTIONS Arnica: May cause allergic reactions in sensitive individuals, especially if there is a history of ragweed allergies. Bromelain: May increase the risk of bleeding in individuals taking anticoagulants or antiplatelet medications. Discontinue use two weeks before surgery. Zinc and Vitamin C: Use cautiously in individuals with kidney disease or those prone to kidney stones. If you experience an allergic reaction or prolonged bleeding, discontinue use and seek medical attention immediately. For use on the order of a licensed healthcare practitioner. Call your doctor about side effects. To report side effects, call PureTek Corporation at 1-877-921-7873."
+        ],
+        "precautions": [],
+        "drug_interactions": [
+            "Drug Interactions: The use of anticoagulants, such as warfarin or aspirin, may increase the risk of bleeding when combined with Bromelain. High doses of zinc can interfere with the absorption of iron when taken alongside iron supplements. Additionally, citrus bioflavonoids have the potential to enhance the effects of blood pressure-lowering medications."
+        ],
+        "adverse_reactions": [
+            "Adverse Reactions: Adverse reactions associated with the use of Bruising Tablets may include mild gastrointestinal discomfort, nausea, or allergic reactions such as skin rash. In rare cases, more serious reactions, such as prolonged bleeding or hypersensitivity reactions (e.g., difficulty breathing, swelling), may occur. If you experience any serious adverse effects, discontinue use and seek medical attention immediately."
+        ],
+        "clinical_pharmacology": []
+    },
+    "disease_flags": [],
+    "queries_tried": [
+        "Diosmin"
     ]
-  },
-  "sections": {
-    "boxed_warning": [],
-    "contraindications": [
-      "CONTRAINDICATIONS: Do not use if you have a known allergy to any of the ingredients in Bruselix™ Bruising Tablets , including Arnica Montana or pineapple (Bromelain). Avoid use if you have an allergy to citrus or bioflavonoid components."
-    ],
-    "warnings": [],
-    "warnings_and_cautions": [
-      "WARNINGS AND PRECAUTIONS Arnica: May cause allergic reactions in sensitive individuals, especially if there is a history of ragweed allergies. Bromelain: May increase the risk of bleeding in individuals taking anticoagulants or antiplatelet medications. Discontinue use two weeks before surgery. Zinc and Vitamin C: Use cautiously in individuals with kidney disease or those prone to kidney stones. If you experience an allergic reaction or prolonged bleeding, discontinue use and seek medical attention immediately. For use on the order of a licensed healthcare practitioner. Call your doctor about side effects. To report side effects, call PureTek Corporation at 1-877-921-7873."
-    ],
-    "precautions": [],
-    "drug_interactions": [
-      "Drug Interactions: The use of anticoagulants, such as warfarin or aspirin, may increase the risk of bleeding when combined with Bromelain. High doses of zinc can interfere with the absorption of iron when taken alongside iron supplements. Additionally, citrus bioflavonoids have the potential to enhance the effects of blood pressure-lowering medications."
-    ],
-    "adverse_reactions": [
-      "Adverse Reactions: Adverse reactions associated with the use of Bruising Tablets may include mild gastrointestinal discomfort, nausea, or allergic reactions such as skin rash. In rare cases, more serious reactions, such as prolonged bleeding or hypersensitivity reactions (e.g., difficulty breathing, swelling), may occur. If you experience any serious adverse effects, discontinue use and seek medical attention immediately."
-    ],
-    "clinical_pharmacology": []
-  },
-  "disease_flags": [],
-  "queries_tried": [
-    "Diosmin"
-  ]
 }

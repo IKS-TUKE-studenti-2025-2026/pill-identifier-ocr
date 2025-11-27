@@ -1,75 +1,75 @@
 {
-  "drug_name": "MUCONASAL PLUS sol neb 1x10 ml",
-  "ingredient_sk": "Tramazolín (tramazolínium-chlorid)",
-  "ingredient_en_candidates": [
-    "Tramazoline"
-  ],
-  "matched_name": "Tramazoline",
-  "source": "ŠÚKL – SmPC (Príloha č. 1 k notifikácii o zmene, ev. č.: 2024/02437-Z1B), Dátum revízie textu: 07/2024",
-  "openfda_meta": {},
-  "sections": {
-    "boxed_warning": [],
-    "contraindications": [
-      "Precitlivenosť na tramazolínium-chlorid, benzalkónium-chlorid alebo na ktorúkoľvek pomocnú látku.",
-      "Glaukóm s uzavretým uhlom.",
-      "Po lebečnom chirurgickom zákroku cez nosovú dutinu.",
-      "Rhinitis sicca.",
-      "Deti do 6 rokov (nevhodné)."
+    "drug_name": "MUCONASAL PLUS 1x10 ml",
+    "ingredient_sk": "Tramazolín (tramazolínium-chlorid)",
+    "ingredient_en_candidates": [
+        "Tramazoline"
     ],
-    "warnings": [
-      "Podávať s opatrnosťou a pod lekárskou kontrolou u pacientov s arteriálnou hypertenziou, ochoreniami srdca, hypertyreózou, diabetes mellitus, hypertrofiou prostaty, feochromocytómom a porfýriou (riziko systémovej absorpcie).",
-      "Opatrnosť pri súbežnom užívaní inhibítorov MAO, tricyklických antidepresív, antihypotenzív a antihypertenzív (pozri interakcie).",
-      "Ak príznaky nevymiznú do 7 dní, poradiť sa s lekárom; dlhodobé používanie lokálnych vazokonstrikčných nosových liekov môže viesť k chronickému zápalu a atrofii nosovej sliznice (rhinitis medicamentosa).",
-      "Po ústupe terapeutického účinku sa môže objaviť výrazný nazálny edém ako prejav reboun­du (opakovaného upchatia).",
-      "Zabrániť vniknutiu do očí (riziko podráždenia).",
-      "Obsahuje benzalkónium-chlorid – môže spôsobiť podráždenie alebo edém nosovej sliznice, najmä pri dlhodobom používaní."
+    "matched_name": "Tramazoline",
+    "source": "ŠÚKL – SmPC (Príloha č. 1 k notifikácii o zmene, ev. č.: 2024/02437-Z1B), Dátum revízie textu: 07/2024",
+    "openfda_meta": {},
+    "sections": {
+        "boxed_warning": [],
+        "contraindications": [
+            "Precitlivenosť na tramazolínium-chlorid, benzalkónium-chlorid alebo na ktorúkoľvek pomocnú látku.",
+            "Glaukóm s uzavretým uhlom.",
+            "Po lebečnom chirurgickom zákroku cez nosovú dutinu.",
+            "Rhinitis sicca.",
+            "Deti do 6 rokov (nevhodné)."
+        ],
+        "warnings": [
+            "Podávať s opatrnosťou a pod lekárskou kontrolou u pacientov s arteriálnou hypertenziou, ochoreniami srdca, hypertyreózou, diabetes mellitus, hypertrofiou prostaty, feochromocytómom a porfýriou (riziko systémovej absorpcie).",
+            "Opatrnosť pri súbežnom užívaní inhibítorov MAO, tricyklických antidepresív, antihypotenzív a antihypertenzív (pozri interakcie).",
+            "Ak príznaky nevymiznú do 7 dní, poradiť sa s lekárom; dlhodobé používanie lokálnych vazokonstrikčných nosových liekov môže viesť k chronickému zápalu a atrofii nosovej sliznice (rhinitis medicamentosa).",
+            "Po ústupe terapeutického účinku sa môže objaviť výrazný nazálny edém ako prejav reboun­du (opakovaného upchatia).",
+            "Zabrániť vniknutiu do očí (riziko podráždenia).",
+            "Obsahuje benzalkónium-chlorid – môže spôsobiť podráždenie alebo edém nosovej sliznice, najmä pri dlhodobom používaní."
+        ],
+        "warnings_and_cautions": [],
+        "precautions": [
+            "Maximálne 1 vstrek do každej nosovej dierky podľa potreby, najviac 4× denne; bez odporúčania lekára nepoužívať dlhšie ako 5–7 dní.",
+            "Pri vzniku systémových nežiaducich účinkov (napr. palpitácie, závraty, sedácia) zvážiť prerušenie a lekársku konzultáciu."
+        ],
+        "drug_interactions": [
+            "Inhibítory MAO a tricyklické antidepresíva: riziko zvýšenia krvného tlaku, arytmií.",
+            "Vazopresíva: potenciácia účinkov na kardiovaskulárny systém.",
+            "Antihypertenzíva, najmä pôsobiace na sympatický nervový systém: možné závažné interakcie s rôznymi kardiovaskulárnymi účinkami."
+        ],
+        "adverse_reactions": [
+            "Poruchy nervového systému: menej časté – bolesti hlavy; zriedkavé – závraty, dysgeúzia; neznáme – somnolencia, sedácia.",
+            "Psychické poruchy: menej časté – nepokoj; neznáme – halucinácie, nespavosť.",
+            "Poruchy srdca a srdcovej činnosti: menej časté – palpitácie; neznáme – arytmia, tachykardia.",
+            "Dýchacia sústava, hrudník a mediastínum: časté – diskomfort v nose; menej časté – edém a suchosť sliznice nosa, rinorea, kýchanie; zriedkavé – epistaxa.",
+            "Gastrointestinálny trakt: menej časté – nauzea.",
+            "Imunitný systém: neznáme – hypersenzitivita.",
+            "Koža a podkožie: neznáme – vyrážka, svrbenie, edém kože*.",
+            "Celkové poruchy a reakcie v mieste podania: neznáme – edém sliznice*, únava.",
+            "Laboratórne a funkčné vyšetrenia: neznáme – zvýšenie krvného tlaku.",
+            "* ako symptóm hypersenzitivity."
+        ],
+        "clinical_pharmacology": [
+            "Farmakoterapeutická skupina: dekongestíva na lokálne použitie – sympatomimetiká samotné (ATC R01AA09).",
+            "Mechanizmus účinku: tramazolínium-chlorid je α-sympatomimetikum s vazokonstrikčným účinkom, okamžite znižuje opuch nosovej sliznice a vedie k rýchlej, dlhotrvajúcej dekongescii; nástup účinku ~ do 5 min a trvanie 8–10 hod.",
+            "Farmakokinetika: u ľudí údaje nie sú k dispozícii; u zvierat po perorálnom/intranazálnom podaní absorpcia 50–80 %, distribúcia do orgánov (najvyššie v pečeni), 3 hlavné metabolity v moči; terminálny t½ 5–7 h; eliminácia prevažne renálna."
+        ]
+    },
+    "disease_flags": [
+        "arteriálna hypertenzia / kardiovaskulárne ochorenia",
+        "hypertyreóza",
+        "diabetes mellitus",
+        "benígna hyperplázia prostaty",
+        "feochromocytóm",
+        "porfýria",
+        "glaukóm s uzavretým uhlom (kontraindikované)",
+        "stav po transnazálnej kraniálnej operácii (kontraindikované)",
+        "rhinitis sicca (kontraindikované)",
+        "deti < 6 rokov (nevhodné)",
+        "tehotenstvo (1. trimester – nepoužívať; ďalej iba po konzultácii)",
+        "dojčenie (iba po konzultácii)",
+        "dlhodobé používanie – riziko rebound kongescie/atrofie",
+        "benzalkónium-chlorid – riziko dráždenia sliznice"
     ],
-    "warnings_and_cautions": [],
-    "precautions": [
-      "Maximálne 1 vstrek do každej nosovej dierky podľa potreby, najviac 4× denne; bez odporúčania lekára nepoužívať dlhšie ako 5–7 dní.",
-      "Pri vzniku systémových nežiaducich účinkov (napr. palpitácie, závraty, sedácia) zvážiť prerušenie a lekársku konzultáciu."
+    "queries_tried": [
+        "Tramazoline"
     ],
-    "drug_interactions": [
-      "Inhibítory MAO a tricyklické antidepresíva: riziko zvýšenia krvného tlaku, arytmií.",
-      "Vazopresíva: potenciácia účinkov na kardiovaskulárny systém.",
-      "Antihypertenzíva, najmä pôsobiace na sympatický nervový systém: možné závažné interakcie s rôznymi kardiovaskulárnymi účinkami."
-    ],
-    "adverse_reactions": [
-      "Poruchy nervového systému: menej časté – bolesti hlavy; zriedkavé – závraty, dysgeúzia; neznáme – somnolencia, sedácia.",
-      "Psychické poruchy: menej časté – nepokoj; neznáme – halucinácie, nespavosť.",
-      "Poruchy srdca a srdcovej činnosti: menej časté – palpitácie; neznáme – arytmia, tachykardia.",
-      "Dýchacia sústava, hrudník a mediastínum: časté – diskomfort v nose; menej časté – edém a suchosť sliznice nosa, rinorea, kýchanie; zriedkavé – epistaxa.",
-      "Gastrointestinálny trakt: menej časté – nauzea.",
-      "Imunitný systém: neznáme – hypersenzitivita.",
-      "Koža a podkožie: neznáme – vyrážka, svrbenie, edém kože*.",
-      "Celkové poruchy a reakcie v mieste podania: neznáme – edém sliznice*, únava.",
-      "Laboratórne a funkčné vyšetrenia: neznáme – zvýšenie krvného tlaku.",
-      "* ako symptóm hypersenzitivity."
-    ],
-    "clinical_pharmacology": [
-      "Farmakoterapeutická skupina: dekongestíva na lokálne použitie – sympatomimetiká samotné (ATC R01AA09).",
-      "Mechanizmus účinku: tramazolínium-chlorid je α-sympatomimetikum s vazokonstrikčným účinkom, okamžite znižuje opuch nosovej sliznice a vedie k rýchlej, dlhotrvajúcej dekongescii; nástup účinku ~ do 5 min a trvanie 8–10 hod.",
-      "Farmakokinetika: u ľudí údaje nie sú k dispozícii; u zvierat po perorálnom/intranazálnom podaní absorpcia 50–80 %, distribúcia do orgánov (najvyššie v pečeni), 3 hlavné metabolity v moči; terminálny t½ 5–7 h; eliminácia prevažne renálna."
-    ]
-  },
-  "disease_flags": [
-    "arteriálna hypertenzia / kardiovaskulárne ochorenia",
-    "hypertyreóza",
-    "diabetes mellitus",
-    "benígna hyperplázia prostaty",
-    "feochromocytóm",
-    "porfýria",
-    "glaukóm s uzavretým uhlom (kontraindikované)",
-    "stav po transnazálnej kraniálnej operácii (kontraindikované)",
-    "rhinitis sicca (kontraindikované)",
-    "deti < 6 rokov (nevhodné)",
-    "tehotenstvo (1. trimester – nepoužívať; ďalej iba po konzultácii)",
-    "dojčenie (iba po konzultácii)",
-    "dlhodobé používanie – riziko rebound kongescie/atrofie",
-    "benzalkónium-chlorid – riziko dráždenia sliznice"
-  ],
-  "queries_tried": [
-    "Tramazoline"
-  ],
-  "status": "ok"
+    "status": "ok"
 }

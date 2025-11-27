@@ -1,34 +1,34 @@
 {
-  "drug_name": "OLYNTH 0,1 % aer nao 10 ml 0,1%",
-  "ingredient_sk": "Xylometazolín",
-  "ingredient_en_candidates": [
-    "Xylometazoline"
-  ],
-  "matched_name": "Xylometazoline",
-  "source": "openfda",
-  "openfda_meta": {
-    "hits": 1,
-    "set_ids": [
-      "e9da6f39-8620-faca-e053-2995a90a8a57"
-    ]
-  },
-  "sections": {
-    "boxed_warning": [],
-    "contraindications": [],
-    "warnings": [
-      "■ When using this product Stop use and ask a doctor if nervousness, diziness, or sleepness occur. Pain, nasal congestion or cough gets worse or lasts more than 7 days. fever gets worse or lasts more than 3 days New symtoms occur. keep out of reach of children. In case of overdose, get medical help or contact a poison contral center right away. If pregnant or breast-feeding, ask a health professional before use."
+    "drug_name": "OLYNTH 0,1 %",
+    "ingredient_sk": "Xylometazolín",
+    "ingredient_en_candidates": [
+        "Xylometazoline"
     ],
-    "warnings_and_cautions": [],
-    "precautions": [],
-    "drug_interactions": [],
-    "adverse_reactions": [],
-    "clinical_pharmacology": []
-  },
-  "disease_flags": [
-    "children / pediatrics",
-    "pregnancy"
-  ],
-  "queries_tried": [
-    "Xylometazoline"
-  ]
+    "matched_name": "Xylometazoline",
+    "source": "openfda",
+    "openfda_meta": {
+        "hits": 1,
+        "set_ids": [
+            "e9da6f39-8620-faca-e053-2995a90a8a57"
+        ]
+    },
+    "sections": {
+        "boxed_warning": [],
+        "contraindications": [],
+        "warnings": [
+            "■ When using this product Stop use and ask a doctor if nervousness, diziness, or sleepness occur. Pain, nasal congestion or cough gets worse or lasts more than 7 days. fever gets worse or lasts more than 3 days New symtoms occur. keep out of reach of children. In case of overdose, get medical help or contact a poison contral center right away. If pregnant or breast-feeding, ask a health professional before use."
+        ],
+        "warnings_and_cautions": [],
+        "precautions": [],
+        "drug_interactions": [],
+        "adverse_reactions": [],
+        "clinical_pharmacology": []
+    },
+    "disease_flags": [
+        "children / pediatrics",
+        "pregnancy"
+    ],
+    "queries_tried": [
+        "Xylometazoline"
+    ]
 }

@@ -1,52 +1,52 @@
 {
-  "drug_name": "VESSEL DUE F kapsuly cps 60x250 LSU (blis.PVC/PVDC/Al)",
-  "ingredient_sk": "sulodexid",
-  "ingredient_en_candidates": [
-    "Sulodexide"
-  ],
-  "matched_name": "Sulodexide",
-  "source": "ŠÚKL – Písomná informácia pre používateľa, ev. č. 2023/01848-ZME (aktualizované 05/2024)",
-  "openfda_meta": {},
-  "sections": {
-    "boxed_warning": [],
-    "contraindications": [
-      "Precitlivenosť na sulodexid alebo na ktorúkoľvek z pomocných látok.",
-      "Alergia na heparín alebo heparinoidy.",
-      "Riziko krvácania alebo hemoragické ochorenia."
+    "drug_name": "VESSEL DUE F",
+    "ingredient_sk": "sulodexid",
+    "ingredient_en_candidates": [
+        "Sulodexide"
     ],
-    "warnings": [
-      "Bezpečnosť a účinnosť u detí a dospievajúcich <18 rokov nebola stanovená.",
-      "Ako preventívne opatrenie sa odporúča vyhnúť sa užívaniu počas tehotenstva.",
-      "Liek sa nesmie používať počas dojčenia.",
-      "Obsahuje parabény (sodná soľ etyl-parahydroxybenzoátu, sodná soľ propyl-parahydroxybenzoátu), ktoré môžu vyvolať alergické reakcie (možno oneskorené).",
-      "Vplyv na vedenie vozidiel a obsluhu strojov je žiadny alebo zanedbateľný."
+    "matched_name": "Sulodexide",
+    "source": "ŠÚKL – Písomná informácia pre používateľa, ev. č. 2023/01848-ZME (aktualizované 05/2024)",
+    "openfda_meta": {},
+    "sections": {
+        "boxed_warning": [],
+        "contraindications": [
+            "Precitlivenosť na sulodexid alebo na ktorúkoľvek z pomocných látok.",
+            "Alergia na heparín alebo heparinoidy.",
+            "Riziko krvácania alebo hemoragické ochorenia."
+        ],
+        "warnings": [
+            "Bezpečnosť a účinnosť u detí a dospievajúcich <18 rokov nebola stanovená.",
+            "Ako preventívne opatrenie sa odporúča vyhnúť sa užívaniu počas tehotenstva.",
+            "Liek sa nesmie používať počas dojčenia.",
+            "Obsahuje parabény (sodná soľ etyl-parahydroxybenzoátu, sodná soľ propyl-parahydroxybenzoátu), ktoré môžu vyvolať alergické reakcie (možno oneskorené).",
+            "Vplyv na vedenie vozidiel a obsluhu strojov je žiadny alebo zanedbateľný."
+        ],
+        "warnings_and_cautions": [],
+        "precautions": [
+            "Pri súbežnom podávaní s liekmi ovplyvňujúcimi hemostázu monitorovať príznaky krvácania."
+        ],
+        "drug_interactions": [
+            "Môže zvýšiť antikoagulačné a antiagregačné účinky heparínu a perorálnych antikoagulancií.",
+            "Môže zosilniť účinok liekov ovplyvňujúcich agregáciu trombocytov (napr. nesteroidové protizápalové lieky) pri súčasnom užívaní."
+        ],
+        "adverse_reactions": [
+            "Časté: závrat, hnačka, bolesť v hornej časti brucha, vyrážka.",
+            "Menej časté: strata vedomia, bolesť hlavy, krvácanie do žalúdka, svrbivá vyrážka, suchá/červená koža, periférne opuchy.",
+            "Neznáme: anémia, poruchy metabolizmu plazmatických bielkovín, zmeny vnímania, kŕče, tras, poruchy zraku, palpitácie, návaly, hemoptýza, meléna, vracanie, plynatosť, dyspepsia, nevoľnosť, diskomfort v bruchu, angioedém, erytém, purpura, ekchymóza, svrbenie, retencia moču, dyzúria, častejšia menštruácia, opuch/začervenanie v okolí genitálií, bolesť na hrudníku, bolesť."
+        ],
+        "clinical_pharmacology": [
+            "Sulodexid má antikoagulačné, profibrinolytické a endotelprotektívne účinky; zlepšuje reologické vlastnosti krvi a znižuje hladiny cholesterolu, krvných tukov a fibrinogénu."
+        ]
+    },
+    "disease_flags": [
+        "riziko krvácania / hemoragické ochorenia",
+        "tehotenstvo",
+        "dojčenie",
+        "alergia na heparín/heparinoidy",
+        "precitlivenosť na sulodexid",
+        "pediatrická populácia (<18 rokov)"
     ],
-    "warnings_and_cautions": [],
-    "precautions": [
-      "Pri súbežnom podávaní s liekmi ovplyvňujúcimi hemostázu monitorovať príznaky krvácania."
-    ],
-    "drug_interactions": [
-      "Môže zvýšiť antikoagulačné a antiagregačné účinky heparínu a perorálnych antikoagulancií.",
-      "Môže zosilniť účinok liekov ovplyvňujúcich agregáciu trombocytov (napr. nesteroidové protizápalové lieky) pri súčasnom užívaní."
-    ],
-    "adverse_reactions": [
-      "Časté: závrat, hnačka, bolesť v hornej časti brucha, vyrážka.",
-      "Menej časté: strata vedomia, bolesť hlavy, krvácanie do žalúdka, svrbivá vyrážka, suchá/červená koža, periférne opuchy.",
-      "Neznáme: anémia, poruchy metabolizmu plazmatických bielkovín, zmeny vnímania, kŕče, tras, poruchy zraku, palpitácie, návaly, hemoptýza, meléna, vracanie, plynatosť, dyspepsia, nevoľnosť, diskomfort v bruchu, angioedém, erytém, purpura, ekchymóza, svrbenie, retencia moču, dyzúria, častejšia menštruácia, opuch/začervenanie v okolí genitálií, bolesť na hrudníku, bolesť."
-    ],
-    "clinical_pharmacology": [
-      "Sulodexid má antikoagulačné, profibrinolytické a endotelprotektívne účinky; zlepšuje reologické vlastnosti krvi a znižuje hladiny cholesterolu, krvných tukov a fibrinogénu."
+    "queries_tried": [
+        "Sulodexide (manuálny zápis zo ŠÚKL PIL)"
     ]
-  },
-  "disease_flags": [
-    "riziko krvácania / hemoragické ochorenia",
-    "tehotenstvo",
-    "dojčenie",
-    "alergia na heparín/heparinoidy",
-    "precitlivenosť na sulodexid",
-    "pediatrická populácia (<18 rokov)"
-  ],
-  "queries_tried": [
-    "Sulodexide (manuálny zápis zo ŠÚKL PIL)"
-  ]
 }
