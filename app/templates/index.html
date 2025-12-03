@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pill Recognition</title>
+</head>
+<body>
+    <h1>Upload a Pill Image</h1>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if detected_text %}
+        <h2>Detected Text:</h2>
+        <p>{{ detected_text }}</p>
+        
+        <h3>Best Match:</h3>
+        <p>{{ best_match }} (Match Percentage: {{ match_percentage }}%)</p>
+        
+        {% if pill_data %}
+            <h3>Pill Data:</h3>
+            <pre>{{ pill_data | tojson(indent=2) }}</pre>
+        {% else %}
+            <p>No pill data found for the matched pill.</p>
+        {% endif %}
+        
+    {% elif message %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>

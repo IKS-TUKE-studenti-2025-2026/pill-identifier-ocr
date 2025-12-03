@@ -1,10 +1,8 @@
 import easyocr
-import torch
 import os
 import numpy as np
 from fuzzywuzzy import fuzz
 from PIL import Image
-import csv
 import re
 
 # Function to read pill names from the file into a list
@@ -24,18 +22,14 @@ def get_pill_core(pill_name):
 
 # Function to clean text by removing special characters and converting to lowercase
 def clean_text(text):
-    # Remove non-alphanumeric characters except spaces
+    # Remove non-alphanumeric characters except spaces and normalize text to lowercase
     return re.sub(r'[^a-zA-Z0-9\s]', '', text).lower()
 
-# Initialize the EasyOCR reader with GPU support
+# Initialize the EasyOCR reader with Slovak ('sk') and English ('en') support
 reader = easyocr.Reader(['en'], gpu=True)
 
 # Directory containing the dataset
 dataset_path = r"C:\Users\fedor\Documents\GitHub\bakalarska_praca\dataset"
-
-spravne = 0
-nespravne = 0
-total = 0
 
 # Path to the pill names file
 pill_names_file = r"C:\Users\fedor\Documents\GitHub\bakalarska_praca\zoznam_liekov.txt"
@@ -43,108 +37,66 @@ pill_names_file = r"C:\Users\fedor\Documents\GitHub\bakalarska_praca\zoznam_liek
 # Load the pill names from the file
 pill_names_list = read_pill_names(pill_names_file)
 
-# Open CSV file to write results
-with open('ocr_results.csv', mode='w', newline='', encoding='utf-8') as csvfile:
-    fieldnames = ['Detected Text', 'Guessed Pill Name', 'Pill Core', 'Match Percentage', 'Correct Guess', 'Correct Folder']
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+# Function to perform OCR on an image
+def perform_ocr(image_path):
+    image = Image.open(image_path)  # Open the image file using Pillow
+    image_np = np.array(image)     # Convert the image to a numpy array
+    result = reader.readtext(image_np)  # Perform OCR using EasyOCR
+    detected_text = " ".join([text[1] for text in result])  # Extract text from OCR result
+    return detected_text
 
-    # Write header to CSV file
-    writer.writeheader()
+# Function to find the folder based on matched pill name
+def find_folder(detected_text, pill_names_list):
+    best_match = None
+    match_percentage = 0
 
-    # Process the first 10 folders in the dataset
-    folder_count = 0
-    for folder_name in os.listdir(dataset_path):
-        folder_path = os.path.join(dataset_path, folder_name)
+    for pill_name in pill_names_list:
+        # Clean the pill name by removing special characters
+        cleaned_pill_name = clean_text(pill_name)
 
-        # Only process folders (pill names)
-        if os.path.isdir(folder_path):
-            folder_count += 1
-            if folder_count > 40:  # Process only the first 10 folders
-                break
+        # Use fuzzy matching to compare pill names with the detected text
+        current_match_percentage = fuzz.partial_ratio(cleaned_pill_name, clean_text(detected_text))
 
-            print(f"Processing folder: {folder_name}")
+        if current_match_percentage > match_percentage:
+            match_percentage = current_match_percentage
+            best_match = pill_name
 
-            # Loop through images in the folder (assuming there are 3 images per folder)
-            for image_file in os.listdir(folder_path):
-                if image_file.lower().endswith(('.jpg', '.jpeg', '.png')):
-                    image_path = os.path.join(folder_path, image_file)
+    return best_match, match_percentage
 
-                    # Open the image using Pillow (PIL)
-                    image = Image.open(image_path)
+# Function to get pill data from the corresponding JSON file
+def find_pill_data(folder_name):
+    json_file_path = os.path.join(dataset_path, folder_name, 'interactions.json')
+    if os.path.exists(json_file_path):
+        with open(json_file_path, 'r') as f:
+            pill_data = json.load(f)
+            return pill_data
+    return None
 
-                    # Convert the PIL image to a NumPy array (required by EasyOCR)
-                    image_np = np.array(image)
+# Process a single image
+def process_image(image_path):
+    # Perform OCR to extract text
+    detected_text = perform_ocr(image_path)
 
-                    # Perform OCR on the image
-                    result = reader.readtext(image_np)
+    # Find the pill name that matches the detected text
+    best_match, match_percentage = find_folder(detected_text, pill_names_list)
 
-                    # Extract detected text
-                    detected_text = " ".join([text[1] for text in result])
-                    print(f"Detected Text: {detected_text}")
+    if best_match:
+        # Find the pill data in the corresponding JSON file
+        folder_name = best_match  # Use the matched pill name as folder name
+        pill_data = find_pill_data(folder_name)
 
-                    # Clean the detected text by removing special characters
-                    cleaned_detected_text = clean_text(detected_text)
+        if pill_data:
+            print(f"Detected Text: {detected_text}")
+            print(f"Best Match: {best_match}")
+            print(f"Match Percentage: {match_percentage}%")
+            print("Pill Data:", pill_data)
+        else:
+            print(f"Pill data for '{folder_name}' not found.")
+    else:
+        print("No matching pill name found.")
 
-                    # Initialize match percentage to 0
-                    match_percentage = 0
-                    best_match = None
+# Path to the image you want to process
+image_path = r'C:\path_to_your_image\image_1.jpg'  # Update with the correct path to your image
 
-                    # Loop through the pill names from the zoznam_liekov.txt file
-                    for pill_name in pill_names_list:
-                        # Clean the pill name by removing special characters
-                        cleaned_pill_name = clean_text(pill_name)
-
-                        # Calculate the fuzzy match percentage between the cleaned detected text and the cleaned pill name
-                        current_match_percentage = fuzz.partial_ratio(cleaned_pill_name, cleaned_detected_text)
-
-                        # Check if this is the best match so far
-                        if current_match_percentage > match_percentage:
-                            match_percentage = current_match_percentage
-                            best_match = pill_name
-
-                    # Check if the core part of the pill name is in the detected text
-                    pill_core = get_pill_core(best_match)
-                    if pill_core.lower() in cleaned_detected_text:
-                        # Add a bonus percentage if the core part is found
-                        bonus_percentage = 60  # You can adjust this value
-                        match_percentage += bonus_percentage
-                        print(f"Core part '{pill_core}' found in detected text. Adding {bonus_percentage}% bonus.")
-
-                    # Cap the match percentage at 100% (to avoid going over 100%)
-                    if match_percentage > 100:
-                        match_percentage = 100
-
-                    # If the match percentage is at least 80%, consider it a correct match
-                    correct_guess = "No"
-                    if match_percentage >= 80:  # Using a higher threshold to avoid incorrect matches
-                        # Check if the best match is the same as the real pill name (folder name)
-                        real_pill_name = get_real_pill_name(image_path)
-                        if best_match and fuzz.partial_ratio(best_match.lower(), real_pill_name.lower()) > 70:
-                            correct_guess = "Yes"
-                            spravne += 1
-
-                        print(f"Match found: {best_match} with match percentage: {match_percentage}%")
-                    else:
-                        print("No match found above 80%")
-                        nespravne += 1
-
-                    # "Correct Folder" will always be the real folder name since it's guaranteed to be correct
-                    correct_folder = folder_name  # This will always be the correct folder name
-
-                    # Write the results to the CSV file, including the pill core
-                    writer.writerow({
-                        'Detected Text': detected_text,
-                        'Guessed Pill Name': best_match,
-                        'Pill Core': pill_core,  # Add Pill Core to CSV
-                        'Match Percentage': match_percentage,
-                        'Correct Guess': correct_guess,
-                        'Correct Folder': correct_folder
-                    })
-
-# Calculate precision
-total = spravne + nespravne
-precision = (spravne / total) * 100 if total > 0 else 0
-
-print("Processing complete. Results saved to 'ocr_results.csv'.")
-print(f"Total Correct Guesses: {spravne}")
-print(f"Precision: {precision:.2f}%")
+# Run the function to process the image
+process_image(image_path)
