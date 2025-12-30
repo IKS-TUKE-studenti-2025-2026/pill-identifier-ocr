@@ -1,102 +1,125 @@
 import easyocr
+import torch
 import os
 import numpy as np
+import cv2
 from fuzzywuzzy import fuzz
 from PIL import Image
+import csv
 import re
 
-# Function to read pill names from the file into a list
+# --- ČISTENIE TEXTU (Ešte agresívnejšie na šum) ---
+def clean_text(text):
+    if not text: return ""
+    # Odstránime dávkovanie a špeciálne znaky
+    text = re.sub(r'\d+\s*(mg|ml|g|tbl|cps|tablety|ug|%|mgml)', '', text, flags=re.IGNORECASE)
+    # Ponecháme len písmená a medzery
+    return re.sub(r'[^a-zA-Z\s]', '', text).lower().strip()
+
 def read_pill_names(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
-        pill_names = [line.strip() for line in file.readlines()]
-    return pill_names
+        return [line.strip() for line in file.readlines()]
 
-# Function to get the folder name from the path (pill name)
-def get_real_pill_name(image_path):
-    folder_name = os.path.basename(os.path.dirname(image_path))  # Get folder name from image path
-    return folder_name
+def safe_load_image(image_path):
+    try:
+        img_array = np.fromfile(image_path, np.uint8)
+        return cv2.imdecode(img_array, cv2.IMREAD_COLOR)
+    except: return None
 
-# Function to get the core part of the pill name (first word or core identifier)
-def get_pill_core(pill_name):
-    return pill_name.split()[0]  # The first word is typically the core part
+# --- PREPROCESSING ---
+def get_optimized_variants(img):
+    if img is None: return []
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8,8))
+    en_gray = clahe.apply(gray)
+    resized = cv2.resize(en_gray, None, fx=2, fy=2, interpolation=cv2.INTER_LANCZOS4)
+    # Skúsime len jeden, ale kvalitný variant na zníženie šumu
+    return [resized]
 
-# Function to clean text by removing special characters and converting to lowercase
-def clean_text(text):
-    # Remove non-alphanumeric characters except spaces and normalize text to lowercase
-    return re.sub(r'[^a-zA-Z0-9\s]', '', text).lower()
-
-# Initialize the EasyOCR reader with Slovak ('sk') and English ('en') support
-reader = easyocr.Reader(['en'], gpu=True)
-
-# Directory containing the dataset
+# --- HLAVNÁ LOGIKA ---
+reader = easyocr.Reader(['en', 'sk'], gpu=True)
 dataset_path = r"C:\Users\fedor\Documents\GitHub\bakalarska_praca\dataset"
-
-# Path to the pill names file
 pill_names_file = r"C:\Users\fedor\Documents\GitHub\bakalarska_praca\zoznam_liekov.txt"
-
-# Load the pill names from the file
 pill_names_list = read_pill_names(pill_names_file)
 
-# Function to perform OCR on an image
-def perform_ocr(image_path):
-    image = Image.open(image_path)  # Open the image file using Pillow
-    image_np = np.array(image)     # Convert the image to a numpy array
-    result = reader.readtext(image_np)  # Perform OCR using EasyOCR
-    detected_text = " ".join([text[1] for text in result])  # Extract text from OCR result
-    return detected_text
+spravne = 0
+nespravne = 0
 
-# Function to find the folder based on matched pill name
-def find_folder(detected_text, pill_names_list):
-    best_match = None
-    match_percentage = 0
+with open('ocr_results.csv', mode='w', newline='', encoding='utf-8') as csvfile:
+    fieldnames = ['Detected Text', 'Guessed Pill Name', 'Match Percentage', 'Correct Guess', 'Correct Folder']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
 
-    for pill_name in pill_names_list:
-        # Clean the pill name by removing special characters
-        cleaned_pill_name = clean_text(pill_name)
+    folders = sorted([f for f in os.listdir(dataset_path) if os.path.isdir(os.path.join(dataset_path, f))])
+    
+    for folder_name in folders[:50]: 
+        folder_path = os.path.join(dataset_path, folder_name)
+        print(f"Spracovávam: {folder_name}")
 
-        # Use fuzzy matching to compare pill names with the detected text
-        current_match_percentage = fuzz.partial_ratio(cleaned_pill_name, clean_text(detected_text))
+        for image_file in os.listdir(folder_path):
+            if image_file.lower().endswith(('.jpg', '.jpeg', '.png')):
+                image_path = os.path.join(folder_path, image_file)
+                raw_img = safe_load_image(image_path)
+                if raw_img is None: continue
 
-        if current_match_percentage > match_percentage:
-            match_percentage = current_match_percentage
-            best_match = pill_name
+                # Spustíme OCR na upravenom obrázku
+                variants = get_optimized_variants(raw_img)
+                full_detected_text = ""
+                for var in variants:
+                    results = reader.readtext(var, detail=0, paragraph=True, text_threshold=0.2)
+                    full_detected_text += " " + " ".join(results)
 
-    return best_match, match_percentage
+                # Vyčistíme detekovaný text
+                ocr_cleaned = clean_text(full_detected_text)
+                
+                best_match = None
+                max_score = 0
 
-# Function to get pill data from the corresponding JSON file
-def find_pill_data(folder_name):
-    json_file_path = os.path.join(dataset_path, folder_name, 'interactions.json')
-    if os.path.exists(json_file_path):
-        with open(json_file_path, 'r') as f:
-            pill_data = json.load(f)
-            return pill_data
-    return None
+                # --- NOVÝ MATCHING ALGORITMUS ---
+                for pill_name in pill_names_list:
+                    pill_cleaned = clean_text(pill_name)
+                    if not pill_cleaned: continue
 
-# Process a single image
-def process_image(image_path):
-    # Perform OCR to extract text
-    detected_text = perform_ocr(image_path)
+                    # 1. Partial Ratio nájde názov aj v "bordeli"
+                    partial = fuzz.partial_ratio(pill_cleaned, ocr_cleaned)
+                    
+                    # 2. Token Set Ratio ignoruje poradie slov
+                    token = fuzz.token_set_ratio(pill_cleaned, ocr_cleaned)
+                    
+                    # Kombinované skóre (vážený priemer)
+                    current_score = (partial * 0.7) + (token * 0.3)
 
-    # Find the pill name that matches the detected text
-    best_match, match_percentage = find_folder(detected_text, pill_names_list)
+                    # 3. FUZZY BONUS ZA CORE PART (napr. Betaloc)
+                    core_part = pill_cleaned.split()[0]
+                    # Ak sa prvé slovo lieku podobá na čokoľvek v OCR, pridaj bonus
+                    if fuzz.partial_ratio(core_part, ocr_cleaned) > 85:
+                        current_score += 25 
 
-    if best_match:
-        # Find the pill data in the corresponding JSON file
-        folder_name = best_match  # Use the matched pill name as folder name
-        pill_data = find_pill_data(folder_name)
+                    if current_score > max_score:
+                        max_score = current_score
+                        best_match = pill_name
 
-        if pill_data:
-            print(f"Detected Text: {detected_text}")
-            print(f"Best Match: {best_match}")
-            print(f"Match Percentage: {match_percentage}%")
-            print("Pill Data:", pill_data)
-        else:
-            print(f"Pill data for '{folder_name}' not found.")
-    else:
-        print("No matching pill name found.")
+                final_percentage = min(100, int(max_score))
 
-# Path to the image you want to process
-image_path = r'C:\path_to_your_image\image_1.jpg'  # Update with the correct path to your image
+                # Vyhodnotenie
+                is_correct = "No"
+                # Ak sme našli zhodu nad 70% s novým scoringom, je to vysoko pravdepodobné
+                if final_percentage >= 70: 
+                    # Overíme, či sa hádanka zhoduje s názvom priečinka
+                    if best_match and fuzz.token_set_ratio(best_match.lower(), folder_name.lower()) > 75:
+                        is_correct = "Yes"
+                        spravne += 1
+                    else: nespravne += 1
+                else: nespravne += 1
 
-# Run the function to process the image
-process_image(image_path)
+                writer.writerow({
+                    'Detected Text': full_detected_text.strip(),
+                    'Guessed Pill Name': best_match,
+                    'Match Percentage': final_percentage,
+                    'Correct Guess': is_correct,
+                    'Correct Folder': folder_name
+                })
+
+total = spravne + nespravne
+precision = (spravne / total) * 100 if total > 0 else 0
+print(f"\n--- NOVÝ VÝSLEDOK ---\nSprávne: {spravne} | Nesprávne: {nespravne}\nPresnosť: {precision:.2f}%")
