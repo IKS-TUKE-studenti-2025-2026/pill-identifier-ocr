@@ -8,28 +8,24 @@ SOURCE_DATASET = r"C:\Users\fedor\Documents\GitHub\bakalarska_praca\dataset"
 # Cesta, kde chceš mať nový dataset pre aplikáciu (v priečinku app)
 DEST_APP_DATASET = r"C:\Users\fedor\Documents\GitHub\bakalarska_praca\app\dataset"
 
-def duplicate_without_images():
-    print("🚀 Spúšťam migráciu datasetu do aplikácie...")
+def duplicate_data_files():
+    print("🚀 Spúšťam rozšírenú migráciu (JSON + TXT)...")
     
-    # 1. Skontrolujeme, či zdroj existuje
     if not os.path.exists(SOURCE_DATASET):
         print(f"❌ Chyba: Zdrojový priečinok {SOURCE_DATASET} nebol nájdený.")
         return
 
-    # 2. Vytvoríme cieľový priečinok app/dataset, ak neexistuje
     if not os.path.exists(DEST_APP_DATASET):
         os.makedirs(DEST_APP_DATASET)
-        print(f"📁 Vytvorený hlavný priečinok: {DEST_APP_DATASET}")
 
     count_folders = 0
-    count_files = 0
+    count_json = 0
+    count_txt = 0
 
-    # 3. Prechádzame priečinky v pôvodnom datasete
     for folder_name in os.listdir(SOURCE_DATASET):
         source_folder_path = os.path.join(SOURCE_DATASET, folder_name)
 
         if os.path.isdir(source_folder_path):
-            # Vytvoríme rovnaký pod-priečinok v app/dataset
             dest_folder_path = os.path.join(DEST_APP_DATASET, folder_name)
             
             if not os.path.exists(dest_folder_path):
@@ -37,20 +33,27 @@ def duplicate_without_images():
             
             count_folders += 1
 
-            # 4. Hľadáme a kopírujeme iba JSON súbory
+            # Hľadáme JSON súbory a súbor dataset.txt
             for item in os.listdir(source_folder_path):
-                if item.lower().endswith('.json'):
+                item_lower = item.lower()
+                
+                # Kopírujeme interactions.json ALEBO dataset.txt
+                if item_lower.endswith('.json') or item_lower == 'dataset.txt':
                     s_file = os.path.join(source_folder_path, item)
                     d_file = os.path.join(dest_folder_path, item)
                     
                     shutil.copy2(s_file, d_file)
-                    count_files += 1
+                    
+                    if item_lower.endswith('.json'):
+                        count_json += 1
+                    else:
+                        count_txt += 1
 
     print("-" * 40)
     print(f"✅ HOTOVO!")
-    print(f"📂 Vytvorených priečinkov liekov: {count_folders}")
-    print(f"📄 Skopírovaných JSON súborov: {count_files}")
-    print(f"⚠️ Žiadne obrázky neboli skopírované.")
+    print(f"📂 Spracovaných priečinkov liekov: {count_folders}")
+    print(f"📄 Skopírovaných JSON súborov: {count_json}")
+    print(f"📝 Skopírovaných popisov (dataset.txt): {count_txt}")
 
 if __name__ == "__main__":
-    duplicate_without_images()
+    duplicate_data_files()

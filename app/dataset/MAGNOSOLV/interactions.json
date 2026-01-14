@@ -1,0 +1,36 @@
+{
+    "drug_name": "MAGNOSOLV",
+    "ingredient_sk": "Horčík (rôzne soli v kombinácii)",
+    "ingredient_en_candidates": [
+        "Magnesium"
+    ],
+    "matched_name": "Magnesium",
+    "source": "openfda",
+    "openfda_meta": {
+        "hits": 2,
+        "set_ids": [
+            "2faff171-575b-3fd8-e063-6294a90a2bce",
+            "31f417f0-1637-eefa-e063-6294a90a121b"
+        ]
+    },
+    "sections": {
+        "boxed_warning": [],
+        "contraindications": [],
+        "warnings": [
+            "Warnings Allergy alert : Do not use if you are allergic to famotidine or other acid reducers Do not use if you have trouble or pain swallowing food, vomiting with blood, or bloody or black stools. These may be signs of a serious condition. See your doctor. with other acid reducers Ask a doctor before use if you have had heartburn over 3 months. This may be a sign of a more serious condition. heartburn with lightheadedness, sweating, or dizziness chest pain or shoulder pain with shortness of breath; sweating; pain spreading to arms, neck or shoulders; or lightheadedness frequent chest pain frequent wheezing, particularly with heartburn unexplained weight loss nausea or vomiting stomach pain kidney disease Ask a doctor or pharmacist before use if you are taking a prescription drug. Antacids and acid reducers may interact with certain prescription drugs. Stop use and ask a doctor if your heartburn continues or worsens you need to take this product for more than 14 days If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. (1-800-222-1222)",
+            "Warnings Ask a doctor before use if you have kidney disease Ask a doctor or pharmacist before use if you are taking a prescription drug. Antacids may interact with certain prescription drugs. Do not take more than 2 tablets in a 24 hour period or use the maximum dosage of this product for more than two weeks, except under the advice and supervision of a physician. May have a laxative effect. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children."
+        ],
+        "warnings_and_cautions": [],
+        "precautions": [],
+        "drug_interactions": [],
+        "adverse_reactions": [],
+        "clinical_pharmacology": []
+    },
+    "disease_flags": [
+        "children / pediatrics",
+        "pregnancy"
+    ],
+    "queries_tried": [
+        "Magnesium"
+    ]
+}

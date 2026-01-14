@@ -1,0 +1,77 @@
+{
+    "drug_name": "NOVALGIN 500 mg",
+    "ingredient_sk": "metamizol",
+    "ingredient_en_candidates": [
+        "Metamizole",
+        "Dipyrone"
+    ],
+    "matched_name": "Metamizole",
+    "source": "ŠÚKL – SmPC (Príloha č. 1, ev. č. 2024/06117-Z1B), Dátum revízie textu: 01/2025",
+    "openfda_meta": {},
+    "sections": {
+        "boxed_warning": [],
+        "contraindications": [
+            "Precitlivenosť na metamizol, iné pyrazolóny/pyrazolidíny (napr. fenazón, propyfenazón, fenylbutazón, oxyfenbutazón) alebo na pomocné látky.",
+            "Anamnéza agranulocytózy vyvolanej metamizolom, pyrazolónmi alebo pyrazolidínmi.",
+            "Porucha funkcie kostnej drene alebo ochorenia krvotvorného systému.",
+            "Bronchospazmus alebo iné anafylaktoidné reakcie (urtikária, rinitída, angioedém) po analgetikách (salicyláty, paracetamol, diklofenak, ibuprofén, indometacín, naproxén).",
+            "Akútna intermitentná pečeňová porfýria.",
+            "Vrodený deficit glukózo-6-fosfátdehydrogenázy (riziko hemolýzy).",
+            "Tehotenstvo – 3. trimester (kontraindikované)."
+        ],
+        "warnings": [
+            "Riziko agranulocytózy (môže byť fatálna); idiosynkratická, nezávislá od dávky, môže vzniknúť kedykoľvek počas liečby. Pri príznakoch (horúčka, bolesť hrdla, slizničné lézie) okamžite prerušiť a vyšetriť KO s diferenciálom.",
+            "Možná pancytopénia; pri výskyte liečbu ihneď prerušiť a sledovať KO.",
+            "Anafylaktické/anafylaktoidné reakcie, najmä u senzitivných pacientov.",
+            "Závažné kožné reakcie (SJS/TEN/DRESS); pri príznakoch okamžite vysadiť a znovu nepodávať.",
+            "Ojedinelé hypotenzné reakcie; vyššie riziko pri parenterálnom podaní a u pacientov s hypotenziou, hypovolémiou, dehydratáciou, nestabilným obehom, začínajúcim zlyhaním obehu, alebo pri vysokej horúčke.",
+            "Liekom indukované poškodenie pečene (akútna hepatitída); pri príznakoch ukončiť a vyšetriť pečeňové testy; po epizóde neobnovovať, ak nie je iná príčina.",
+            "Zvýšené riziko ťažkých anafylaktoidných reakcií u: analgeticko-astmatický syndróm / intolerancia analgetík typu urtikária-angioedém, bronchiálna astma s polypóznou rinosinusitídou, chronická žihľavka, intolerancia alkoholu, intolerancia farbív/konzervantov (tartrazín, benzoáty)."
+        ],
+        "warnings_and_cautions": [],
+        "precautions": [
+            "Starší, celkovo oslabení a pacienti so zníženým klírensom kreatinínu: znížiť dávku.",
+            "Porucha funkcie pečene/obličiek: vyhnúť sa vysokým opakovaným dávkam; pri krátkodobom použití obvykle netreba redukovať.",
+            "Pacientov, u ktorých je nežiaduce zníženie TK (závažná ICHS, stenózy mozgových artérií), monitorovať hemodynamiku.",
+            "Obsah sodíka: 32,7 mg v 1 tablete (1,63 % max. denného príjmu WHO)."
+        ],
+        "drug_interactions": [
+            "Metamizol môže indukovať CYP2B6/CYP3A4: môže znížiť plazmatické hladiny a účinnosť bupropiónu, efavirenzu, metadónu, valproátu, cyklosporínu, takrolimu, sertralínu – zvážiť monitorovanie klinickej odpovede/hladín.",
+            "Metamizol + metotrexát: zvýšená hematotoxicita (najmä u starších) – vyhnúť sa kombinácii.",
+            "Metamizol môže znížiť antiagregačný účinok nízkych dávok kyseliny acetylsalicylovej – opatrne u pacientov na kardioprotektívnom ASA.",
+            "Interferencia s laboratórnymi testami využívajúcimi Trinderovu reakciu (kreatinín, triglyceridy, HDL, kyselina močová)."
+        ],
+        "adverse_reactions": [
+            "Poruchy krvi a lymfatického systému: aplastická anémia, agranulocytóza, pancytopénia (vrátane fatálnych), leukopénia, trombocytopénia.",
+            "Imunitné reakcie: anafylaktický šok, anafylaktické/anafylaktoidné reakcie (môžu byť život ohrozujúce).",
+            "Srdce: Kounisov syndróm (akútny koronárny syndróm).",
+            "Cievy: ojedinelé hypotenzné reakcie, zriedkavo kritický pokles TK.",
+            "Pečeň/žlčové cesty: liekom indukované poškodenie pečene vrátane akútnej hepatitídy, žltačky, elevácie pečeňových enzýmov.",
+            "Koža a podkožie: SJS, TEN, DRESS; fixný liekový exantém; vyrážky.",
+            "Obličky a močové cesty: akútne zhoršenie funkcie obličiek (niekedy s oligúriou, anúriou, proteinúriou), akútna intersticiálna nefritída; červené sfarbenie moču (kyselina rubazónová).",
+            "Gastrointestinálny trakt: krvácanie z GIT."
+        ],
+        "clinical_pharmacology": [
+            "Metamizol (pyrazolón) má analgetický, antipyretický a spazmolytický účinok; mechanizmus nie je úplne objasnený (centrálny aj periférny účinok).",
+            "Farmakokinetika: perorálne sa hydrolyzuje na MAA (4-N-metylaminoantipyrín), absolútna biologická dostupnosť ~90 %; ďalšie metabolity AA, AAA, FAA; nelineárna PK; u starších ↑ expozícia."
+        ]
+    },
+    "disease_flags": [
+        "riziko agranulocytózy / poruchy krvotvorby",
+        "anafylaxia / analgeticko-astmatický syndróm",
+        "G6PD deficit",
+        "akútna intermitentná porfýria",
+        "ochorenie pečene / obličiek",
+        "hypotenzia / nestabilný obeh",
+        "tehotenstvo (3. trimester) – kontraindikované",
+        "dojčenie – vyhnúť sa opakovanému užívaniu; po jednorazovej dávke odsať a zlikvidovať mlieko 48 h",
+        "starší pacienti / znížený klírens kreatinínu",
+        "súbežné lieky citlivé na CYP2B6/CYP3A4",
+        "nízke dávky ASA (antiagregačný efekt môže byť oslabený)"
+    ],
+    "queries_tried": [
+        "Metamizole",
+        "Dipyrone"
+    ],
+    "status": "ok"
+}

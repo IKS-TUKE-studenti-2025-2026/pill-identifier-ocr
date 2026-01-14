@@ -1,0 +1,37 @@
+{
+    "drug_name": "TEBOKAN 120 mg",
+    "ingredient_sk": "Ginkgo biloba",
+    "ingredient_en_candidates": [
+        "Ginkgo biloba"
+    ],
+    "matched_name": "Ginkgo biloba",
+    "source": "openfda",
+    "openfda_meta": {
+        "hits": 2,
+        "set_ids": [
+            "df2d7683-3b45-4ddb-9b67-7bb74dad2854",
+            "1d08ce52-0604-04d0-e063-6294a90a7412"
+        ]
+    },
+    "sections": {
+        "boxed_warning": [],
+        "contraindications": [],
+        "warnings": [
+            "Warnings Use only if cap seal is unbroken. As with drugs if you are pregnant or nursing a baby seek professional advice before using this product. Keep this and all medication out of the reach of children.",
+            "Warnings Do not: use if you have an allergy or hypersensitivity to components of the formula use if pregnant or nursing Person suffering from heart ailments and hypertension should use after consulting their physician. Protect the medicine from heat, sunlight, dust and odors, keep out of the reach of children."
+        ],
+        "warnings_and_cautions": [],
+        "precautions": [],
+        "drug_interactions": [],
+        "adverse_reactions": [],
+        "clinical_pharmacology": []
+    },
+    "disease_flags": [
+        "children / pediatrics",
+        "hypertension",
+        "pregnancy"
+    ],
+    "queries_tried": [
+        "Ginkgo biloba"
+    ]
+}

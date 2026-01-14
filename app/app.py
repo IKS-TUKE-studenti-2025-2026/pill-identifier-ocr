@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import requests
 import numpy as np
 import cv2
 import easyocr
@@ -12,79 +13,57 @@ app = Flask(__name__)
 
 # --- KONFIGURÁCIA ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PILL_NAMES_FILE = os.path.join(BASE_DIR, 'zoznam_liekov.txt')
-DATASET_PATH = os.path.join(BASE_DIR, 'dataset')
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'webp'}
 UPLOAD_FOLDER = os.path.join(BASE_DIR, 'uploads')
+DATASET_PATH = os.path.join(BASE_DIR, 'dataset')
+PILL_NAMES_FILE = os.path.join(BASE_DIR, 'zoznam_liekov.txt')
 
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-# Inicializácia OCR presne ako v teste
 reader = easyocr.Reader(['en', 'sk'], gpu=True)
 
-# --- IDENTICKÉ FUNKCIE AKO V TESTE ---
+# --- POMOCNÉ FUNKCIE ---
 
 def clean_text(text):
     if not text: return ""
-    # Odstránenie dávkovania a jednotiek
+    # Odstránenie jednotiek a dávkovania pre presnejší matching
     text = re.sub(r'\d+\s*(mg|ml|g|tbl|cps|tablety|ug|%|mgml)', '', text, flags=re.IGNORECASE)
-    # Ponechanie len písmen a medzier
     return re.sub(r'[^a-zA-Z\s]', '', text).lower().strip()
 
-def get_image_variants(img):
-    """Vytvorí 3 varianty obrázka presne ako v tvojom úspešnom teste."""
-    if img is None: return []
-
-    # Variant 1: Grayscale + resize (Lanczos4)
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    gray_res = cv2.resize(gray, None, fx=2, fy=2, interpolation=cv2.INTER_LANCZOS4)
-    
-    # Variant 2: Adaptívne prahovanie (Threshold)
-    thresh = cv2.adaptiveThreshold(gray_res, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
-    
-    # Variant 3: CLAHE (Kontrast)
-    clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8,8))
-    contrast_img = clahe.apply(gray_res)
-
-    return [gray_res, thresh, contrast_img]
-
-def find_pill_data(folder_name):
-    json_path = os.path.join(DATASET_PATH, folder_name, 'interactions.json')
-    if os.path.exists(json_path):
-        with open(json_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
+def fetch_pill_data_from_api(pill_name):
+    """Získanie dát o účinných látkach z OpenFDA API."""
+    try:
+        url = f"https://api.fda.gov/drug/label.json?search=openfda.brand_name:{pill_name}&limit=1"
+        response = requests.get(url, timeout=5)
+        if response.status_code == 200:
+            res = response.json()['results'][0]
+            return {
+                "ingredient_sk": res.get('active_ingredient', ['Nezistené'])[0],
+                "disease_flags": ["Externý zdroj"],
+                "sections": {
+                    "Indikácie": res.get('indications_and_usage', ['Nezadané'])[0],
+                    "Varovania": res.get('warnings', ['Nezadané'])[0],
+                    "Dávkovanie": res.get('dosage_and_administration', ['Nezadané'])[0],
+                    "Vedľajšie_účinky": res.get('adverse_reactions', ['Nezadané'])[0]
+                }
+            }
+    except:
+        return None
     return None
-
-# --- HLAVNÝ MATCHING (Identický s ocr_batch_test) ---
 
 def find_best_match(full_detected_text, pill_names_list):
     ocr_cleaned = clean_text(full_detected_text)
     if not ocr_cleaned: return None, 0
-
-    best_match = None
-    max_score = 0
-
+    best_match, max_score = None, 0
     for pill_name in pill_names_list:
         pill_cleaned = clean_text(pill_name)
-        if not pill_cleaned: continue
-
-        # Identický scoring 0.7/0.3
-        partial = fuzz.partial_ratio(pill_cleaned, ocr_cleaned)
-        token = fuzz.token_set_ratio(pill_cleaned, ocr_cleaned)
-        current_score = (partial * 0.7) + (token * 0.3)
-
-        # Fuzzy bonus za Core Part
-        core_part = pill_cleaned.split()[0]
-        if fuzz.partial_ratio(core_part, ocr_cleaned) > 85:
-            current_score += 25 
-
-        if current_score > max_score:
-            max_score = current_score
+        score = (fuzz.partial_ratio(pill_cleaned, ocr_cleaned) * 0.7) + (fuzz.token_set_ratio(pill_cleaned, ocr_cleaned) * 0.3)
+        if score > max_score:
+            max_score = score
             best_match = pill_name
-
-    return best_match, min(100, int(max_score))
+    return best_match, int(max_score)
 
 # --- ROUTES ---
 
@@ -93,53 +72,57 @@ def index():
     if request.method == 'POST':
         file = request.files.get('image')
         if not file or file.filename == '':
-            return render_template('index.html', message="Nebol vybraný žiaden súbor.")
+            return render_template('index.html', message="Nebol prijatý žiaden súbor.")
 
-        # Uloženie
         filename = secure_filename(file.filename)
         image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(image_path)
 
-        # Načítanie (safe load s diakritikou)
         img_array = np.fromfile(image_path, np.uint8)
-        raw_img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
+        img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
+
+        if img is None:
+            return render_template('index.html', message="Chyba: Nepodarilo sa spracovať obrázok.")
+
+        # OCR Analýza
+        results = reader.readtext(img, detail=0, paragraph=True)
+        full_text = " ".join(results)
         
-        if raw_img is None:
-            return render_template('index.html', message="Chyba pri načítaní obrázka.")
+        # Hľadanie v lokálnom zozname
+        match_name, score = None, 0
+        if os.path.exists(PILL_NAMES_FILE):
+            with open(PILL_NAMES_FILE, 'r', encoding='utf-8') as f:
+                pill_names = [line.strip() for line in f.readlines()]
+            match_name, score = find_best_match(full_text, pill_names)
 
-        # Získanie variantov a OCR (identicky s testom)
-        variants = get_image_variants(raw_img)
-        full_detected_text = ""
+        p_data, p_desc = None, ""
         
-        for var in variants:
-            # text_threshold=0.2 podľa tvojich úprav
-            results = reader.readtext(var, detail=0, paragraph=True, text_threshold=0.2)
-            if results:
-                full_detected_text += " " + " ".join(results)
-
-        # Ak by varianty zlyhali, skúsime surový obrázok
-        if not full_detected_text.strip():
-            results = reader.readtext(raw_img, detail=0, paragraph=True)
-            full_detected_text = " ".join(results)
-
-        # Vyhľadanie zhody
-        with open(PILL_NAMES_FILE, 'r', encoding='utf-8') as f:
-            pill_names_list = [line.strip() for line in f.readlines()]
+        if match_name and score >= 70:
+            json_path = os.path.join(DATASET_PATH, match_name, 'interactions.json')
+            txt_path = os.path.join(DATASET_PATH, match_name, 'dataset.txt')
             
-        best_match, match_percentage = find_best_match(full_detected_text, pill_names_list)
-
-        # Zobrazenie (tvoj prah 70% z testu)
-        if best_match and match_percentage >= 70:
-            pill_data = find_pill_data(best_match)
-            return render_template('index.html', 
-                                   detected_text=full_detected_text.strip(), 
-                                   best_match=best_match, 
-                                   match_percentage=match_percentage, 
-                                   pill_data=pill_data)
+            if os.path.exists(json_path):
+                with open(json_path, 'r', encoding='utf-8') as f: p_data = json.load(f)
+            else:
+                p_data = fetch_pill_data_from_api(match_name)
+                
+            if os.path.exists(txt_path):
+                with open(txt_path, 'r', encoding='utf-8') as f: p_desc = f.read()
         else:
-            return render_template('index.html', 
-                                   detected_text=full_detected_text.strip(),
-                                   message=f"Liek sa nepodarilo určiť. (Najvyššia nájdená zhoda: {match_percentage}%)")
+            words = clean_text(full_text).split()
+            if words:
+                p_data = fetch_pill_data_from_api(words[0])
+                if p_data:
+                    match_name = words[0].upper()
+                    score = 90
+                    p_desc = "Informácie automaticky načítané z OpenFDA."
+
+        return render_template('index.html', 
+                               detected_text=full_text,
+                               best_match=match_name, 
+                               match_percentage=score, 
+                               pill_data=p_data,
+                               pill_description=p_desc)
 
     return render_template('index.html')
 
