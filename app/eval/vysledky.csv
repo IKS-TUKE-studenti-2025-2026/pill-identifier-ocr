@@ -1,0 +1,21 @@
+﻿subor,spravne,metoda,vysledok,spravne_rozpoznane,cas_s
+paralen_500.jpg,PARALEN 500,fuzzy,PARALEN 500,1,0.75
+paralen_500.jpg,PARALEN 500,ocr_gemma,PARALEN 500,1,37.22
+paralen_500.jpg,PARALEN 500,vision_gemma,PARALEN 500,1,4.49
+paralen_500.jpg,PARALEN 500,kombinacia,PARALEN 500,1,6.35
+anopyrin_1.jpg,ANOPYRIN 100 mg,fuzzy,ANOPYRIN 100 mg,1,0.26
+anopyrin_1.jpg,ANOPYRIN 100 mg,ocr_gemma,ANOPYRIN 100 mg,1,4.93
+anopyrin_1.jpg,ANOPYRIN 100 mg,vision_gemma,ANOPYRIN 100 mg,1,4.52
+anopyrin_1.jpg,ANOPYRIN 100 mg,kombinacia,ANOPYRIN 100 mg,1,6.13
+anopyrin_2.jpg,ANOPYRIN 100 mg,fuzzy,ANOPYRIN 100 mg,1,0.09
+anopyrin_2.jpg,ANOPYRIN 100 mg,ocr_gemma,ANOPYRIN 100 mg,1,40.26
+anopyrin_2.jpg,ANOPYRIN 100 mg,vision_gemma,ANOPYRIN 100 mg,1,4.38
+anopyrin_2.jpg,ANOPYRIN 100 mg,kombinacia,ANOPYRIN 100 mg,1,5.69
+paralen_anopyrin.jpg,ANOPYRIN 100 mg; PARALEN 500,fuzzy,PARALEN 500,0,0.71
+paralen_anopyrin.jpg,ANOPYRIN 100 mg; PARALEN 500,ocr_gemma,,0,6.1
+paralen_anopyrin.jpg,ANOPYRIN 100 mg; PARALEN 500,vision_gemma,ANOPYRIN 100 mg; PARALEN 500,1,6.18
+paralen_anopyrin.jpg,ANOPYRIN 100 mg; PARALEN 500,kombinacia,ANOPYRIN 100 mg; PARALEN 500,1,7.89
+nahodny_obrazok.jpg,,fuzzy,,1,0.1
+nahodny_obrazok.jpg,,ocr_gemma,,1,55.64
+nahodny_obrazok.jpg,,vision_gemma,,1,10.11
+nahodny_obrazok.jpg,,kombinacia,,1,66.94

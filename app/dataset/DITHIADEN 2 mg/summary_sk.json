@@ -1,0 +1,23 @@
+{
+  "na_co": "DITHIADEN je liek na precitlivenosť spôsobenú alergickými reakciami.",
+  "davkovanie": "Dospelým sa môže podať 4 – 8 mg denne, deťom 1 – 2 mg 2 až 3-krát denne, v závislosti od veku.",
+  "kontraindikacie": [
+    "Precitlivenosť na bisulepín",
+    "Status asthmaticus",
+    "Ospalosť"
+  ],
+  "varovania": [
+    "Liek môže ovplyvniť zrak, srdce a gastrointestinálny trakt",
+    "Počas liečby sa nesmie piť alkohol"
+  ],
+  "interakcie": [
+    "Zosilňuje účinky iných tlmivých látok",
+    "Anticholinergiká zosilňujú jeho účinok"
+  ],
+  "vedlajsie_ucinky": [
+    "Zvýšený vnútroočný tlak",
+    "Suchý úst",
+    "Ospalosť",
+    "Znížená pozornosť"
+  ]
+}

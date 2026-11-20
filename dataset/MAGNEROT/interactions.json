@@ -1,0 +1,37 @@
+{
+  "drug_name": "MAGNEROT tbl 100",
+  "ingredient_sk": "Magnéziumorotát",
+  "ingredient_en_candidates": [
+    "Magnesium orotate"
+  ],
+  "matched_name": "Magnesium orotate",
+  "source": "openfda",
+  "openfda_meta": {
+    "hits": 2,
+    "set_ids": [
+      "6edee6eb-0ec9-4d2a-9dc9-dc2a6503a6db",
+      "afad858e-064f-454d-be78-da1501ffe853"
+    ]
+  },
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [],
+    "warnings": [
+      "WARNINGS: If pregnant or breastfeeding, ask a health professional before use. Keep out of reach of children. In case of overdose, contact a physician or Poison Control Center right away. Tamper Evident: Sealed for your protection. Do not use if seal is broken or missing.",
+      "WARNINGS: If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. In case of overdose, contact a physician or Poison Control Center right away. Tamper Evident: Sealed for your protection. Do not use if seal is broken or missing."
+    ],
+    "warnings_and_cautions": [],
+    "precautions": [],
+    "drug_interactions": [],
+    "adverse_reactions": [],
+    "clinical_pharmacology": []
+  },
+  "disease_flags": [
+    "children / pediatrics",
+    "lactation",
+    "pregnancy"
+  ],
+  "queries_tried": [
+    "Magnesium orotate"
+  ]
+}

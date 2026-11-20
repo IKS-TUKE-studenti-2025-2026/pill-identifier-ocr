@@ -1,0 +1,25 @@
+{
+  "na_co": "Magneziové tablety obsahujú mliečnan horečnatý dihydrát, ktorý je známy ako magnéziumlaktát dihydrát.",
+  "davkovanie": "Dospelým sa užíva 1-3 tablety denne, deťom 1/2 až 1 tableta denne, najlepšie medzi jedlami a s dostatkom vody.",
+  "kontraindikacie": [
+    "Citlivosť na liečivo alebo na niektorú z pomocných látok.",
+    "Hypermagneziémia.",
+    "Závažná renálna insuficiencia.",
+    "Závažné poruchy pečene.",
+    "Myasténia gravis."
+  ],
+  "varovania": [
+    "Neužívajte súbežne s inými liekmi obsahujúcimi minerálne látky.",
+    "Odporúča sa piť dostatok vody a obmedziť konzumáciu mlieka a mliečnych výrobkov."
+  ],
+  "interakcie": [
+    "Digoxín, dexametazón, nitrofurantoín, paracetamol, salicyláty, fosfor, vápnik a železo môžu znižovať vstrebávanie horčíka.",
+    "Tetracyklíny spomaľujú vstrebávanie horčíka, preto sa užívajte s aspoň 3-hodinovým odstupom."
+  ],
+  "vedlajsie_ucinky": [
+    "Zriedkave poruchy srdcovej činnosti.",
+    "Zriedkava hypotenzia.",
+    "Zriedkava nauzea a hnačky.",
+    "Zriedkava celková slabosť."
+  ]
+}

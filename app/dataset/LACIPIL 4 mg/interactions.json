@@ -1,0 +1,52 @@
+{
+  "drug_name": "LACIPIL 4 mg tbl flm 28x4 mg",
+  "ingredient_sk": "Lacidipín",
+  "ingredient_en_candidates": [
+    "Lacidipine"
+  ],
+  "matched_name": "Lacidipine",
+  "source": "sukl_spc",
+  "language": "sk",
+  "spc_url": "https://www.sukl.sk/document/download?dok_id=877158&dok_sec=dc54d07feadd5d1800b8d39148979b24",
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [
+      "Precitlivenosť na lacidipín alebo na ktorúkoľvek z pomocných látok uvedených v časti 6.1. Podobne ako u ostatných dihydropyridínov je lacidipín kontraindikovaný u pacientov s ťažkou aortálnou stenózou."
+    ],
+    "warnings": [],
+    "warnings_and_cautions": [
+      "Cielené štúdie nedokázali, že lacidipín ovplyvňuje spontánnu aktivitu sinoatriálneho (SA) uzla, ani predĺženie vedenia v atrioventrikulárnom (AV) uzle. Je však potrebné upozorniť na teoretickú možnosť ovplyvnenia funkcie SA a AV uzla blokátormi vápnikových kanálov, preto je u pacientov s existujúcimi abnormalitami činnosti SA a AV uzla pri použití Lacipilu potrebná opatrnosť. Ako bolo zistené s ďalšími dihydropyridínovými blokátormi vápnikových kanálov, lacidipín má byť používaný s opatrnosťou u pacientov s kongenitálnym alebo získaným predĺžením QT intervalu. Lacidipín má byť používaný s opatrnosťou u pacientov liečených liekmi, o ktorých sa vie, že predlžujú QT interval, tak ako antiarytmiká triedy I a III, tricyklické antidepresíva, niektoré antipsychotiká, antibiotiká (napr. erytromycín) a niektoré antihistaminiká (napr. terfenadín). Podobne ako pri iných blokátoroch vápnikových kanálov je pri použití Lacipilu u pacientov so zníženou srdcovou rezervou potrebná opatrnosť. Podobne ako iné dihydropyridínové blokátory vápnikových kanálov, aj Lacipil je potrebné podávať opatrne pacientom, u ktorých bola v minulosti diagnostikovaná nestabilná angína pektoris, ako aj pacientom, u ktorých nestabilná angína pektoris vznikne počas liečby. U pacientov s čerstvým infarktom myokardu je pri podávaní Lacipilu potrebná opatrnosť. Nepreukázalo sa, že by lacidipín bol prospešný pri sekundárnej prevencii infarktu myokardu. Účinnosť a bezpečnosť lacidipínu v liečbe malígnej hypertenzie neboli stanovené. Vzhľadom na možné zvýšenie antihypertenzného účinku je pri podávaní Lacipilu pacientom s poruchou funkcie pečene potrebná opatrnosť. Liek obsahuje laktózu. Pacienti so zriedkavými dedičnými problémami galaktózovej intolerancie, laponského deficitu laktázy alebo glukózo-galaktózovej malabsorpcie nesmú užívať tento liek."
+    ],
+    "precautions": [],
+    "drug_interactions": [
+      "Súčasné podávanie Lacipilu s inými látkami, ktorých hypotenzný účinok je známy, zahŕňajúcimi antihypertenzíva (napr. s diuretikami, beta-blokátormi alebo ACE inhibítormi), môže mať aditívny hypotenzný účinok. V štúdiách s bežne používanými antihypertenzívami (ako beta-blokátory a diuretiká), ďalej s digoxínom, tolbutamidom a warfarínom neboli dokázané žiadne zvláštne interakcie. Súčasné podávanie cimetidínu môže zvyšovať plazmatické hladiny lacidipínu. Lacidipín sa silne viaže na plazmatické bielkoviny (> 95 %) albumín a alfa-1-glykoproteín. Podobne ako ostatné dihydropyridíny, ani Lacipil sa nemá užívať spolu s grapefruitovým džúsom, ktorý môže meniť biologickú dostupnosť lieku. V klinických štúdiách u pacientov po transplantácii obličky liečených cyklosporínom lacidipín zlepšoval cyklosporínom indukované zníženie renálneho plazmatického prietoku a glomerulárnej filtrácie. Je známe, že lacidipín je metabolizovaný cytochrómom CYP3A4 a z tohto dovôdu môžu súčasne podávané významné inhibítory a induktory CYP3A4 (napr. rifampicín, itrakonazol) interagovať s metabolizmom a elimináciou lacidipínu. Súbežné použitie lacidipínu a kortikoidov alebo tetrakosaktidu môže znížiť antihypertenzný účinok."
+    ],
+    "adverse_reactions": [
+      "Na určenie frekvencie veľmi častých až menej častých nežiaducich účinkov boli použité údaje z veľkých klinických štúdií (interných a publikovaných). Pri klasifikácii frekvencie sa použilo nasledujúce pravidlo: veľmi časté ≥ 1/10, časté ≥ 1/100 až < 1/10, menej časté ≥ 1/1 000 až < 1/100, zriedkavé ≥ 1/10 000 až < 1/1 000, veľmi zriedkavé < 1/10 000, neznáme (z dostupných údajov). Lacidipín sa obvykle dobre znáša. Niektorí pacienti môžu pociťovať nevýznamné nežiaduce účinky spojené s farmakologicky vyvolanou periférnou vazodilatáciou. Takéto účinky, označené mriežkou (#), sú zvyčajne prechodné a pri pokračovaní podávania nezmenenej dávky lacidipínu zvyčajne vymiznú. Psychické poruchy Veľmi zriedkavé Depresia Poruchy nervového systému Časté #Bolesť hlavy, #závraty Veľmi zriedkavé Tremor Poruchy srdca a srdcovej činnosti Časté #Búšenie srdca, tachykardia Menej časté Zhoršenie existujúcej angíny pektoris, synkopa, hypotenzia Podobne ako pri ostatných dihydropyridínoch bolo u malého počtu pacientov popísané zhoršenie existujúcej angíny pektoris, obzvlášť na začiatku liečby. Uvedený účinok je pravdepodobnejší u pacientov so symptomatickou ischemickou chorobou srdca. Poruchy ciev Časté #Návaly tepla Poruchy gastrointestinálneho traktu Časté Žalúdočné ťažkosti, nevoľnosť Menej časté Zdurenie ďasien Poruchy kože a podkožného tkaniva Časté Kožná vyrážka (vrátane erytému a svrbenia) Zriedkavé Angioedém, urtikária Poruchy obličiek a močových ciest Časté Časté močenie Celkové poruchy a reakcie v mieste podania Časté Slabosť, #opuch Laboratórne a funkčné vyšetrenia Časté Reverzibilné zvýšenie alkalickej fosfatázy (klinicky významné zvýšenia sú menej časté) Hlásenie podozrení na nežiaduce reakcie Hlásenie podozrení na nežiaduce reakcie po registrácii lieku je dôležité. Umožňuje priebežné monitorovanie pomeru prínosu a rizika lieku. Od zdravotníckych pracovníkov sa vyžaduje, aby hlásili akékoľvek podozrenia na nežiaduce reakcie na národné centrum hlásenia uvedené v Prílohe V."
+    ],
+    "clinical_pharmacology": [],
+    "indications_and_usage": [
+      "Liečba hypertenzie buď v monoterapii, alebo v kombinácii s inými antihypertenzívami, ako betablokátory, diuretiká alebo ACE inhibítory."
+    ],
+    "dosage_and_administration": [
+      "Úvodná dávka je 2 mg raz denne. Uvedená dávka sa má užívať v rovnakú dennú hodinu, najlepšie ráno. Liečbu hypertenzie je potrebné prispôsobiť závažnosti stavu a individuálnej odpovedi pacienta. Dávkovanie možno zvyšovať na 4 mg a v prípade potreby až na 6 mg. Pri každom dávkovaní je potrebné počkať dostatočne dlhý čas na dosiahnutie maximálneho farmakologického účinku. Tento čas v praxi nemá byť kratší ako 3 - 4 týždne, pokiaľ klinický stav nevyžaduje rýchlejšiu úpravu dávkovania. Liek sa má užívať v rovnakú dennú hodinu, najlepšie ráno, nalačno alebo s jedlom. Populácie Porucha funkcie pečene Pacienti s ľahkou až stredne ťažkou poruchou funkcie pečene nevyžadujú zmenu dávkovania. Nie sú k dispozícii dostatočné údaje týkajúce sa odporúčaní pre pacientov s ťažkou poruchou funkcie pečene (pozri časť 4.4). Porucha funkcie obličiek Keďže lacidipín sa nevylučuje obličkami, u pacientov s poruchou funkcie obličiek nie je potrebná úprava dávkovania. Deti S liečbou Lacipilom u detí nie sú žiadne skúsenosti. Starší pacienti Úprava dávkovania nie je potrebná. V liečbe je možné pokračovať dlhodobo."
+    ],
+    "pregnancy_and_lactation": [
+      "Nie sú k dispozícii údaje o bezpečnosti lacidipínu u gravidných žien. Štúdie na zvieratách nedokázali žiadny teratogénny účinok alebo poruchu vývoja (pozri časť 5.3). Štúdie materského mlieka u zvierat ukázali, že lacidipín (alebo jeho metabolity) sa pravdepodobne vylučuje do materského mlieka. Lacidipín sa smie počas gravidity alebo laktácie používať, len keď prínos pre matku prevyšuje možnosť vzniku nežiaducich účinkov u plodu alebo dojčeného dieťaťa. Je potrebné zvážiť možnosť, že lacidipín môže v termíne pôrodu spôsobiť relaxáciu svalstva maternice (pozri časť 5.3)."
+    ],
+    "driving_and_machines": [
+      "Lacidipín môže spôsobovať závraty. Pacientov treba upozorniť, aby neviedli vozidlá alebo neobsluhovali stroje, ak sa u nich vyskytnú závraty alebo podobné príznaky."
+    ],
+    "overdosage": [
+      "Nebol popísaný žiadny prípad predávkovania Lacipilom. Príznaky a prejavy Najpravdepodobnejší účinok môže byť dlhotrvajúca periférna vazodilatácia spojená s hypotenziou a tachykardiou. Teoreticky môže dôjsť k bradykardii alebo predĺženiu AV vedenia. Liečba Špecifické antidotum neexistuje. Je potrebné použiť štandardné prostriedky na sledovanie funkcie srdca a príslušné podporné a liečebné opatrenia. 5. FARMAKOLOGICKÉ VLASTNOSTI"
+    ]
+  },
+  "disease_flags": [
+    "arrhythmia",
+    "depression / suicidality",
+    "hypertension",
+    "lactation",
+    "pregnancy"
+  ],
+  "status": "ok"
+}

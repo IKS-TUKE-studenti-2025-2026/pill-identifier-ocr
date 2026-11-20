@@ -1,0 +1,37 @@
+{
+  "drug_name": "PANCREOLAN FORTE tbl ent 60x220 mg (blis. PVC/Al)",
+  "ingredient_sk": "Multienzýmy (lipáza, proteáza, amyláza)",
+  "ingredient_en_candidates": [
+    "Pancrelipase"
+  ],
+  "matched_name": "Pancrelipase",
+  "source": "openfda",
+  "openfda_meta": {
+    "hits": 2,
+    "set_ids": [
+      "9510bb76-b717-407d-b9e8-da7743e4cfc8",
+      "527dbb62-5c68-4ea8-93c7-48122817d6a5"
+    ]
+  },
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [],
+    "warnings": [
+      "WARNINGS: Stop use and ask a doctor if symptoms persist for more than 7 days. If pregnant or breastfeeding, ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. DO NOT USE IF TAMPER EVIDENT SEAL IS BRODEN OR MISSING Store in a cool, dry place.",
+      "WARNINGS Consult a doctor if condition worsens or if symptoms persist. Keep out of the reach of children. In case of overdose, get medical help or contact a poison control center right away. If pregnant or breastfeeding, ask a healthcare professional before use. Keep out of the reach of children. If pregnant or breastfeeding, ask a healthcare professional before use."
+    ],
+    "warnings_and_cautions": [],
+    "precautions": [],
+    "drug_interactions": [],
+    "adverse_reactions": [],
+    "clinical_pharmacology": []
+  },
+  "disease_flags": [
+    "children / pediatrics",
+    "lactation",
+    "pregnancy"
+  ],
+  "queries_tried": [
+    "Pancrelipase"
+  ]
+}

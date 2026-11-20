@@ -1,0 +1,21 @@
+{
+  "na_co": "NOVALGIN 500 mg je liek na bolesť obsahujúci metamizol.",
+  "davkovanie": "Užíva sa ako tabletka 500 mg.",
+  "kontraindikacie": [
+    "Citlivosť na metamizol alebo iné pyrazolóny",
+    "Anamnéza agranulocytózy",
+    "Porucha funkcie kostnej drene"
+  ],
+  "varovania": [
+    "Riziko agranulocytózy, ktorá môže byť fatálna",
+    "Možná pancytopénia a anafylaktické reakcie",
+    "Riziko vážnych kožných reakcií"
+  ],
+  "interakcie": [
+    "Metamizol môže ovplyvňovať hladiny niektorých liekov",
+    "Kombinácia s metotrexátom môže zvýšiť riziko hematotoxicít"
+  ],
+  "vedlajsie_ucinky": [
+    "Môže spôsobiť agranulocytózu, anafylaktický šok, poškodenie pečene a krvácanie z GIT"
+  ]
+}

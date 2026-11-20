@@ -1,0 +1,42 @@
+{
+  "drug_name": "HYLAK FORTE gtt 1x100 ml",
+  "ingredient_sk": "Antidiaroické mikroorganizmy",
+  "ingredient_en_candidates": [
+    "Lactobacillus"
+  ],
+  "matched_name": "Lactobacillus",
+  "source": "openfda",
+  "openfda_meta": {
+    "hits": 2,
+    "set_ids": [
+      "7c0e1b3e-f1a3-451d-a5c6-45bdf13274f8",
+      "bc5e4d0b-03ac-43a5-9155-8f3ceb9504cc"
+    ]
+  },
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [
+      "CONTRAINDICATIONS Probentra™ is contraindicated in individuals with known hypersensitivity to any of its ingredients.",
+      "CONTRAINDICATIONS None known."
+    ],
+    "warnings": [
+      "WARNINGS Accidental overdose of iron-containing products is a leading cause of fatal poisoning in children under 6. In case of accidental overdose, call a doctor or poison control center immediately. If pregnant, lactating, or trying to conceive, consult with a licensed healthcare professional prior to use."
+    ],
+    "warnings_and_cautions": [
+      "WARNINGS AND PRECAUTIONS If pregnant, nursing, or attempting to conceive, consult a licensed healthcare professional prior to use. Keep out of reach of children. Accidental overdose of iron-containing products is a leading cause of fatal poisoning in children under six years of age. In case of accidental overdose, call a physician or poison control center immediately."
+    ],
+    "precautions": [],
+    "drug_interactions": [],
+    "adverse_reactions": [
+      "ADVERSE REACTIONS Probiotic supplementation may occasionally result in mild gastrointestinal symptoms such as bloating, gas, or abdominal discomfort. If adverse reactions occur, discontinue use and consult a healthcare professional."
+    ],
+    "clinical_pharmacology": []
+  },
+  "disease_flags": [
+    "children / pediatrics",
+    "pregnancy"
+  ],
+  "queries_tried": [
+    "Lactobacillus"
+  ]
+}

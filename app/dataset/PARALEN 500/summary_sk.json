@@ -1,0 +1,25 @@
+{
+  "na_co": "PARALEN 500 je liek obsahujúci paracetamol, ktorý sa používa na zmiernenie bolesti a horúčok.",
+  "davkovanie": "Liek obsahuje 24 tablet s obsahom 500 mg paracetamolu v každej tablete.",
+  "kontraindikacie": [
+    "Citlivosť na jednotlivé zložky lieku",
+    "Simultánna užívanie tricyklických antidepresív, beta-adrenergných blokátorov alebo iných sympatomimetík",
+    "Hyperthyroidizmus",
+    "Pheochromocytóm",
+    "Úzky-uhlový glaukom",
+    "Alkoholizmus",
+    "Tieto lieky sa nesmú užívať počas tehotenstva, dojčenia a u detí do 12 rokov."
+  ],
+  "varovania": [
+    "Liek by sa nemal kombinovať s alkoholom, aby sa zabránilo toxickému poškodeniu pečene.",
+    "Pri užívaniu lieku je potrebné byť opatrný u ľudí s ochoreniami srdca, vysokým krvným tlakom alebo glaukom.",
+    "Ak sa liekom sprievodná horúčka, je potrebné konzultovať s lekárom."
+  ],
+  "interakcie": [
+    "Liek môže posilniť účinok MAO inhibítorov, sedatívnych prostriedkov a etanolu.",
+    "Užívanie s barbiturátmi, diphenínom, karbamazepínom, rifampínom, zidovudínom alebo inými induktormi pečeňových mikrosomálnych enzýmov môže zvýšiť riziko toxického účinku paracetamolu."
+  ],
+  "vedlajsie_ucinky": [
+    "Možné vedľajšie účinky zahŕňajú alergické reakcie, nepríjemný spánok, zníženú psychomotorickú zrušitosť, závraty, nevoľnosť, zvracanie, bolesť brucha, zrýchlenie srdcovej frekvencie, zvýšený krvný tlak, sucho v ústach, problémy s vidom, zvýšený tlak v ociach a zadržiavanie moču."
+  ]
+}

@@ -5,97 +5,267 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PillRecognition AI</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f4f7fa; }
-        .card-custom { border: none; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: #fff; margin-bottom: 30px; }
-        .header-section { background: linear-gradient(135deg, #0d6efd 0%, #00d2ff 100%); color: #fff; padding: 35px; border-radius: 24px 24px 0 0; }
-        #loading-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.9); z-index: 9999; flex-direction: column; justify-content: center; align-items: center; }
-        .scanner { width: 220px; height: 3px; background: #0d6efd; box-shadow: 0 0 15px #0d6efd; animation: scan 2s infinite ease-in-out; }
-        @keyframes scan { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(120px); } }
-        #video { width: 100%; border-radius: 15px; background: #000; max-height: 350px; object-fit: cover; }
-        .nav-pills .nav-link { border-radius: 12px; font-weight: 600; color: #6c757d; padding: 12px 20px; }
-        .nav-pills .nav-link.active { background: #0d6efd; }
+        /* Klinický (Swiss) štýl: tlmená zeleno-tyrkysová, tabuľky, bočné menu */
+        :root {
+            --c-bg: #f4f7f7; --c-panel: #fbfcfc; --c-ink: #102a2e; --c-muted: #5b7377;
+            --c-line: #d5e0e1; --c-soft: #e3eaeb; --c-accent: #0a7d6f; --c-accent-dark: #0a5c52; --c-accent-soft: #e2f1ef;
+            --c-warn-bg: #fff6e5; --c-warn-line: #f0d39b; --c-warn-ink: #6b4a07;
+            --bs-primary: #0a7d6f; --bs-primary-rgb: 10, 125, 111;
+            --bs-body-font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif; --bs-body-color: #102a2e;
+            --bs-border-color: #d5e0e1; --bs-border-radius: 6px;
+        }
+        body { background: var(--c-bg); color: var(--c-ink); }
+        .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+        .lbl { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--c-muted); }
+
+        /* Horná lišta */
+        .topbar { background: var(--c-panel); border-bottom: 1px solid var(--c-line); padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+        .brand { font-weight: 600; font-size: 16px; letter-spacing: .01em; color: var(--c-ink); text-decoration: none; }
+        .brand::before { content: "+"; color: var(--c-accent); font-weight: 700; margin-right: 8px; }
+        .topbar small { color: var(--c-muted); font-size: 12px; }
+
+        /* Rozloženie: bočné menu + obsah */
+        .shell { display: grid; grid-template-columns: 220px minmax(0, 1fr); min-height: calc(100vh - 53px); }
+        .side { border-right: 1px solid var(--c-line); background: var(--c-panel); padding: 20px 14px; }
+        .side .lbl { padding: 0 10px; margin-bottom: 6px; display: block; }
+        .side-group + .side-group { margin-top: 22px; }
+        .side .nav-link, .side a.side-link { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; border-radius: 6px; padding: 8px 10px; color: #3d585c; font-size: 14px; text-decoration: none; background: none; border: 0; }
+        .side .nav-link:hover, .side a.side-link:hover { background: var(--c-soft); color: var(--c-ink); }
+        .side .nav-link.active { background: var(--c-accent-soft); color: var(--c-accent-dark); font-weight: 600; }
+        .side a.side-link span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .main { padding: 28px 32px 48px; max-width: 960px; width: 100%; }
+        @media (max-width: 768px) {
+            .shell { grid-template-columns: minmax(0, 1fr); }
+            .side { border-right: 0; border-bottom: 1px solid var(--c-line); padding: 10px 12px; }
+            .side .nav { flex-direction: row !important; flex-wrap: wrap; gap: 4px; }
+            .side .nav-link { width: auto; }
+            .side-results, .side .lbl { display: none; }
+            .main { padding: 20px 16px 40px; }
+        }
+
+        /* Panely */
+        .panel { background: var(--c-panel); border: 1px solid var(--c-line); border-radius: 8px; margin-bottom: 24px; }
+        .panel-head { padding: 18px 22px; border-bottom: 1px solid var(--c-line); }
+        .panel-body { padding: 20px 22px; }
+        .panel h1 { font-size: 22px; font-weight: 600; margin: 2px 0 0; }
+        .pill-name { font-size: 26px; font-weight: 600; margin: 2px 0 12px; }
+        .h-sec { font-size: 14px; font-weight: 600; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+        .h-sec i { color: var(--c-accent); }
+
+        /* Zhoda */
+        .score-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+        .score-row b { font-family: 'IBM Plex Mono', monospace; font-size: 14px; }
+        .bar { height: 6px; background: var(--c-soft); border-radius: 3px; overflow: hidden; margin: 6px 0 16px; }
+        .bar i { display: block; height: 100%; background: var(--c-accent); }
+        .tag { display: inline-flex; align-items: center; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .04em; border: 1px solid var(--c-line); border-radius: 4px; padding: 2px 8px; color: var(--c-muted); background: #fff; }
+        .tag.on { background: var(--c-accent-soft); color: var(--c-accent-dark); border-color: transparent; }
+
+        /* Tabuľka údajov */
+        .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 20px; }
+        .data-table td { padding: 9px 0; border-bottom: 1px solid var(--c-soft); vertical-align: top; }
+        .data-table td:first-child { color: var(--c-muted); width: 40%; padding-right: 12px; }
+
+        /* Boxy */
+        .box { border: 1px solid var(--c-line); border-radius: 6px; padding: 14px 16px; font-size: 14px; background: #fff; }
+        .box-accent { background: var(--c-accent-soft); border-color: transparent; }
+        .box-warn { background: var(--c-warn-bg); border-color: var(--c-warn-line); color: var(--c-warn-ink); }
+        .js-summary .fw-bold { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--c-accent-dark); }
+        .js-summary .fw-bold:first-child { margin-top: 0 !important; }
+        .js-summary ul { padding-left: 18px; }
+
+        /* Vstup */
+        .drop { border: 1px dashed #9db3b5; border-radius: 6px; padding: 22px; text-align: center; background: #fff; }
+        .drop i { font-size: 28px; color: var(--c-accent); }
+        #video { width: 100%; border-radius: 6px; background: #000; max-height: 350px; object-fit: cover; }
+        .btn { border-radius: 6px; font-weight: 500; }
+        .btn-primary { --bs-btn-bg: #0a7d6f; --bs-btn-border-color: #0a7d6f; --bs-btn-hover-bg: #0a5c52; --bs-btn-hover-border-color: #0a5c52; --bs-btn-active-bg: #0a5c52; --bs-btn-active-border-color: #0a5c52; --bs-btn-disabled-bg: #0a7d6f; --bs-btn-disabled-border-color: #0a7d6f; }
+        .form-control:focus, .form-select:focus { border-color: var(--c-accent); box-shadow: 0 0 0 3px rgba(10,125,111,.15); }
+
+        /* Sekcie letáku */
+        .accordion { --bs-accordion-border-color: var(--c-line); --bs-accordion-border-radius: 6px; --bs-accordion-inner-border-radius: 6px; --bs-accordion-active-bg: var(--c-accent-soft); --bs-accordion-active-color: var(--c-accent-dark); --bs-accordion-btn-focus-box-shadow: none; --bs-accordion-btn-padding-y: .7rem; }
+        .accordion-button { font-size: 14px; font-weight: 500; }
+
+        /* Chat */
+        .js-chat-log .bg-primary { border-radius: 6px !important; }
+        .js-chat-log .bg-light { background: var(--c-soft) !important; border-radius: 6px !important; }
+        .divider { border-top: 1px solid var(--c-line); margin: 24px 0; }
+
+        /* Načítavanie */
+        #loading-overlay { display: none; position: fixed; inset: 0; background: rgba(244,247,247,.94); z-index: 9999; flex-direction: column; justify-content: center; align-items: center; gap: 18px; }
+        .scanner { width: 220px; height: 120px; border: 1px solid var(--c-line); border-radius: 6px; position: relative; overflow: hidden; background: #fff; }
+        .scanner::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: var(--c-accent); box-shadow: 0 0 10px var(--c-accent); animation: scan 2s infinite ease-in-out; }
+        @keyframes scan { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(118px); } }
+        @media (prefers-reduced-motion: reduce) { .scanner::after { animation: none; top: 50%; } }
     </style>
 </head>
 <body>
 
 <div id="loading-overlay">
-    <div class="scanner mb-4"></div>
-    <h4 class="fw-bold">AI analyzuje liek...</h4>
+    <div class="scanner"></div>
+    <div class="lbl">Analýza obrázka</div>
+    <div style="font-weight:600">AI rozpoznáva liek…</div>
 </div>
 
-<div class="container py-5" style="max-width: 850px;">
-    <div class="card-custom">
-        <div class="p-4 p-md-5 text-center">
-            <h1 class="fw-bold mb-4"> PillRecognition AI</h1>
-            
-            <ul class="nav nav-pills justify-content-center mb-4" id="pills-tab">
-                <li class="nav-item"><button class="nav-link active" id="tab-upload" data-bs-toggle="pill" data-bs-target="#c-upload"><i class="bi bi-upload me-2"></i>Súbor</button></li>
-                <li class="nav-item"><button class="nav-link" id="tab-camera" data-bs-toggle="pill" data-bs-target="#c-camera"><i class="bi bi-camera me-2"></i>Kamera</button></li>
-                <li class="nav-item"><button class="nav-link" id="tab-paste" data-bs-toggle="pill" data-bs-target="#c-paste"><i class="bi bi-clipboard me-2"></i>Schránka</button></li>
-            </ul>
+<header class="topbar">
+    <a class="brand" href="/">PillRecognition AI</a>
+    <small><i class="bi bi-info-circle me-1"></i>Výsledok nenahrádza konzultáciu s lekárom alebo lekárnikom</small>
+</header>
 
-            <div class="tab-content">
+<div class="shell">
+    <aside class="side">
+        <div class="side-group">
+            <span class="lbl">Vstup</span>
+            <div class="nav flex-column" id="pills-tab">
+                <button class="nav-link active" id="tab-upload" data-bs-toggle="pill" data-bs-target="#c-upload" type="button"><i class="bi bi-upload"></i>Súbor</button>
+                <button class="nav-link" id="tab-camera" data-bs-toggle="pill" data-bs-target="#c-camera" type="button"><i class="bi bi-camera"></i>Kamera</button>
+                <button class="nav-link" id="tab-paste" data-bs-toggle="pill" data-bs-target="#c-paste" type="button"><i class="bi bi-clipboard"></i>Schránka</button>
+            </div>
+        </div>
+        {% if pills %}
+        <div class="side-group side-results">
+            <span class="lbl">Výsledky</span>
+            {% for pill in pills %}<a class="side-link" href="#liek-{{ loop.index }}"><i class="bi bi-capsule"></i><span>{{ pill.name }}</span></a>{% endfor %}
+            {% if pair_checks and llm_on %}<a class="side-link" href="#interakcie"><i class="bi bi-shield-exclamation"></i><span>Interakcie</span></a>{% endif %}
+        </div>
+        {% endif %}
+    </aside>
+
+    <main class="main">
+        <section class="panel">
+            <div class="panel-head">
+                <div class="lbl">Rozpoznanie lieku</div>
+                <h1>Nahrajte fotografiu balenia</h1>
+            </div>
+            <div class="panel-body tab-content">
                 <div class="tab-pane fade show active" id="c-upload">
                     <form action="/" method="POST" enctype="multipart/form-data" id="form-up">
-                        <input type="file" name="image" class="form-control form-control-lg mb-3" accept="image/*">
-                        <div class="d-grid"><button type="submit" class="btn btn-primary btn-lg fw-bold">ANALYZOVAŤ</button></div>
+                        <label class="drop d-block mb-3" for="image-input">
+                            <i class="bi bi-image d-block mb-2"></i>
+                            <span class="d-block mb-2" style="font-size:14px">Vyberte obrázok krabičky alebo blistra</span>
+                            <input type="file" name="image" id="image-input" class="form-control" accept="image/*">
+                        </label>
+                        <button type="submit" class="btn btn-primary w-100 py-2">Analyzovať</button>
                     </form>
                 </div>
                 <div class="tab-pane fade" id="c-camera">
                     <video id="video" autoplay playsinline class="mb-3"></video>
                     <canvas id="canvas" class="d-none"></canvas>
-                    <div class="d-grid"><button type="button" id="snap" class="btn btn-success btn-lg fw-bold"><i class="bi bi-record-circle me-2"></i>SNÍMAŤ</button></div>
+                    <button type="button" id="snap" class="btn btn-primary w-100 py-2"><i class="bi bi-record-circle me-2"></i>Nasnímať</button>
                 </div>
-                <div class="tab-pane fade p-4 border rounded-4 bg-light text-center" id="c-paste">
-                    <i class="bi bi-clipboard-pulse display-4 text-primary mb-2"></i>
-                    <h6>Kliknite sem a stlačte <b>Ctrl + V</b></h6>
+                <div class="tab-pane fade" id="c-paste">
+                    <div class="drop">
+                        <i class="bi bi-clipboard-pulse d-block mb-2"></i>
+                        <span style="font-size:14px">Kliknite sem a stlačte <b>Ctrl + V</b></span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    {% if best_match %}
-    <div class="card-custom overflow-hidden">
-        <div class="header-section d-flex justify-content-between align-items-center">
-            <div><small class="text-uppercase fw-bold opacity-75">Identifikovaný liek</small><h2 class="mb-0 fw-bold">{{ best_match }}</h2></div>
-            <div class="text-end"><h3 class="mb-0 fw-bold">{{ match_percentage }}%</h3><small class="opacity-75">zhoda</small></div>
-        </div>
-        <div class="p-4 p-md-5">
-            {% if pill_data %}
-                <div class="row g-3 mb-4">
-                    <div class="col-md-6"><div class="p-3 border rounded-4 bg-light"><small class="text-muted d-block fw-bold small">ÚČINNÁ LÁTKA</small><b>{{ pill_data.ingredient_sk }}</b></div></div>
-                    <div class="col-md-6"><div class="p-3 border rounded-4 bg-light"><small class="text-muted d-block fw-bold small">STATUS</small>
-                        {% for flag in pill_data.disease_flags %}<span class="badge bg-info me-1">{{ flag }}</span>{% endfor %}
-                    </div></div>
-                </div>
-                {% if pill_description %}<div class="mb-4"><h6 class="fw-bold text-success small">POZNÁMKY:</h6><div class="p-3 bg-success-subtle rounded-3 small">{{ pill_description | replace('\n', '<br>') | safe }}</div></div>{% endif %}
-                
-                <div class="accordion shadow-sm" id="pSec">
-                    {% for k, v in pill_data.sections.items() if v %}
-                    <div class="accordion-item border-0 border-bottom">
-                        <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold text-capitalize" type="button" data-bs-toggle="collapse" data-bs-target="#s-{{ loop.index }}">{{ k.replace('_', ' ') }}</button></h2>
-                        <div id="s-{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#pSec">
-                            <div class="accordion-body small text-muted">{{ v[0] if v is iterable and v is not string else v }}</div>
-                        </div>
+        {% if message %}<div class="box box-warn mb-4"><i class="bi bi-exclamation-triangle me-2"></i>{{ message }}</div>{% endif %}
+
+        {% if llm_on is defined and not llm_on %}
+        <div class="box mb-4" style="color:var(--c-muted)"><i class="bi bi-plug me-2"></i>Gemma nie je dostupná (Ollama nebeží), aplikácia používa iba OCR a fuzzy matching.</div>
+        {% endif %}
+
+        {% if pills %}
+        {% if pills|length > 1 %}
+        <div class="box box-accent mb-4"><i class="bi bi-capsule me-2"></i>Počet nájdených liekov na obrázku: <b>{{ pills|length }}</b></div>
+        {% endif %}
+
+        {% for pill in pills %}
+        {% set i = loop.index %}
+        <section class="panel" id="liek-{{ i }}">
+            <div class="panel-head">
+                <div class="lbl">Identifikovaný liek{% if pills|length > 1 %} {{ i }}/{{ pills|length }}{% endif %}</div>
+                <div class="pill-name">{{ pill.name }}</div>
+                <div class="score-row"><span class="lbl">Zhoda</span><b>{{ pill.score }} %</b></div>
+                <div class="bar"><i style="width: {{ pill.score }}%"></i></div>
+                {% if pill.method_label %}<span class="tag"><i class="bi bi-cpu"></i>{{ pill.method_label }}</span>{% endif %}
+            </div>
+            <div class="panel-body">
+                {% if pill.details or pill.data %}
+                <table class="data-table">
+                    {% if pill.data %}<tr><td>Účinná látka</td><td><b>{{ pill.data.ingredient_sk }}</b></td></tr>{% endif %}
+                    {% if pill.details %}{% for label, value in pill.details.items() %}<tr><td>{{ label }}</td><td>{{ value }}</td></tr>{% endfor %}{% endif %}
+                    {% if pill.data and pill.data.disease_flags %}<tr><td>Status</td><td class="d-flex flex-wrap gap-1">{% for flag in pill.data.disease_flags %}<span class="tag on">{{ flag }}</span>{% endfor %}</td></tr>{% endif %}
+                </table>
+                {% endif %}
+
+                {% if pill.data %}
+                    {% if llm_on %}
+                    <div class="mb-4">
+                        <h6 class="h-sec"><i class="bi bi-stars"></i>Zhrnutie od Gemmy</h6>
+                        <div class="js-summary box box-accent" data-pill="{{ pill.name }}"><span class="spinner-border spinner-border-sm me-2"></span>Gemma pripravuje zhrnutie...</div>
                     </div>
-                    {% endfor %}
+                    {% endif %}
+                    {% if pill.description %}<div class="mb-4"><h6 class="h-sec"><i class="bi bi-journal-text"></i>Poznámky</h6><div class="box box-warn">{{ pill.description | replace('\n', '<br>') | safe }}</div></div>{% endif %}
+
+                    <h6 class="h-sec"><i class="bi bi-file-earmark-medical"></i>Príbalový leták</h6>
+                    <div class="accordion" id="pSec-{{ i }}">
+                        {% for k, v in pill.data.sections.items() if v %}
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed text-capitalize" type="button" data-bs-toggle="collapse" data-bs-target="#s-{{ i }}-{{ loop.index }}">{{ k.replace('_', ' ') }}</button></h2>
+                            <div id="s-{{ i }}-{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#pSec-{{ i }}">
+                                <div class="accordion-body small" style="color:var(--c-muted)">{{ v[0] if v is iterable and v is not string else v }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    {% if llm_on %}
+                    <div class="divider"></div>
+                    <h6 class="h-sec"><i class="bi bi-chat-dots"></i>Opýtaj sa na {{ pill.name }}</h6>
+                    <div class="js-chat-log mb-3 small"></div>
+                    <form class="js-ask d-flex gap-2 mb-4" data-pill="{{ pill.name }}">
+                        <input name="question" class="form-control" maxlength="500" placeholder="Napr. Môžem to užiť s alkoholom?" required>
+                        <button class="btn btn-primary" type="submit">Opýtať</button>
+                    </form>
+
+                    <h6 class="h-sec"><i class="bi bi-arrow-left-right"></i>Interakcia s iným liekom</h6>
+                    <form class="js-inter d-flex gap-2 mb-3" data-pill="{{ pill.name }}">
+                        <select name="other" class="form-select" required>
+                            <option value="">Vyber druhý liek...</option>
+                            {% for p in all_pills if p != pill.name %}<option>{{ p }}</option>{% endfor %}
+                        </select>
+                        <button class="btn btn-primary" type="submit">Skontrolovať</button>
+                    </form>
+                    <div class="js-inter-result small"></div>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </section>
+        {% endfor %}
+
+        {% if pair_checks and llm_on %}
+        <section class="panel" id="interakcie">
+            <div class="panel-head">
+                <div class="lbl">Kontrola</div>
+                <h1><i class="bi bi-shield-exclamation me-2 text-danger"></i>Interakcie medzi nájdenými liekmi</h1>
+            </div>
+            <div class="panel-body d-grid gap-3">
+                {% for a, b in pair_checks %}
+                <div class="js-pair box small" data-pill="{{ a }}" data-other="{{ b }}">
+                    <div class="fw-semibold mb-2">{{ a }} + {{ b }}</div>
+                    <div class="js-inter-result"><span class="spinner-border spinner-border-sm me-2"></span>Gemma porovnáva letáky...</div>
                 </div>
-            {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {% if llm_on %}<div class="box box-warn small"><i class="bi bi-info-circle me-2"></i>{{ disclaimer }}</div>{% endif %}
+        {% endif %}
+
+        {% if detected_text %}
+        <div class="mt-4">
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#rawOcr"><i class="bi bi-code-slash me-1"></i>Zobraziť OCR dáta</button>
+            <div class="collapse mt-2" id="rawOcr"><div class="box mono small" style="white-space:pre-wrap">{{ detected_text }}</div></div>
         </div>
-    </div>
-    {% endif %}
-
-    {% if message %}<div class="alert alert-warning rounded-4 shadow-sm border-0">{{ message }}</div>{% endif %}
-
-    {% if detected_text %}
-    <div class="text-center mt-3">
-        <button class="btn btn-sm btn-outline-secondary opacity-50" type="button" data-bs-toggle="collapse" data-bs-target="#rawOcr">Zobraziť OCR dáta</button>
-        <div class="collapse mt-2" id="rawOcr"><div class="card card-body small bg-light text-start">{{ detected_text }}</div></div>
-    </div>
-    {% endif %}
+        {% endif %}
+    </main>
 </div>
 
 <script>
@@ -133,6 +303,79 @@
 
     document.getElementById('form-up').onsubmit = () => overlay.style.display = 'flex';
 </script>
+
+{% if pills and llm_on %}
+<script>
+    // --- Funkcie gemmy (odpovede modelu sa vkladajú iba ako text, nie HTML) ---
+    const api = async (url, body) => {
+        const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Chyba servera.');
+        return data;
+    };
+
+    const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
+
+    // Zhrnutie každého lieku
+    const SUMMARY_FIELDS = [
+        ['na_co', 'Na čo sa používa'], ['davkovanie', 'Dávkovanie'], ['kontraindikacie', 'Kedy neužívať'],
+        ['varovania', 'Varovania'], ['interakcie', 'Interakcie'], ['vedlajsie_ucinky', 'Vedľajšie účinky']
+    ];
+    document.querySelectorAll('.js-summary').forEach(box => {
+        api('/api/summary', { pill: box.dataset.pill }).then(data => {
+            box.replaceChildren();
+            SUMMARY_FIELDS.forEach(([key, label]) => {
+                const value = data[key];
+                const items = Array.isArray(value) ? value.filter(Boolean) : (value ? [value] : []);
+                if (!items.length) return;
+                box.appendChild(el('div', 'fw-bold mt-3 mb-1', label));
+                if (items.length === 1) { box.appendChild(el('div', '', items[0])); return; }
+                const ul = el('ul', 'mb-0');
+                items.forEach(i => ul.appendChild(el('li', '', i)));
+                box.appendChild(ul);
+            });
+            if (!box.children.length) box.textContent = 'Zhrnutie sa nepodarilo vytvoriť.';
+        }).catch(e => box.textContent = e.message);
+    });
+
+    // Otázky
+    document.querySelectorAll('.js-ask').forEach(form => form.onsubmit = async (e) => {
+        e.preventDefault();
+        const input = form.elements.question;
+        const chat = form.previousElementSibling;
+        const question = input.value.trim();
+        if (!question) return;
+        input.value = '';
+        chat.appendChild(el('div', 'text-end mb-2', '')).appendChild(el('span', 'd-inline-block px-3 py-2 bg-primary text-white rounded-3', question));
+        const answer = el('div', 'mb-3 px-3 py-2 bg-light rounded-3', 'Gemma premýšľa...');
+        chat.appendChild(answer);
+        try { answer.textContent = (await api('/api/ask', { pill: form.dataset.pill, question })).answer; }
+        catch (err) { answer.textContent = err.message; }
+    });
+
+    // Interakcie
+    const RISK_COLORS = { 'nezistené': 'secondary', 'nízke': 'success', 'stredné': 'warning', 'vysoké': 'danger' };
+    const checkInteraction = async (pill, other, out) => {
+        out.replaceChildren(el('span', '', 'Gemma porovnáva letáky...'));
+        try {
+            const data = await api('/api/interaction', { pill, other });
+            out.replaceChildren();
+            const risk = String(data.riziko || 'nezistené').toLowerCase();
+            out.appendChild(el('span', `badge bg-${RISK_COLORS[risk] || 'secondary'} mb-2`, `Riziko: ${risk}`));
+            if (data.priama_zmienka) out.appendChild(el('span', 'badge bg-dark ms-2 mb-2', 'Leták priamo spomína druhý liek'));
+            if (data.vysvetlenie) out.appendChild(el('p', 'mb-1', data.vysvetlenie));
+            if (data.odporucanie) out.appendChild(el('p', 'mb-0 fw-bold', data.odporucanie));
+        } catch (err) { out.textContent = err.message; }
+    };
+    document.querySelectorAll('.js-inter').forEach(form => form.onsubmit = (e) => {
+        e.preventDefault();
+        checkInteraction(form.dataset.pill, form.elements.other.value, form.nextElementSibling);
+    });
+    // Dvojice nájdených liekov sa kontrolujú automaticky
+    document.querySelectorAll('.js-pair').forEach(card =>
+        checkInteraction(card.dataset.pill, card.dataset.other, card.querySelector('.js-inter-result')));
+</script>
+{% endif %}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

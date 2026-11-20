@@ -18,7 +18,8 @@ def clean_text(text):
 
 def read_pill_names(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
-        return [line.strip() for line in file.readlines()]
+        names = [line.split('#')[0].strip() for line in file.readlines()]
+    return [n for n in names if n]
 
 def safe_load_image(image_path):
     try:

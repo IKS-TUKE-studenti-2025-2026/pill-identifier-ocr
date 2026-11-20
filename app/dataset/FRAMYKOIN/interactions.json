@@ -1,0 +1,36 @@
+{
+  "drug_name": "FRAMYKOIN ung 1x10 g",
+  "ingredient_sk": "Neomycín a bacitracín",
+  "ingredient_en_candidates": [
+    "Neomycin",
+    "Bacitracin"
+  ],
+  "matched_name": "Neomycin",
+  "source": "openfda",
+  "openfda_meta": {
+    "hits": 2,
+    "set_ids": [
+      "5b14499e-e45c-7c05-e063-6294a90a1cc2",
+      "eb0d108f-42bf-3364-e053-2a95a90a4542"
+    ]
+  },
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [],
+    "warnings": [
+      "Warnings For external use only. Do not use if you are allergic to any of the ingredients in the eyes over large areas of the body Ask a doctor before use if you have deep or puncture wounds animal bites serious burns Stop use and ask a doctor if you need to use longer than 1 week condition persists or gets worse rash or other allergic reaction develops Keep out of reach of children. If swallowed, get medical help or contact a Poison Control Center right away.",
+      "Warning For external use only."
+    ],
+    "warnings_and_cautions": [],
+    "precautions": [],
+    "drug_interactions": [],
+    "adverse_reactions": [],
+    "clinical_pharmacology": []
+  },
+  "disease_flags": [
+    "children / pediatrics"
+  ],
+  "queries_tried": [
+    "Neomycin"
+  ]
+}

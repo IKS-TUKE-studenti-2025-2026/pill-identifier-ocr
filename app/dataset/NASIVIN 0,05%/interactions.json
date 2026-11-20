@@ -1,0 +1,39 @@
+{
+  "drug_name": "NASIVIN aer nas 10 ml 0,05% (sklo)",
+  "ingredient_sk": "Oxymetazolín",
+  "ingredient_en_candidates": [
+    "Oxymetazoline"
+  ],
+  "matched_name": "Oxymetazoline",
+  "source": "openfda",
+  "openfda_meta": {
+    "hits": 2,
+    "set_ids": [
+      "69d3f1fe-b476-4f84-8c5e-94957b74b46c",
+      "71845bf9-8981-4ca0-a62c-dbef102b1b02"
+    ]
+  },
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [],
+    "warnings": [
+      "Warnings Ask a doctor before use if you have ▪ heart disease ▪ high blood pressure ▪ thyroid disease ▪ diabetes ▪ trouble urinating due to enlarged prostate gland When using this product • do not use more than directed • do not use for more than 3 days. Use only as directed. Frequent or prolonged use may cause nasal congestion to recur or worsen • temporary discomfort such as burning, stinging, sneezing or an increase in nasal discharge may occur • use of this container by more than one person may spread infection. • Stop use and ask a doctor if symptoms persist. • If pregnant or breast feeding, ask a health professional before use. Keep Out of Reach of Children If swallowed, get medical help or contact a Poison Control Centre right away at 1-800-222-1222.",
+      "Warnings Ask a doctor before use if you have • heart disease • high blood pressure • thyroid disease • diabetes • trouble urinating due to an enlarged prostate gland When using this product • do not use more than directed • do not use for more than 3 days. Use only as directed. Frequent or prolonged use may cause nasal congestion to recur or worsen. • temporary discomfort such as burning, stinging, sneezing or an increase in nasal discharge may occur • use of this container by more than one person may spread infection Stop use and ask a doctor if symptoms persist If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. If swallowed, get medical help or contact a Poison Control Center right away (1-800-222-1222)."
+    ],
+    "warnings_and_cautions": [],
+    "precautions": [],
+    "drug_interactions": [],
+    "adverse_reactions": [],
+    "clinical_pharmacology": []
+  },
+  "disease_flags": [
+    "children / pediatrics",
+    "diabetes",
+    "hypertension",
+    "lactation",
+    "pregnancy"
+  ],
+  "queries_tried": [
+    "Oxymetazoline"
+  ]
+}

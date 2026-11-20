@@ -1,0 +1,3 @@
+PANGROL 20000 tbl flm 50
+Multienzýmy (lipáza, proteáza, amyláza)
+Pancrelipase

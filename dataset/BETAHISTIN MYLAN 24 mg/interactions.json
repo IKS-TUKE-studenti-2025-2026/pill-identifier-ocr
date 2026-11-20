@@ -1,0 +1,52 @@
+{
+  "drug_name": "Betahistin Mylan 24 mg tbl 50x24 mg",
+  "ingredient_sk": "Betahistín",
+  "ingredient_en_candidates": [
+    "Betahistine"
+  ],
+  "matched_name": "Betahistine",
+  "source": "sukl_spc",
+  "language": "sk",
+  "spc_url": "https://www.sukl.sk/document/download?dok_id=889610&dok_sec=8035224a14c2f8c950217c1fa2140519",
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [
+      "Precitlivenosť na liečivo alebo na ktorúkoľvek z pomocných látok uvedených v časti 6.1. Feochromocytóm."
+    ],
+    "warnings": [],
+    "warnings_and_cautions": [
+      "Pacienti s bronchiálnou astmou a peptickým vredom v anamnéze majú byť počas liečby starostlivo sledovaní."
+    ],
+    "precautions": [],
+    "drug_interactions": [
+      "Nevykonali sa žiadne in-vivo štúdie interakcií. Na základe in-vitro údajov sa neočakáva in-vivo inhibícia enzýmov cytochrómu P450. In –vitro údaje naznačujú inhibíciu metabolizmu betahistínu liekmi, ktoré inhibujú monoaminooxidázu (MAO), vrátane podtypu B (napr. selegilín). Pri súbežnom užívaní betahistínu a inhibítorov MAO (vrátane MAO-B selektívnych inhibítorov) sa odporúča opatrnosť. Keďže betahistín je analóg histamínu, interakcia s antihistaminikami môže teoreticky ovplyvniť účinnosť jedného z týchto liekov."
+    ],
+    "adverse_reactions": [
+      "U pacientov liečených betahistínom sa v placebom kontrolovaných klinických štúdiách vyskytli nasledovné nežiaduce účinky s nižšie uvedenou frekvenciou: veľmi časté (≥1/10); časté (≥1/100 až <1/10); menej časté (≥1/1 000 až < 1/100); zriedkavé (≥1/10 000 až < 1/1 000), veľmi zriedkavé (<1/10 000). Poruchy nervového systému Časté: bolesť hlavy Poruchy gastrointestinálneho traktu Časté: nauzea a dyspepsia Okrem týchto prípadov hlásených počas klinických štúdií boli spontánne hlásené nasledovné nežiaduce účinky z postmarketingového užívania a vedeckej literatúry. Frekvenciu nemožno odhadnúť na základe dostupných údajov, preto je klasifikovaná ako „neznáma“. Poruchy imunitného systému Boli hlásené reakcie z precitlivenosti, napr. anafylaxia. Poruchy gastrointestinálneho traktu Boli hlásené mierne žalúdočné problémy (napr. vracanie, gastrointestinálna bolesť, abdominálna distenzia a nafukovanie), ktoré zvyčajne vymiznú, ak sa liek užíva spolu s jedlom alebo po znížení dávky. Poruchy kože a podkožného tkaniva Boli hlásené kožné a podkožné reakcie z precitlivenosti, osobitne angioneurotický edém, žihľavka, vyrážka a pruritus. Hlásenie podozrení na nežiaduce reakcie Hlásenie podozrení na nežiaduce reakcie po registrácii lieku je dôležité. Umožňuje priebežné monitorovanie pomeru prínosu a rizika lieku. Od zdravotníckych pracovníkov sa vyžaduje, aby hlásili akékoľvek podozrenia na nežiaduce reakcie na národné centrum hlásenia uvedené v Prílohe V."
+    ],
+    "clinical_pharmacology": [],
+    "indications_and_usage": [
+      "Menièrov syndróm je definovaný nasledovnou trojicou hlavných príznakov: • vertigo (s nevoľnosťou/vracaním) • strata sluchu (zhoršenie sluchu) • tinnitus"
+    ],
+    "dosage_and_administration": [
+      "Dávkovanie Dospelí (vrátane starších pacientov) Dávkovanie pre dospelých je 12 - 24 mg dvakrát denne, podané s jedlom. Podávanie lieku môže byť rozdelené na celý deň. Dávkovanie má byť upravené individuálne, na základe odpovede pacienta. Zlepšenie môže byť niekedy pozorované až po niekoľkých týždňoch liečby. Optimálne výsledky sa niekedy dosiahnu až po niekoľkých mesiacoch. Pri určitých indikáciách užívanie lieku na začiatku ochorenia môže zabrániť progresii ochorenia alebo strate sluchu v neskorších fázach ochorenia. Porucha funkcie obličiek Nie sú dostupné špecifické klinické štúdie u tejto skupiny pacientov, ale podľa postmarketingových skúseností nie je potrebná úprava dávky. Porucha funkcie pečene Nie sú dostupné špecifické klinické štúdie u tejto skupiny pacientov, ale podľa postmarketingových skúseností nie je potrebná úprava dávky. Pediatrická populácia Tento liek sa neodporúča používať u detí mladších ako 18 rokov vzhľadom na nedostatok údajov o bezpečnosti a účinnosti. Starší pacienti Hoci sú údaje z klinických skúšaní v tejto skupine pacientov obmedzené, rozsiahle skúsenosti po uvedení lieku na trh naznačujú, že u starších ľudí nie je potrebná úprava dávky. Spôsob podávania Perorálne použitie. Betahistin Viatris môžete užívať s jedlom alebo bez jedla. Betahistin Viatris môže vyvolať mierne žalúdočné problémy (pozri časť 4.8). Užívanie Betahistinu Viatris s jedlom môže zmierniť žalúdočné problémy."
+    ],
+    "pregnancy_and_lactation": [
+      "Gravidita Nie sú k dispozícii dostatočné údaje o použití betahistínu u gravidných žien. Štúdie na zvieratách nepreukázali priame alebo nepriame účinky z hľadiska reprodukčnej toxicity pri klinicky relevantnej terapeutickej expozícii. Ako preventívne opatrenie je vhodnejšie vyhnúť sa užívaniu betahistínu počas gravidity. Dojčenie Nie je známe, či sa betahistín vylučuje do ľudského mlieka. Betahistín sa vylučuje do mlieka u potkanov. Účinky pozorované v popôrodnom období v štúdiách na zvieratách boli obmedzené na veľmi vysoké dávky. Význam tohto lieku pre matku sa má zvážiť s ohľadom na prínos dojčenia a možné riziká pre dieťa. Fertilita Štúdie na zvieratách nepreukázali účinky na fertilitu u potkanov."
+    ],
+    "driving_and_machines": [
+      "Betahistín je indikovaný na liečbu Menièrovho syndrómu s príznakmi ako vertigo, tinnitus a strata sluchu. Toto ochorenie môže negatívne ovplyvniť schopnosť viesť vozidlá a obsluhovať stroje. V klinických štúdiách špecificky navrhnutých na štúdium schopnosti viesť vozidlá a obsluhovať stroje nemal betahistín žiadny alebo mal len zanedbateľný vplyv."
+    ],
+    "overdosage": [
+      "Bolo hlásených niekoľko prípadov predávkovania. Niektorí pacienti mali mierne až stredne závažné symptómy pri dávkach do 640 mg (napr. nauzea, somnolencia, abdominálna bolesť). Závažnejšie komplikácie (napr. kŕče, pľúcne alebo srdcové komplikácie) sa pozorovali v prípade úmyselného predávkovania betahistínom, zvlášť v kombinácii s inými liekmi v nadmerných dávkach. Liečba predávkovania zahŕňa štandardné podporné opatrenia. 5. FARMAKOLOGICKÉ VLASTNOSTI"
+    ]
+  },
+  "disease_flags": [
+    "asthma",
+    "lactation",
+    "peptic ulcer / gi bleeding",
+    "pheochromocytoma",
+    "pregnancy"
+  ],
+  "status": "ok"
+}

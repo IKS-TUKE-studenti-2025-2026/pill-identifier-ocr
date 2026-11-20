@@ -1,0 +1,36 @@
+{
+  "drug_name": "ZODAC tbl flm 7x10 mg",
+  "ingredient_sk": "Cetirizín",
+  "ingredient_en_candidates": [
+    "Cetirizine"
+  ],
+  "matched_name": "Cetirizine",
+  "source": "openfda",
+  "openfda_meta": {
+    "hits": 2,
+    "set_ids": [
+      "36b6d0e4-8da5-9df5-e063-6294a90af326",
+      "e5fd935d-5b60-7270-e053-2995a90a7141"
+    ]
+  },
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [],
+    "warnings": [
+      "Warnings Severe Allergy Warning Severe Allergy Warning: Get emergency help immediately if you have hives along with any of the following symptoms: trouble swallowing dizziness or loss of consciousness swelling of tongue swelling in or around mouth trouble speaking drooling wheezing or problems breathing These symptoms may be signs of anaphylactic shock. This condition can be life threatening if not treated by a health professional immediately. Symptoms of anaphylactic shock may occur when hives first appear or up to a few hours later. Not a Substitute for Epinephrine . If your doctor has prescribed an epinephrine injector for \"anaphylaxis\" or severe allergy symptoms that could occur with your hives, never use this product as a substitute for the epinephrine injector. If you have been prescribed an epinephrine injector, you should carry it with you at all times. Do not use Do not use ■ to prevent hives from any known cause such as: foods insect stings medicines latex or rubber gloves because this product will not stop hives from occurring. Avoiding the cause of your hives is the only way to prevent them. Hives can sometimes be serious. If you do not know the cause of your hives, see your doctor for a medical exam. Your doctor may be able to help you find a cause. ■ if you have ever had an allergic reaction to this product or any of its ingredients or to an antihistamine containing hydroxyzine. Ask a doctor before use if you have liver or kidney disease. Your doctor should determine if you need a different dose. hives that are an unusual color, look bruised or blistered hives that do not itch Ask a doctor or pharmacist before use if you are taking tranquilizers or sedatives. When using this product drowsiness may occur avoid alcoholic drinks alcohol, sedatives, and tranquilizers may increase drowsiness be careful when driving a motor vehicle or operating machinery in rare cases, you may experience itching after stopping cetirizine. Consult your healthcare provider if this happens. Stop use and ask a doctor if an allergic reaction to this product occurs. Seek medical help right away. symptoms do not improve after 3 days of treatment the hives have lasted more than 6 weeks If pregnant or breast-feeding : if breast-feeding: not recommended if pregnant: ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. (1-800-222-1222)",
+      "Warnings Do not use if you have ever had an allergic reaction to this product or any of its ingredients or to an antihistamine containing hydroxyzine. Ask a doctor before use if you have liver or kidney disease. Your doctor should determine if you need a different dose. Ask a doctor or pharmacist before use if you are taking tranquilizers or sedatives. When using this product drowsiness may occur avoid alcoholic drinks alcohol, sedatives, and tranquilizers may increase drowsiness be careful when driving a motor vehicle or operating machinery Stop use and ask a doctor if an allergic reaction to this product occurs. Seek medical help right away. If pregnant or breast-feeding: if breast-feeding: not recommended if pregnant: ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. (1-800-222-1222)"
+    ],
+    "warnings_and_cautions": [],
+    "precautions": [],
+    "drug_interactions": [],
+    "adverse_reactions": [],
+    "clinical_pharmacology": []
+  },
+  "disease_flags": [
+    "children / pediatrics",
+    "pregnancy"
+  ],
+  "queries_tried": [
+    "Cetirizine"
+  ]
+}

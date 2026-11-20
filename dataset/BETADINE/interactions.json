@@ -1,0 +1,34 @@
+{
+  "drug_name": "BETADINE liq 1x30 ml",
+  "ingredient_sk": "Jódovaný povidón",
+  "ingredient_en_candidates": [
+    "Povidone-iodine"
+  ],
+  "matched_name": "Povidone-iodine",
+  "source": "openfda",
+  "openfda_meta": {
+    "hits": 2,
+    "set_ids": [
+      "7302a2f8-a600-4200-bc4e-309e4c190fe5",
+      "b8a23a29-2541-4987-a534-17a6369a6c8d"
+    ]
+  },
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [],
+    "warnings": [
+      "Warnings For external use only Avoid \"pooling\" beneath patient. Prolonged exposure to wet solution may cause skin irritation. Do not use in the eyes on individuals allergic or sensitive to iodine Ask a doctor before use if injuries are deep or puncture wounds serious burns Stop use and ask a doctor if infection occurs redness, irritation, swelling or pain persists or increases Keep out of reach of children. In case of accidental ingestion, seek professional assistance or consult a poison control center immediately."
+    ],
+    "warnings_and_cautions": [],
+    "precautions": [],
+    "drug_interactions": [],
+    "adverse_reactions": [],
+    "clinical_pharmacology": []
+  },
+  "disease_flags": [
+    "children / pediatrics"
+  ],
+  "queries_tried": [
+    "Povidone-iodine"
+  ]
+}

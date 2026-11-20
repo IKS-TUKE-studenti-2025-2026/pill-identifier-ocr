@@ -1,0 +1,52 @@
+{
+  "drug_name": "ERDOMED 300 MG cps 20x300 mg",
+  "ingredient_sk": "Erdosteín",
+  "ingredient_en_candidates": [
+    "Erdosteine"
+  ],
+  "matched_name": "Erdosteine",
+  "source": "sukl_spc",
+  "language": "sk",
+  "spc_url": "https://www.sukl.sk/document/download?dok_id=838903&dok_sec=17839a9f41a3686af6118a53cc187eab",
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [
+      "- precitlivenosť na liečivo alebo na ktorúkoľvek z pomocných látok uvedených v časti 6.1, - deti s telesnou hmotnosťou nižšou ako 15 kg, - hepatálne poruchy alebo abnormality (napr. vzostup sérovej alkalickej fosfatázy, tranzamináz atď.), - renálna insuficiencia (klírens kreatinínu < 25 ml/min), - homocysteinúria (liek je zdrojom homocysteínu a neexistujú žiadne údaje týkajúce sa podávania erdosteínu v prípade kongenitálnych porúch metabolizmu aminokyselín, zvlášť u tých pacientov, ktorí majú dodržiavať diétu bez metionínu), - u pacientov s hepatálnou cirhózou a pri deficiencii enzýmu cystationín-syntetáza je liek kontraindikovaný kvôli možnej interferencii metabolitov s metabolizmom metionínu."
+    ],
+    "warnings": [],
+    "warnings_and_cautions": [
+      "Pri objavení príznakov klasickej precitlivenosti musí byť liečba erdosteínom okamžite prerušená."
+    ],
+    "precautions": [],
+    "drug_interactions": [
+      "Neboli pozorované žiadne vážne interakcie s inými liečivami často používanými pri respiračných infekciách a chronických obštrukčných pľúcnych chorobách ako teofylín, bronchodilatanciá, erytromycín, amoxicilín alebo sulfatrimetoprim. Erdosteín zvyšuje účinok niektorých antibiotík (napr. amoxicilínu, ampicilínu), čo je možné využiť na terapeutické účely. Bol dokázaný synergický účinok s budenozidom a salbutamolom. Súbežné podávanie erdosteínu s inými antitusikami nemá opodstatnenie a môže indukovať akumuláciu stekuteného exkrétu v bronchiálnom strome so zvyšovaním rizika superinfekcie alebo bronchospazmov."
+    ],
+    "adverse_reactions": [
+      "Frekvencia výskytu nežiaducich reakcií je usporiadaná podľa nasledovnej konvencie: časté (≥ 1/100 až < 1/10); menej časté (≥ 1/1 000 až < 1/100); zriedkavé (≥ 1/10 000 až < 1/1 000); veľmi zriedkavé (<1/10 000), neznáme (z dostupných údajov). Poruchy nervového systému Veľmi zriedkavé (< 1/10 000): bolesť hlavy Poruchy dýchacej sústavy, hrudníka a mediastína Veľmi zriedkavé (< 1/10 000): prechladnutie, dýchavičnosť Poruchy gastrointestinálneho traktu Veľmi zriedkavé (< 1/10 000): zmeny chuti, nevoľnosť, vracanie, hnačka, bolesť v epigastriu Poruchy kože a podkožného tkaniva Veľmi zriedkavé (< 1/10 000): žihľavka, začervenanie, ekzém Hlásenie podozrení na nežiaduce reakcie Hlásenie podozrení na nežiaduce reakcie po registrácii lieku je dôležité. Umožňuje priebežné monitorovanie pomeru prínosu a rizika lieku. Od zdravotníckych pracovníkov sa vyžaduje, aby hlásili akékoľvek podozrenia na nežiaduce reakcie na Štátny ústav pre kontrolu liečiv, Sekcia klinického skúšania liekov a farmakovigilancie, Kvetná ul. 11, SK-825 08 Bratislava 26, Tel: + 421 2 507 01 206, e-mail: neziaduce.ucinky@sukl.sk. Tlačivo na hlásenie nežiaduceho účinku je na webovej stránke www.sukl.sk v časti Bezpečnosť liekov/Hlásenie o nežiaducich účinkoch. Formulár na elektronické podávanie hlásení: https://portal.sukl.sk/eskadra/."
+    ],
+    "clinical_pharmacology": [],
+    "indications_and_usage": [
+      "Erdosteín redukuje viskozitu bronchiálnych sekrétov a je indikovaný pri akútnych a chronických ochoreniach dýchacích ciest ako bronchitída, rinitída, sinusitída, laryngo-faryngitída a exacerbácia chronickej bronchitídy, CHOPCH (chronická obštrukčná choroba pľúc), hypersekrečná astma bronchiale, bronchiektázia. Erdosteín tiež pôsobí protektívne proti zhoršeniu ochorenia dýchacích ciest a je indikovaný na preventívnu liečbu stabilných chronických bronchitíd u fajčiarov, na prevenciu rekurentných infekčných epizód napr. počas zimnej sezóny a podobne. Liek je tiež indikovaný ako súbežná liečba s antibiotikami v prípade exacerbácie s bakteriálnou infekciou. Erdosteín sa tiež používa na predchádzanie komplikácií po chirurgickom zákroku, ako je zápal pľúc alebo nevzdušnosť časti pľúc. ERDOMED 300 mg je indikovaný u dospelých, dospievajúcich a detí s telesnou hmotnosťou vyššou ako 30 kg (nad 12 rokov)."
+    ],
+    "dosage_and_administration": [
+      "Dospelí a starší pacienti Optimálna denná dávka je 600 mg erdosteínu rozdelená na dve 300 mg podania. Maximálna denná dávka je 900 mg v 2 až 3 podaniach. 1 kapsula (300 mg) 2- až 3-krát denne. Pediatrická populácia Dávka pre deti a dospievajúcich s telesnou hmotnosťou vyššou ako 30 kg (nad 12 rokov) je identická s dávkou pre dospelých. Dĺžka trvania liečby Terapeutický účinok sa prejaví po 3 dňoch liečby; priemerná dĺžka liečby pre dosiahnutie úplného účinku je 7 dní. Pri chronických ochoreniach sa môže erdosteín používať aj dlhšiu dobu. Osobitná skupina pacientov Pacienti s ťažkým zlyhaním pečene majú užívať polovičnú dávku. Nie je potrebná úprava dávkovania u pacientov so zlyhaním obličiek s klírensom kreatinínu > 25 ml/min."
+    ],
+    "pregnancy_and_lactation": [
+      "O použití erdosteínu u gravidných žien nie sú k dispozícii dostatočné údaje. Štúdie na zvieratách sú nedostatočné z hľadiska posúdenia účinkov na priebeh gravidity a/alebo vývoj embrya/plodu a/alebo na pôrod a/alebo postnatálny vývoj. Potenciálne riziko pre človeka nie je známe. Preto sa ERDOMED 300 mg nemá podávať počas gravidity a laktácie."
+    ],
+    "driving_and_machines": [
+      "ERDOMED 300 mg nemá žiadny alebo má zanedbateľný vplyv na schopnosť viesť vozidlá a obsluhovať stroje."
+    ],
+    "overdosage": [
+      "Doteraz neboli popísané prípady predávkovania. Dávky vyššie ako odporúčané (1 200 mg/deň) môžu spôsobiť potenie, závraty a návaly. Vo všetkých prípadoch predávkovania je liečba symptomatická a podľa potreby sa majú vykonať všeobecné podporné opatrenia. 5. FARMAKOLOGICKÉ VLASTNOSTI"
+    ]
+  },
+  "disease_flags": [
+    "children / pediatrics",
+    "hepatic impairment",
+    "lactation",
+    "pregnancy",
+    "renal impairment"
+  ],
+  "status": "ok"
+}

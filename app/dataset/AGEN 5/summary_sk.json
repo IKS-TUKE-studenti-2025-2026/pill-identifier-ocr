@@ -1,0 +1,16 @@
+{
+  "na_co": "Amlodipín je liek na zníženie vysokého krvného tlaku.",
+  "davkovanie": "Liek je dostupný v tabletách po 5 mg, balenie obsahuje 30 tablet.",
+  "kontraindikacie": [
+    "Liek sa nesmie užívať, ak máte alergie na amlodipín."
+  ],
+  "varovania": [
+    "Môže dôjsť k poklesu krvného tlaku, najmä u ľudí s ťažkým zúžením aorty."
+  ],
+  "interakcie": [
+    "Užívanie s niektorými liečivami môže zvýšiť účinok amlodipínu a vyžadovať úpravu dávky."
+  ],
+  "vedlajsie_ucinky": [
+    "Najčastejšie vedľajší účinok je otok, ktorý sa zvyšuje s dávkou, môžu sa objaviť aj únava, nevoľnosť a závraty."
+  ]
+}

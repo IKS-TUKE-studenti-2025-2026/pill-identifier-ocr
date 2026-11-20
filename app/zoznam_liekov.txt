@@ -48,3 +48,53 @@ TEBOKAN 120 mg
 TRITACE 5
 UNIFLOX 0,3 %
 VESSEL DUE F
+PAMYCON
+EBRANTIL RETARD 30 mg       # SPC zo ŠÚKL (nie je v openFDA)
+HYLAK FORTE
+OXAZEPAM LÉČIVA 10 mg
+PANCREOLAN FORTE
+GUAJACURAN 200 mg
+TIAPRIDAL 100 mg            # SPC zo ŠÚKL (nie je v openFDA)
+AMOKSIKLAV 1000 mg
+CAVINTON FORTE              # SPC zo ŠÚKL (nie je v openFDA)
+KALDYUM 600 mg
+NOLIPREL FORTE A
+KINEDRYL
+VIGANTOL OIL
+ACIDUM FOLICUM LÉČIVA
+KVENTIAX 25 mg
+DALACIN C 300 mg
+VENTOLIN INHALER
+SETALOFT 50 mg
+VOLTAREN RAPID 25 mg
+DITHIADEN 2 mg              # SPC zo ŠÚKL (nie je v openFDA)
+ZINNAT 500 mg
+ENDITRIL 100 mg             # SPC zo ŠÚKL (nie je v openFDA)
+BETAHISTIN MYLAN 24 mg      # SPC zo ŠÚKL (nie je v openFDA)
+FRAMYKOIN
+BILAHIST 20 mg              # SPC zo ŠÚKL (nie je v openFDA)
+SOLMUCOL 200 mg
+MILGAMMA N
+HELICID 20
+ZODAC 10 mg
+NASIVIN 0,05%
+FRONTIN 0,5 mg
+THERAFLU
+OZEMPIC 1 mg
+BETADINE
+CELASKON 250
+JARDIANCE 10 mg
+IALUGEN PLUS
+VASOCARDIN 50
+PANADOL NOVUM 500 mg
+GERODORM 40 mg              # SPC zo ŠÚKL (nie je v openFDA)
+CORDARONE 200 mg
+FRAXIPARINE                 # SPC zo ŠÚKL (nie je v openFDA)
+OPHTHALMO-SEPTONEX          # SPC zo ŠÚKL (nie je v openFDA)
+PANGROL 20000
+ERDOMED 300 mg              # SPC zo ŠÚKL (nie je v openFDA)
+SIRDALUD 2 mg
+LACIPIL 4 mg                # SPC zo ŠÚKL (nie je v openFDA)
+TRITTICO AC 150
+PRENESSA 4 mg
+MAGNEROT

@@ -1,0 +1,36 @@
+{
+  "drug_name": "HELICID 20 cps 90x20 mg",
+  "ingredient_sk": "Omeprazol",
+  "ingredient_en_candidates": [
+    "Omeprazole"
+  ],
+  "matched_name": "Omeprazole",
+  "source": "openfda",
+  "openfda_meta": {
+    "hits": 2,
+    "set_ids": [
+      "94faa721-e925-4033-8661-d1990dfa920d",
+      "10efef7c-bdf4-36cf-e063-6394a90a8c0f"
+    ]
+  },
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [],
+    "warnings": [
+      "Warnings Allergy alert: • do not use if you are allergic to omeprazole. • omeprazole may cause severe skin reactions. Symptoms may include: • skin reddening • blisters • rash If an allergic reaction occurs, stop use and seek medical help right away. Do not use if you have: • trouble or pain swallowing food, vomiting with blood, or bloody or black stools • heartburn with lightheadedness, sweating or dizziness • chest pain or shoulder pain with shortness of breath; sweating; pain spreading to arms, neck or shoulders; or lightheadedness • frequent chest pain These may be signs of a serious condition. See your doctor. Ask a doctor before use if you have: • had heartburn over 3 months. This may be a sign of a more serious condition. • frequent wheezing, particularly with heartburn • unexplained weight loss • nausea or vomiting • stomach pain Ask a doctor or pharmacist before use if you are taking a prescription drug. Acid reducers may interact with certain prescription drugs. Stop use and ask a doctor if: • your heartburn continues or worsens • you need to take this product for more than 14 days • you need to take more than 1 course of treatment every 4 months • you get diarrhea • you develop a rash or joint pain If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222).",
+      "Warnings Allergy alert: • Do not use if you are allergic to omeprazole. • Omeprazole may cause severe skin reactions. Symptoms may include: • skin reddening • blisters • rash If an allergic reaction occurs, stop use and seek medical help right away."
+    ],
+    "warnings_and_cautions": [],
+    "precautions": [],
+    "drug_interactions": [],
+    "adverse_reactions": [],
+    "clinical_pharmacology": []
+  },
+  "disease_flags": [
+    "children / pediatrics",
+    "pregnancy"
+  ],
+  "queries_tried": [
+    "Omeprazole"
+  ]
+}

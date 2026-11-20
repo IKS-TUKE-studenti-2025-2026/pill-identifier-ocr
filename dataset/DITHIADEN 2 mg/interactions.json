@@ -1,0 +1,51 @@
+{
+  "drug_name": "DITHIADEN tbl 20x2 mg",
+  "ingredient_sk": "Bisulepín",
+  "ingredient_en_candidates": [
+    "Bisulepin"
+  ],
+  "matched_name": "Bisulepin",
+  "source": "sukl_spc",
+  "language": "sk",
+  "spc_url": "https://www.sukl.sk/document/download?dok_id=697952&dok_sec=d7011fd54acac103cf434f9377c45d3a",
+  "sections": {
+    "boxed_warning": [],
+    "contraindications": [
+      " Precitlivenosť na bisulepín alebo na ktorúkoľvek z pomocných látok uvedených v časti 6.1.  Status asthmaticus.  Vo všetkých prípadoch, kde je na závadu ospalosť."
+    ],
+    "warnings": [],
+    "warnings_and_cautions": [
+      "Vzhľadom na anticholinergný účinok lieku by sa mal zvážiť pomer rizika a prínosu lieku aj pri obštrukcii v močových cestách, pri hypertrofii prostaty, pri retencii moču, glaukóme (predovšetkým s uzavretým uhlom) a pri kóme. Počas liečby Dithiadenom sa nemajú piť alkoholické nápoje. Liek obsahuje monohydrát laktózy. Pacienti so zriedkavými dedičnými problémami galaktózovej intolerancie, celkovým deficitom laktázy alebo glukózo-galaktózovou malabsorpciou nesmú užívať tento liek."
+    ],
+    "precautions": [],
+    "drug_interactions": [
+      "Centrálne tlmivý účinok Dithiadenu zos ilňujú súčasne podávané látky tlmiace CNS (neuroleptiká, hypnotiká, sedatíva, anestetiká, antidepresíva, alkohol, inhibítory MAO a pod.). Anticholinergný účinok zosilňujú súčasne podávané anticholinergiká a látky s anticholinergným účinkom."
+    ],
+    "adverse_reactions": [
+      "Nežiaduce účinky bisulepínu sa vyskytujú častejšie u detí a starších ľudí. V nasledujúcej tabuľke sú zhrnuté nežiaduce účinky bisulepínu rozdelené do skupín podľa terminológie MedDRA s uvedením frekvencie výskytu: veľmi časté (  1/10), časté (  1/100 až < 1/10), menej časté (  1/1 000 až < 1/100), zriedkavé (  1/10 000 až < 1/1 000), veľmi zriedkavé (< 1/10 000), neznáme (z dostupných údajov). Trieda orgánových systémov podľa databázy MedDRA Frekvencia Nežiaduci účinok Poruchy krvi a lymfatického systému zriedkavé Poruchy krvotvorby2 Poruchy metabolizmu a výživy zriedkavé Poruchy metabolických funkcií2 Psychické poruchy zriedkavé Poruchy psychiky (zmätenosť)2 Poruchy nervového systému časté Celkový útlm s rizikom zníženej pozornosti1 (niekedy naopak excitácie)1 Poruchy oka časté Poruchy zraku, zvýšený vnútroočný tlak1 Poruchy srdca a srdcovej činnosti časté Poruchy TK1, srdcového rytmu a frekvencie1 Poruchy gastrointestinálneho traktu časté Sucho v ústach s ťažkosťami pri prehĺtaní1, smäd1, zníženie motility tráviacej sústavy s obstipáciou1 Poruchy pečene a žlčových ciest zriedkavé Poruchy pečene2 Poruchy kože a podkožného tkaniva časté Začervenanie a suchosť kože1, fotosenzitivita Poruchy obličiek a močových ciest časté Poruchy mikcie1 Poruchy reprodukčného systému a prsníkov zriedkavé Gynekomastia2 1 Anticholinergné účinky. 2 Vyskytujú sa pri dlhšom užívaní, pri vyšších dávkach a u citlivých osôb. Hlásenie podozrení na nežiaduce reakcie Hlásenie podozrení na nežiaduce reakcie po registrácii lieku je dôležité. Umožňuje priebežné monitorovanie pomeru prínosu a rizika lieku. Od zdravotníckych pracovníkov sa vyžaduje, aby hlásili akékoľvek podozrenia na nežiaduce reakcie na národné centrum hlásenia uvedené v Prílohe V."
+    ],
+    "clinical_pharmacology": [],
+    "indications_and_usage": [
+      "Prejavy precitlivenosti včasnéh o typu (sprostredkované IgE protilátkami); akútne alergické stavy, alergická nádcha, astma bronchiale I. typu; alergické reakcie po uštipnutí hmyzom, po aplikácii alergénu pri hyposenzibilizácii, po podaní liekov či požití potravín; žihľavka, angioedém, at opická dermatitída. Pre injekčnú liekovú formu je navyše indikáciou (najlepšie i.v. podanie) celková alergická reakcia (anafylaktický šok) ihneď v nadväznosti na podanie adrenalínu, prípadne glukokortikoidov."
+    ],
+    "dosage_and_administration": [
+      "Individuálne, podľa povahy ochorenia a podľa znášanlivosti. Na začiatku je vhodné podávať dávky vyššie, prípadne začať liečbu s injekčnou formou a riadiť sa intenzitou účinku a únosnou mierou ospalosti. Dospelým a dospievajúcim od 15 rokov sa môže podať denne 4 – 8 mg. Deťom vo veku 7 – 14 rokov 1 – 2 mg 2 až 3-krát denne. Deťom vo veku 1 – 6 rokov 0,5 – 1 mg 2 až 3 -krát denne. Pre presné odmeranie 0,5 mg dávky nie je táto lieková forma vhodná. Tablety možno preto podať deťom až v dávke 1 mg (½ tablety) 2 až 3-krát denne, pričom deťom do 3 rokov je potrebné podať tabletu rozdrvenú na lyžičke s tekutinou. Z dôvodu presného dávkovania môže lekár u mladších detí voliť injekčné podanie. Po dosiahnutí účinku možno zvyčajne vystačiť s nižšími dávkami."
+    ],
+    "pregnancy_and_lactation": [
+      "Gravidita Bezpečnosť pri podávaní počas tehotenstva sa nepreverila. Liek sa preto neodporúča podávať počas tehotenstva, najmä v 1. trimestri, bez zváženia priaznivého liečebného účinku pre matku a potenciálneho rizika pre plod. Dojčenie Údaje o vylučovaní do materského mlieka nie sú známe, liek by sa teda nemal podávať dojčiacim ženám."
+    ],
+    "driving_and_machines": [
+      "Liek môže nepriaznivo ovplyvniť schopnosť činností vyžadujúcich zvýšenú pozornosť, moto rickú koordináciu a rýchle rozhodovanie (napr. vedenie vozidiel, obsluhu strojov, práce vo výškach a pod.) a preto pacienti liečení Dithiadenom nesmú uvedené činnosti vykonávať."
+    ],
+    "overdosage": [
+      "Predávkovanie sa prejaví útlmom až spavosťou s anticholinergnými príznakmi (pozri časť 4.8.). Liečba je symptomatická a podporná so zameraním na udržanie vitálnych funkcií. 5. FARMAKOLOGICKÉ VLASTNOSTI"
+    ]
+  },
+  "disease_flags": [
+    "depression / suicidality",
+    "glaucoma",
+    "lactation",
+    "pregnancy"
+  ],
+  "status": "ok"
+}
